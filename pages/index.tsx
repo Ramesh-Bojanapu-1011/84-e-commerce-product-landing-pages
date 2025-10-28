@@ -17,7 +17,6 @@ export default function Home() {
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
-      
 
       <div className="min-h-screen bg-linear-to-br from-blue-50 to-white dark:from-slate-900 dark:to-slate-800 caret-transparent">
         <div className=" absolute top-10 right-10">
@@ -60,7 +59,6 @@ export default function Home() {
           </div>
         </main>
       </div>
-      
     </>
   );
 }

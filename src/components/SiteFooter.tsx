@@ -12,8 +12,9 @@ const services = [
 ];
 
 const quickLinks = [
-  { href: "/", label: "Home" },
+  { href: "/home1", label: "Home" },
   { href: "/about-us", label: "About Us" },
+  { href: "/services", label: "Services" },
   { href: "/blog", label: "Blog" },
   { href: "/contact-us", label: "Contact" },
 ];
@@ -25,15 +26,14 @@ const SiteFooter: React.FC = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
           {/* Column 1: logo + about */}
           <div>
-            <Link href="/" className="inline-flex items-center mb-3">
-              <img
-                src="https://i.postimg.cc/DwdH9gv8/logo-stackly.png"
-                alt="EcomPages"
-                width={100}
-                height={100}
-                className="object-cover"
-              />
-            </Link>
+            <img
+              src="https://i.postimg.cc/DwdH9gv8/logo-stackly.png"
+              alt="EcomPages"
+              width={100}
+              height={100}
+              className="object-cover"
+            />
+
             <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
               We build attractive, high-converting product landing pages and
               product detail experiences tailored for ecommerce brands. Fast,
@@ -42,7 +42,7 @@ const SiteFooter: React.FC = () => {
           </div>
 
           {/* Column 2: Quick links */}
-          <div className="flex  justify-center">
+          <div className="flex md:justify-center">
             <div>
               <h4 className="text-sm font-semibold text-slate-800 dark:text-slate-100 mb-3">
                 Quick Links
@@ -63,7 +63,7 @@ const SiteFooter: React.FC = () => {
           </div>
 
           {/* Column 3: Services (reuse list) */}
-          <div className="flex justify-center">
+          <div className="flex md:justify-center">
             <div>
               <h4 className="text-sm font-semibold text-slate-800 dark:text-slate-100 mb-3">
                 Services
@@ -84,7 +84,7 @@ const SiteFooter: React.FC = () => {
           </div>
 
           {/* Column 4: Contact */}
-          <div className="flex justify-center">
+          <div className="flex md:justify-center">
             <div>
               <h4 className="text-sm font-semibold text-slate-800 dark:text-slate-100 mb-3">
                 Contact Us
@@ -111,7 +111,10 @@ const SiteFooter: React.FC = () => {
 
                 <div className="flex items-center gap-2">
                   <Phone className="w-4 h-4 text-slate-500 dark:text-slate-300" />
-                  <a href="tel:+1234567890" className="text-blue-600 hover:underline dark:text-blue-400">
+                  <a
+                    href="tel:+1234567890"
+                    className="text-blue-600 hover:underline dark:text-blue-400"
+                  >
                     +1 (234) 567-890
                   </a>
                 </div>

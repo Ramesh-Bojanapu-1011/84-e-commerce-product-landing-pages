@@ -7,7 +7,7 @@ const navItems = [
   {
     title: "Home",
     submenu: [
-      { title: "Home 1", href: "/" },
+      { title: "Home 1", href: "/home1" },
       { title: "Home 2", href: "/home-2" },
     ],
   },
@@ -40,12 +40,12 @@ const SiteHeadder: React.FC = () => {
   const [openNavIndex, setOpenNavIndex] = React.useState<number | null>(null);
 
   return (
-    <header className="w-full bg-white/80 backdrop-blur sticky top-0 z-50 border-b border-slate-200 dark:bg-slate-900/80 dark:border-slate-800 caret-transparent">
+    <header className="w-full bg-white   sticky top-0 z-50 border-b border-slate-200 dark:bg-slate-900/80 dark:border-slate-800 caret-transparent">
       <div className="  mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Left: logo */}
           <div className="flex items-center gap-4">
-            <Link href="/" className="flex items-center gap-2">
+            <Link href="/home1" className="flex items-center gap-2">
               <img
                 src="https://i.postimg.cc/DwdH9gv8/logo-stackly.png"
                 alt=""
@@ -105,7 +105,7 @@ const SiteHeadder: React.FC = () => {
           {/* Right: actions */}
           <div className="flex items-center gap-3">
             {/* Language selector */}
-              <div className="relative">
+            <div className="relative">
               <button
                 onClick={() => setOpenLang((s) => !s)}
                 className="inline-flex items-center gap-1 px-3 py-1 rounded-md text-sm border border-slate-200 bg-white dark:bg-slate-900 dark:border-slate-700"
