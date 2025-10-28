@@ -20,7 +20,7 @@ const quickLinks = [
 
 const SiteFooter: React.FC = () => {
   return (
-    <footer className="bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800">
+    <footer className="bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 caret-transparent">
       <div className="  mx-auto px-6 py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
           {/* Column 1: logo + about */}
@@ -52,7 +52,7 @@ const SiteFooter: React.FC = () => {
                   <li key={l.href}>
                     <Link
                       href={l.href}
-                      className="text-sm text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white"
+                      className="text-sm text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
                     >
                       {l.label}
                     </Link>
@@ -73,7 +73,7 @@ const SiteFooter: React.FC = () => {
                   <li key={s.href}>
                     <Link
                       href={s.href}
-                      className="text-sm text-slate-600 hover:text-slate-900 dark:text-slate-300 dark:hover:text-white"
+                      className="text-sm text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
                     >
                       {s.label}
                     </Link>
@@ -103,7 +103,7 @@ const SiteFooter: React.FC = () => {
                   <Mail className="w-4 h-4 text-slate-500 dark:text-slate-300" />
                   <a
                     href="mailto:hello@ecompages.io"
-                    className="hover:underline"
+                    className="text-blue-600 hover:underline dark:text-blue-400"
                   >
                     hello@ecompages.io
                   </a>
@@ -111,7 +111,7 @@ const SiteFooter: React.FC = () => {
 
                 <div className="flex items-center gap-2">
                   <Phone className="w-4 h-4 text-slate-500 dark:text-slate-300" />
-                  <a href="tel:+1234567890" className="hover:underline">
+                  <a href="tel:+1234567890" className="text-blue-600 hover:underline dark:text-blue-400">
                     +1 (234) 567-890
                   </a>
                 </div>

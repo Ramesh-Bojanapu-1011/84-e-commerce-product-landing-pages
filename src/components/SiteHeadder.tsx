@@ -40,7 +40,7 @@ const SiteHeadder: React.FC = () => {
   const [openNavIndex, setOpenNavIndex] = React.useState<number | null>(null);
 
   return (
-    <header className="w-full bg-white/80 backdrop-blur sticky top-0 z-50 border-b border-slate-200 dark:bg-slate-900/80 dark:border-slate-800">
+    <header className="w-full bg-white/80 backdrop-blur sticky top-0 z-50 border-b border-slate-200 dark:bg-slate-900/80 dark:border-slate-800 caret-transparent">
       <div className="  mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Left: logo */}
@@ -65,7 +65,7 @@ const SiteHeadder: React.FC = () => {
                     onClick={() =>
                       setOpenNavIndex(openNavIndex === idx ? null : idx)
                     }
-                    className="flex items-center gap-1 text-slate-700 hover:text-slate-900 dark:text-slate-200"
+                    className="flex items-center gap-1 text-slate-700 hover:text-blue-600 dark:text-slate-200 dark:hover:text-blue-300"
                   >
                     <span>{item.title}</span>
                     <ChevronDown className="w-4 h-4" />
@@ -73,7 +73,7 @@ const SiteHeadder: React.FC = () => {
                 ) : (
                   <Link
                     href={(item as any).href}
-                    className="text-slate-700 hover:text-slate-900 dark:text-slate-200"
+                    className="text-slate-700 hover:text-blue-600 dark:text-slate-200 dark:hover:text-blue-300"
                   >
                     {item.title}
                   </Link>
@@ -90,7 +90,7 @@ const SiteHeadder: React.FC = () => {
                         <Link
                           key={s.title}
                           href={s.href}
-                          className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-700"
+                          className="block px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 hover:text-blue-600 dark:text-slate-200 dark:hover:bg-slate-700 dark:hover:text-blue-300"
                         >
                           {s.title}
                         </Link>
@@ -105,7 +105,7 @@ const SiteHeadder: React.FC = () => {
           {/* Right: actions */}
           <div className="flex items-center gap-3">
             {/* Language selector */}
-            <div className="relative">
+              <div className="relative">
               <button
                 onClick={() => setOpenLang((s) => !s)}
                 className="inline-flex items-center gap-1 px-3 py-1 rounded-md text-sm border border-slate-200 bg-white dark:bg-slate-900 dark:border-slate-700"
@@ -156,7 +156,7 @@ const SiteHeadder: React.FC = () => {
                 className="flex items-center gap-2 px-2 py-1 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800"
                 aria-expanded={openProfile}
               >
-                <div className="w-8 h-8 rounded-full bg-slate-300 dark:bg-slate-700 flex items-center justify-center text-sm font-medium text-slate-700 dark:text-slate-200">
+                <div className="w-8 h-8 rounded-full bg-linear-to-br from-indigo-500 to-blue-500 flex items-center justify-center text-sm font-medium text-white shadow-sm">
                   <User className="w-4 h-4" />
                 </div>
                 <span className="hidden sm:inline text-sm text-slate-700 dark:text-slate-200">
