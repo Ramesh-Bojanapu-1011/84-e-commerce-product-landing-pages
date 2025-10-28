@@ -156,7 +156,7 @@ export default function Home1() {
                     Browse templates
                   </Link>
                   <Link
-                    href="/contact"
+                    href="/contact-us"
                     className="inline-flex items-center gap-2 px-5 py-3 rounded-lg border border-slate-200 dark:border-slate-700"
                   >
                     Contact sales
@@ -552,7 +552,7 @@ export default function Home1() {
                 Get Started
               </Link>
               <Link
-                href="/contact"
+                href="/contact-us"
                 className="text-white px-4 py-3 rounded-md border border-white/30"
               >
                 Contact Sales

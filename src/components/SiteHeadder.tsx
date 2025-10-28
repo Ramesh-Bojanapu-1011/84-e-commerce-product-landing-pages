@@ -11,10 +11,11 @@ const navItems = [
       { title: "Home 2", href: "/home-2" },
     ],
   },
-  { title: "About Us", href: "/about" },
+  { title: "About Us", href: "/about-us" },
   {
     title: "Services",
     submenu: [
+      { title: "All services", href: "/services" },
       { title: "Product Design", href: "/services/product-design" },
       { title: "UX/UI Audit", href: "/services/ux-audit" },
       { title: "Conversion Rate Opt.", href: "/services/cro" },
@@ -24,13 +25,13 @@ const navItems = [
     ],
   },
   { title: "Blog", href: "/blog" },
-  { title: "Contact Us", href: "/contact" },
+  { title: "Contact Us", href: "/contact-us" },
 ];
 
 const languages = [
-  { code: "en", label: "English" },
-  { code: "ar", label: "العربية" },
-  { code: "he", label: "עברית" },
+  { code: "en", label: "English(EN)" },
+  { code: "ar", label: "العربية(AR)" },
+  { code: "he", label: "עברית(HE)" },
 ];
 
 const SiteHeadder: React.FC = () => {
