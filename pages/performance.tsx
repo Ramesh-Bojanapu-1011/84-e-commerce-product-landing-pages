@@ -6,92 +6,96 @@ import { Quote, Linkedin, Twitter } from "lucide-react";
 
 const features = [
   {
-    title: "Funnel Analysis",
-    desc: "Pinpoint drop-offs with event-level analytics and session insights.",
+    title: "Core Web Vitals",
+    desc: "Improve LCP, INP and CLS to deliver faster, more reliable pages.",
   },
   {
-    title: "A/B & MVT",
-    desc: "Experiment-driven changes validated by statistical significance.",
+    title: "Resource Optimization",
+    desc: "Optimize images, fonts and critical CSS to dramatically reduce payloads.",
   },
   {
-    title: "Landing Page Optimization",
-    desc: "Data-led copy, layout and microcopy tweaks to boost CTA lift.",
+    title: "Caching & CDN",
+    desc: "Smart cache policies and CDN strategies to serve assets closer to users.",
   },
   {
-    title: "Personalization",
-    desc: "Targeted experiences that increase relevance and conversions.",
+    title: "JS & Bundles",
+    desc: "Code-splitting, tree-shaking and lazy-loading to minimize runtime cost.",
   },
 ];
 
 const processSteps = [
   {
-    step: "Audit",
-    copy: "Analyze analytics, recordings and user flows to find quick wins.",
+    step: "Measure",
+    copy: "Run lab and field audits (Lighthouse, Real User Metrics) to baseline performance.",
   },
   {
-    step: "Hypothesize",
-    copy: "Create prioritized experiment backlog with expected impact.",
+    step: "Prioritize",
+    copy: "Identify high-impact fixes by cost, risk and expected metric improvement.",
   },
   {
-    step: "Experiment",
-    copy: "Run A/B tests and multivariate experiments to validate ideas.",
+    step: "Implement",
+    copy: "Ship focused changes: image delivery, critical CSS, caching and bundle splits.",
   },
   {
-    step: "Scale",
-    copy: "Roll out winners, document playbooks and automate personalization.",
+    step: "Monitor",
+    copy: "Automate monitoring and alerts to prevent regressions and measure long-term gains.",
   },
 ];
 
 const projects = [
   {
-    title: "Checkout Conversion Lift",
+    title: "Core Web Vitals Sprint",
     tag: "E‑commerce",
-    img: "https://images.unsplash.com/photo-1559526324-593bc073d938?auto=format&fit=crop&w=1200&q=80",
+    img: "https://images.unsplash.com/photo-1505685296765-3a2736de412f?auto=format&fit=crop&w=1200&q=80",
   },
   {
-    title: "Homepage Experimentation",
-    tag: "Retail",
-    img: "https://images.unsplash.com/photo-1509395176047-4a66953fd231?auto=format&fit=crop&w=1200&q=80",
+    title: "Image & Font Optimization",
+    tag: "Publishing",
+    img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
   },
   {
-    title: "Pricing Page Tests",
+    title: "Bundle Reduction for App",
     tag: "SaaS",
-    img: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&w=1200&q=80",
+    img: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
   },
 ];
 
 const team = [
-  { name: "Asha Patel", role: "CRO Lead", avatar: "/avatar1.jpg" },
+  { name: "Priya Nair", role: "Performance Engineer", avatar: "/avatar1.jpg" },
   {
-    name: "Miguel Santos",
-    role: "Experimentation Engineer",
+    name: "Omar Haddad",
+    role: "Frontend Engineer",
     avatar: "/avatar2.jpg",
   },
-  { name: "Lina Chen", role: "Conversion Copywriter", avatar: "/avatar3.jpg" },
+  {
+    name: "Sofia Ruiz",
+    role: "Infrastructure & CDN Lead",
+    avatar: "/avatar3.jpg",
+  },
 ];
 
 const testimonials = [
   {
     quote:
-      "A/B testing with this team increased checkout conversion by 28% in three months.",
-    who: "Dana Morales",
-    role: "Head of Growth, Shoplane",
+      "Cut our LCP in half and organic traffic rose within weeks — great impact on revenue.",
+    who: "Luca B.",
+    role: "Head of Engineering, RetailCo",
     avatar: "/avatar1.jpg",
     rating: 5,
   },
   {
     quote:
-      "Their hypotheses were surgical — we saw measurable revenue impact fast.",
-    who: "Eren K.",
-    role: "VP Product, FinEdge",
+      "Their performance sprint removed critical render-blocking assets and improved engagement significantly.",
+    who: "Nadia R.",
+    role: "Product Manager, NewsDaily",
     avatar: "/avatar2.jpg",
     rating: 5,
   },
   {
     quote:
-      "They helped us prioritize the right experiments and save months of effort.",
-    who: "Maya Singh",
-    role: "Growth Lead, B2B SaaS",
+      "Reliable monitoring and alerts helped us prevent regressions after releases.",
+    who: "Tom W.",
+    role: "CTO, SaaSWorks",
     avatar: "/avatar3.jpg",
     rating: 5,
   },
@@ -101,10 +105,10 @@ const ConversionOptimizationPage = () => {
   return (
     <>
       <Head>
-        <title>Conversion Rate Optimization - Enkonix</title>
+        <title>Performance Optimization - Enkonix</title>
         <meta
           name="description"
-          content="Increase revenue with experiment-driven conversion rate optimization: audits, A/B tests, landing page optimization and personalization."
+          content="Improve page speed, Core Web Vitals and delivery pipelines—performance sprints, image & font optimization, caching and monitoring."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
@@ -117,11 +121,11 @@ const ConversionOptimizationPage = () => {
             <div className="grid grid-cols-1   gap-10 items-center">
               <div className="flex justify-center items-center flex-col">
                 <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight">
-                  Conversion Rate Optimization that grows revenue
+                  Performance optimization that speeds growth
                 </h1>
                 <p className="mt-4 text-lg opacity-90 max-w-xl">
-                  Experiment-driven CRO: audits, prioritized tests and scalable
-                  rollouts to lift conversions and average order value.
+                  Practical performance sprints: reduce load times, improve Core
+                  Web Vitals and keep pages fast at scale.
                 </p>
 
                 <div className="mt-8 flex flex-wrap gap-3">
@@ -140,12 +144,7 @@ const ConversionOptimizationPage = () => {
                 </div>
 
                 <div className="mt-6 flex flex-wrap gap-2 text-sm opacity-95">
-                  {[
-                    "A/B Testing",
-                    "Analytics",
-                    "Personalization",
-                    "Microcopy",
-                  ].map((b) => (
+                  {["LCP", "TTFB", "CLS", "Lighthouse"].map((b) => (
                     <span
                       key={b}
                       className="rounded-full bg-white/10 px-3 py-1"
@@ -169,8 +168,8 @@ const ConversionOptimizationPage = () => {
               What we do
             </h2>
             <p className="mt-2 text-center text-slate-500 dark:text-slate-300 ">
-              Focused CRO services — diagnose, test, and scale the changes that
-              move revenue.
+              Fast, technical and product-focused performance work: audits,
+              targeted fixes and automated monitoring.
             </p>
 
             <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -225,8 +224,8 @@ const ConversionOptimizationPage = () => {
               Our process
             </h2>
             <p className="mt-2 text-slate-500 dark:text-slate-300 max-w-2xl">
-              A clear, iterative approach to discover friction, validate ideas
-              and ship wins fast.
+              A practical audit → fix → monitor workflow that reduces load times
+              and improves user experience.
             </p>
 
             <ol className="mt-8 relative w-full">
@@ -357,8 +356,8 @@ const ConversionOptimizationPage = () => {
               What clients say
             </h2>
             <p className="mt-2 text-slate-500 dark:text-slate-300 max-w-2xl">
-              Short quotes from growth teams who've seen measurable conversion
-              wins.
+              Short quotes from product and engineering teams who saw faster
+              pages and better retention.
             </p>
 
             <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -417,8 +416,8 @@ const ConversionOptimizationPage = () => {
               Meet the team
             </h2>
             <p className="mt-2 text-center text-slate-500 dark:text-slate-300 max-w-2xl mx-auto">
-              Small, cross-functional growth teams focused on experiments,
-              analytics and rapid iteration.
+              Small, cross-functional performance teams specializing in frontend
+              efficiency, infra and monitoring.
             </p>
 
             <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -524,11 +523,11 @@ const ConversionOptimizationPage = () => {
         <section id="contact" className="py-12 bg-indigo-600 text-white">
           <div className="max-w-3xl flex flex-col mx-auto items-center justify-center text-center">
             <h2 className="text-2xl font-bold">
-              Ready to increase conversions?
+              Ready to speed up your product?
             </h2>
             <p className="mt-2 opacity-90">
-              Share your funnel and goals — we’ll propose the highest-impact
-              experiments and a roadmap to scale winners.
+              Share your site and performance goals — we’ll recommend a quick
+              sprint to improve key metrics and prevent regressions.
             </p>
 
             <div className="mt-6 flex gap-3">
