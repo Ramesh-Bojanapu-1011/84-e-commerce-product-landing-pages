@@ -22,7 +22,7 @@ const quickLinks = [
 
 const SiteFooter: React.FC = () => {
   return (
-    <footer className="bg-white dark:bg-slate-900 border-t border-slate-100 dark:border-slate-800 caret-transparent">
+    <footer className="bg-white dark:bg-slate-900 border-t border-slate-400 dark:border-slate-800 caret-transparent">
       <div className="  mx-auto px-6 py-12">
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
           {/* Column 1: logo + about */}
