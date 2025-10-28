@@ -6,74 +6,74 @@ import { Quote, Linkedin, Twitter } from "lucide-react";
 
 const features = [
   {
-    title: "WCAG Audit",
-    desc: "Full accessibility audit against WCAG 2.1 standards to find barriers for users.",
+    title: "API & Webhooks",
+    desc: "Reliable, secure endpoints and webhook workflows to keep systems in sync.",
   },
   {
-    title: "Keyboard & Focus",
-    desc: "Ensure predictable keyboard navigation and visible focus states across UI.",
+    title: "Analytics & Events",
+    desc: "Robust event tracking and schema design for accurate analytics and attribution.",
   },
   {
-    title: "Screen Reader Support",
-    desc: "Semantic markup, ARIA patterns and testing with assistive tech to improve UX for screen reader users.",
+    title: "Payment & Checkout",
+    desc: "Seamless integrations with gateways and fraud providers for safer checkouts.",
   },
   {
-    title: "Color & Contrast",
-    desc: "Accessible color palettes and contrast ratios for readability and visual clarity.",
+    title: "Data Pipelines",
+    desc: "ETL, streaming and warehouse connectors to centralize product and user data.",
   },
 ];
 
 const processSteps = [
   {
-    step: "Assess",
-    copy: "Run automated and manual checks, plus real-user assistive tech testing to identify issues.",
+    step: "Plan",
+    copy: "Define data models, auth, rate limits and rollback plans before connecting systems.",
   },
   {
-    step: "Remediate",
-    copy: "Fix semantic HTML, ARIA roles, keyboard flow and color contrast with prioritized tickets.",
+    step: "Connect",
+    copy: "Implement secure connectors, retries and idempotency for robust integrations.",
   },
   {
-    step: "Validate",
-    copy: "Perform screen reader walkthroughs, keyboard-only passes and regression tests.",
+    step: "Map & Transform",
+    copy: "Align schemas, enrich events and transform payloads for downstream consumers.",
   },
   {
-    step: "Maintain",
-    copy: "Integrate accessibility into CI, design systems and developer reviews to prevent regressions.",
+    step: "Monitor",
+    copy: "Setup alerts, observability and replay tools to detect and resolve sync issues quickly.",
   },
 ];
 
 const projects = [
   {
-    title: "WCAG Remediation",
-    tag: "E‑commerce",
-    img: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    title: "Accessible Checkout",
+    title: "Analytics Migration",
     tag: "Retail",
-    img: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1200&q=80",
+    img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
   },
   {
-    title: "Mobile-a11y Improvements",
-    tag: "Mobile",
-    img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
+    title: "Payment Gateway Consolidation",
+    tag: "E‑commerce",
+    img: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
+    title: "CRM Sync & Enrichment",
+    tag: "SaaS",
+    img: "https://images.unsplash.com/photo-1559526324-593bc073d938?auto=format&fit=crop&w=1200&q=80",
   },
 ];
 
 const team = [
   {
-    name: "Amina Shah",
-    role: "Accessibility Engineer",
+    name: "Hannah Li",
+    role: "Integrations Architect",
     avatar: "/avatar1.jpg",
   },
   {
-    name: "Daniel Cho",
-    role: "UX Researcher (a11y)",
+    name: "Jorge Silva",
+    role: "Backend Engineer",
     avatar: "/avatar2.jpg",
   },
   {
-    name: "Rita Gomez",
-    role: "QA & Assistive Tech Tester",
+    name: "Emily Park",
+    role: "Solutions Engineer",
     avatar: "/avatar3.jpg",
   },
 ];
@@ -81,38 +81,38 @@ const team = [
 const testimonials = [
   {
     quote:
-      "They helped us reach WCAG AA across our storefront — customers with disabilities can now complete purchases independently.",
-    who: "Maya R.",
-    role: "Head of Design, MarketPlace",
+      "Their integration work unified our analytics and CRM data — now we act on reliable signals.",
+    who: "Raj P.",
+    role: "Head of Data, ShopCo",
     avatar: "/avatar1.jpg",
     rating: 5,
   },
   {
     quote:
-      "Their keyboard and screen reader fixes made our admin app usable without a mouse — huge productivity gains.",
-    who: "Owen P.",
-    role: "Operations Lead, FinTechCo",
+      "Payments consolidation reduced checkout errors by 35% and simplified reconciliation.",
+    who: "Claire M.",
+    role: "Finance Lead, RetailX",
     avatar: "/avatar2.jpg",
     rating: 5,
   },
   {
     quote:
-      "Clear remediation tickets and CI checks prevented regressions — a practical accessibility program.",
-    who: "Sara L.",
-    role: "VP Engineering, NewsCorp",
+      "Robust monitoring alerted us to a sync issue before customers were affected — saved hours of firefighting.",
+    who: "Noah T.",
+    role: "Platform Engineer, SaaSWorks",
     avatar: "/avatar3.jpg",
     rating: 5,
   },
 ];
 
-const AccessibilityServicesPage = () => {
+const IntegrationServicesPage = () => {
   return (
     <>
       <Head>
-        <title>Accessibility Services - Enkonix</title>
+        <title>Integrations & Connectors - Enkonix</title>
         <meta
           name="description"
-          content="Make your product usable by everyone: WCAG audits, remediation, assistive tech testing and accessibility monitoring."
+          content="Connect your stack: APIs, webhooks, analytics and data pipelines engineered for reliability and observability."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
@@ -125,11 +125,12 @@ const AccessibilityServicesPage = () => {
             <div className="grid grid-cols-1   gap-10 items-center">
               <div className="flex justify-center items-center flex-col">
                 <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight">
-                  Accessibility-first experiences that include everyone
+                  Integrations that make your product act as one
                 </h1>
                 <p className="mt-4 text-lg opacity-90 max-w-xl">
-                  We audit, fix and validate accessibility issues so your
-                  product works for all users and complies with standards.
+                  We build secure, observable integrations — from event tracking
+                  to payment systems — so your teams can rely on a single source
+                  of truth.
                 </p>
 
                 <div className="mt-8 flex flex-wrap gap-3">
@@ -148,7 +149,7 @@ const AccessibilityServicesPage = () => {
                 </div>
 
                 <div className="mt-6 flex flex-wrap gap-2 text-sm opacity-95">
-                  {["WCAG", "Screen Readers", "Keyboard", "ARIA"].map((b) => (
+                  {["API", "Webhooks", "ETL", "SaaS"].map((b) => (
                     <span
                       key={b}
                       className="rounded-full bg-white/10 px-3 py-1"
@@ -172,8 +173,8 @@ const AccessibilityServicesPage = () => {
               What we do
             </h2>
             <p className="mt-2 text-center text-slate-500 dark:text-slate-300 ">
-              Practical accessibility work: audits, prioritized remediation and
-              assistive-tech validation.
+              Reliable integration projects: planning, secure implementation and
+              long-term observability.
             </p>
 
             <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -228,8 +229,8 @@ const AccessibilityServicesPage = () => {
               Our process
             </h2>
             <p className="mt-2 text-slate-500 dark:text-slate-300 max-w-2xl">
-              A pragmatic assess → remediate → validate workflow that removes
-              barriers and improves inclusion.
+              A practical plan → connect → transform → monitor workflow to keep
+              critical data flowing.
             </p>
 
             <ol className="mt-8 relative w-full">
@@ -360,8 +361,8 @@ const AccessibilityServicesPage = () => {
               What clients say
             </h2>
             <p className="mt-2 text-slate-500 dark:text-slate-300 max-w-2xl">
-              Short quotes from teams who improved accessibility, compliance and
-              customer satisfaction.
+              Short quotes from engineering and data teams who gained reliable
+              pipelines and fewer incidents.
             </p>
 
             <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -420,8 +421,8 @@ const AccessibilityServicesPage = () => {
               Meet the team
             </h2>
             <p className="mt-2 text-center text-slate-500 dark:text-slate-300 max-w-2xl mx-auto">
-              Small, cross-functional accessibility teams pairing engineers,
-              designers and QA.
+              Small, cross-functional integrations teams pairing architects,
+              backend engineers and solutions leads.
             </p>
 
             <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -526,12 +527,10 @@ const AccessibilityServicesPage = () => {
         {/* Final CTA */}
         <section id="contact" className="py-12 bg-indigo-600 text-white">
           <div className="max-w-3xl flex flex-col mx-auto items-center justify-center text-center">
-            <h2 className="text-2xl font-bold">
-              Ready to make your product accessible?
-            </h2>
+            <h2 className="text-2xl font-bold">Ready to connect your stack?</h2>
             <p className="mt-2 opacity-90">
-              Share a URL or a user flow — we’ll propose a remediation plan and
-              validation checklist.
+              Tell us which systems matter — we’ll propose a secure integration
+              plan, mapping and monitoring approach.
             </p>
 
             <div className="mt-6 flex gap-3">
@@ -557,4 +556,4 @@ const AccessibilityServicesPage = () => {
   );
 };
 
-export default AccessibilityServicesPage;
+export default IntegrationServicesPage;
