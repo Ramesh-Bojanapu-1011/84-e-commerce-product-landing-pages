@@ -12,7 +12,8 @@ const services = [
 ];
 
 const quickLinks = [
-  { href: "/home1", label: "Home" },
+  { href: "/home1", label: "Home1" },
+  { href: "/home2", label: "Home2" },
   { href: "/about-us", label: "About Us" },
   { href: "/services", label: "Services" },
   { href: "/blog", label: "Blog" },
