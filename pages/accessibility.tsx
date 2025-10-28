@@ -6,70 +6,74 @@ import { Quote, Linkedin, Twitter } from "lucide-react";
 
 const features = [
   {
-    title: "Core Web Vitals",
-    desc: "Improve LCP, INP and CLS to deliver faster, more reliable pages.",
+    title: "WCAG Audit",
+    desc: "Full accessibility audit against WCAG 2.1 standards to find barriers for users.",
   },
   {
-    title: "Resource Optimization",
-    desc: "Optimize images, fonts and critical CSS to dramatically reduce payloads.",
+    title: "Keyboard & Focus",
+    desc: "Ensure predictable keyboard navigation and visible focus states across UI.",
   },
   {
-    title: "Caching & CDN",
-    desc: "Smart cache policies and CDN strategies to serve assets closer to users.",
+    title: "Screen Reader Support",
+    desc: "Semantic markup, ARIA patterns and testing with assistive tech to improve UX for screen reader users.",
   },
   {
-    title: "JS & Bundles",
-    desc: "Code-splitting, tree-shaking and lazy-loading to minimize runtime cost.",
+    title: "Color & Contrast",
+    desc: "Accessible color palettes and contrast ratios for readability and visual clarity.",
   },
 ];
 
 const processSteps = [
   {
-    step: "Measure",
-    copy: "Run lab and field audits (Lighthouse, Real User Metrics) to baseline performance.",
+    step: "Assess",
+    copy: "Run automated and manual checks, plus real-user assistive tech testing to identify issues.",
   },
   {
-    step: "Prioritize",
-    copy: "Identify high-impact fixes by cost, risk and expected metric improvement.",
+    step: "Remediate",
+    copy: "Fix semantic HTML, ARIA roles, keyboard flow and color contrast with prioritized tickets.",
   },
   {
-    step: "Implement",
-    copy: "Ship focused changes: image delivery, critical CSS, caching and bundle splits.",
+    step: "Validate",
+    copy: "Perform screen reader walkthroughs, keyboard-only passes and regression tests.",
   },
   {
-    step: "Monitor",
-    copy: "Automate monitoring and alerts to prevent regressions and measure long-term gains.",
+    step: "Maintain",
+    copy: "Integrate accessibility into CI, design systems and developer reviews to prevent regressions.",
   },
 ];
 
 const projects = [
   {
-    title: "Core Web Vitals Sprint",
+    title: "WCAG Remediation",
     tag: "E‑commerce",
-    img: "https://images.unsplash.com/photo-1505685296765-3a2736de412f?auto=format&fit=crop&w=1200&q=80",
+    img: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=1200&q=80",
   },
   {
-    title: "Image & Font Optimization",
-    tag: "Publishing",
+    title: "Accessible Checkout",
+    tag: "Retail",
+    img: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1200&q=80",
+  },
+  {
+    title: "Mobile-a11y Improvements",
+    tag: "Mobile",
     img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    title: "Bundle Reduction for App",
-    tag: "SaaS",
-    img: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
   },
 ];
 
 const team = [
-  { name: "Priya Nair", role: "Performance Engineer", avatar: "/avatar1.jpg" },
   {
-    name: "Omar Haddad",
-    role: "Frontend Engineer",
+    name: "Amina Shah",
+    role: "Accessibility Engineer",
+    avatar: "/avatar1.jpg",
+  },
+  {
+    name: "Daniel Cho",
+    role: "UX Researcher (a11y)",
     avatar: "/avatar2.jpg",
   },
   {
-    name: "Sofia Ruiz",
-    role: "Infrastructure & CDN Lead",
+    name: "Rita Gomez",
+    role: "QA & Assistive Tech Tester",
     avatar: "/avatar3.jpg",
   },
 ];
@@ -77,25 +81,25 @@ const team = [
 const testimonials = [
   {
     quote:
-      "Cut our LCP in half and organic traffic rose within weeks — great impact on revenue.",
-    who: "Luca B.",
-    role: "Head of Engineering, RetailCo",
+      "They helped us reach WCAG AA across our storefront — customers with disabilities can now complete purchases independently.",
+    who: "Maya R.",
+    role: "Head of Design, MarketPlace",
     avatar: "/avatar1.jpg",
     rating: 5,
   },
   {
     quote:
-      "Their performance sprint removed critical render-blocking assets and improved engagement significantly.",
-    who: "Nadia R.",
-    role: "Product Manager, NewsDaily",
+      "Their keyboard and screen reader fixes made our admin app usable without a mouse — huge productivity gains.",
+    who: "Owen P.",
+    role: "Operations Lead, FinTechCo",
     avatar: "/avatar2.jpg",
     rating: 5,
   },
   {
     quote:
-      "Reliable monitoring and alerts helped us prevent regressions after releases.",
-    who: "Tom W.",
-    role: "CTO, SaaSWorks",
+      "Clear remediation tickets and CI checks prevented regressions — a practical accessibility program.",
+    who: "Sara L.",
+    role: "VP Engineering, NewsCorp",
     avatar: "/avatar3.jpg",
     rating: 5,
   },
@@ -105,10 +109,10 @@ const PerformanceEnhancementPage = () => {
   return (
     <>
       <Head>
-        <title>Performance Optimization - Enkonix</title>
+        <title>Accessibility Services - Enkonix</title>
         <meta
           name="description"
-          content="Improve page speed, Core Web Vitals and delivery pipelines—performance sprints, image & font optimization, caching and monitoring."
+          content="Make your product usable by everyone: WCAG audits, remediation, assistive tech testing and accessibility monitoring."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
@@ -121,11 +125,11 @@ const PerformanceEnhancementPage = () => {
             <div className="grid grid-cols-1   gap-10 items-center">
               <div className="flex justify-center items-center flex-col">
                 <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight">
-                  Performance optimization that speeds growth
+                  Accessibility-first experiences that include everyone
                 </h1>
                 <p className="mt-4 text-lg opacity-90 max-w-xl">
-                  Practical performance sprints: reduce load times, improve Core
-                  Web Vitals and keep pages fast at scale.
+                  We audit, fix and validate accessibility issues so your
+                  product works for all users and complies with standards.
                 </p>
 
                 <div className="mt-8 flex flex-wrap gap-3">
@@ -144,7 +148,7 @@ const PerformanceEnhancementPage = () => {
                 </div>
 
                 <div className="mt-6 flex flex-wrap gap-2 text-sm opacity-95">
-                  {["LCP", "TTFB", "CLS", "Lighthouse"].map((b) => (
+                  {["WCAG", "Screen Readers", "Keyboard", "ARIA"].map((b) => (
                     <span
                       key={b}
                       className="rounded-full bg-white/10 px-3 py-1"
@@ -168,8 +172,8 @@ const PerformanceEnhancementPage = () => {
               What we do
             </h2>
             <p className="mt-2 text-center text-slate-500 dark:text-slate-300 ">
-              Fast, technical and product-focused performance work: audits,
-              targeted fixes and automated monitoring.
+              Practical accessibility work: audits, prioritized remediation and
+              assistive-tech validation.
             </p>
 
             <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -224,8 +228,8 @@ const PerformanceEnhancementPage = () => {
               Our process
             </h2>
             <p className="mt-2 text-slate-500 dark:text-slate-300 max-w-2xl">
-              A practical audit → fix → monitor workflow that reduces load times
-              and improves user experience.
+              A pragmatic assess → remediate → validate workflow that removes
+              barriers and improves inclusion.
             </p>
 
             <ol className="mt-8 relative w-full">
@@ -356,8 +360,8 @@ const PerformanceEnhancementPage = () => {
               What clients say
             </h2>
             <p className="mt-2 text-slate-500 dark:text-slate-300 max-w-2xl">
-              Short quotes from product and engineering teams who saw faster
-              pages and better retention.
+              Short quotes from teams who improved accessibility, compliance and
+              customer satisfaction.
             </p>
 
             <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -416,8 +420,8 @@ const PerformanceEnhancementPage = () => {
               Meet the team
             </h2>
             <p className="mt-2 text-center text-slate-500 dark:text-slate-300 max-w-2xl mx-auto">
-              Small, cross-functional performance teams specializing in frontend
-              efficiency, infra and monitoring.
+              Small, cross-functional accessibility teams pairing engineers,
+              designers and QA.
             </p>
 
             <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -523,11 +527,11 @@ const PerformanceEnhancementPage = () => {
         <section id="contact" className="py-12 bg-indigo-600 text-white">
           <div className="max-w-3xl flex flex-col mx-auto items-center justify-center text-center">
             <h2 className="text-2xl font-bold">
-              Ready to speed up your product?
+              Ready to make your product accessible?
             </h2>
             <p className="mt-2 opacity-90">
-              Share your site and performance goals — we’ll recommend a quick
-              sprint to improve key metrics and prevent regressions.
+              Share a URL or a user flow — we’ll propose a remediation plan and
+              validation checklist.
             </p>
 
             <div className="mt-6 flex gap-3">
