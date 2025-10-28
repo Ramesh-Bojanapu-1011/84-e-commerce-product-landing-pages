@@ -6,93 +6,105 @@ import { Quote, Linkedin, Twitter } from "lucide-react";
 
 const features = [
   {
-    title: "User Research",
-    desc: "Qualitative & quantitative research to find what users truly need.",
+    title: "Heuristic Evaluation",
+    desc: "A task-based expert review against established usability heuristics to surface friction and unclear flows.",
   },
   {
-    title: "Interaction Design",
-    desc: "Rapid prototyping and interaction flows that delight.",
+    title: "Accessibility Audit",
+    desc: "Automated checks and manual validation for WCAG issues, keyboard support and assistive tech compatibility.",
   },
   {
-    title: "Visual Design",
-    desc: "High-fidelity visual systems and component libraries.",
+    title: "Conversion Funnel Review",
+    desc: "Analyze drop-off points, CTA clarity and form friction to identify quick-win revenue improvements.",
   },
   {
-    title: "Design Systems",
-    desc: "Reusable tokens, components and accessible patterns.",
+    title: "Interaction & Microcopy",
+    desc: "Inspect interaction patterns, affordances and messaging that influence user decisions and trust.",
   },
 ];
 
 const processSteps = [
   {
-    step: "Discover",
-    copy: "Kick-off, stakeholder interviews and research plan.",
+    step: "Scope & Data",
+    copy: "Gather analytics, product metrics and stakeholder goals to define audit boundaries and success criteria.",
   },
-  { step: "Define", copy: "Synthesize insights and define measurable goals." },
-  { step: "Design", copy: "Wireframes, prototypes, and iterative testing." },
-  { step: "Deliver", copy: "Handoff, QA, and design system rollout." },
+  {
+    step: "Expert Review",
+    copy: "Heuristic and accessibility review by senior UX auditors with prioritized findings.",
+  },
+  {
+    step: "User Checks",
+    copy: "Lightweight usability tests or remote validation to confirm the most critical issues.",
+  },
+  {
+    step: "Report & Roadmap",
+    copy: "Actionable report with prioritized fixes, impact estimates and a pragmatic remediation plan.",
+  },
 ];
 
 const projects = [
   {
-    title: "Checkout Redesign",
-    tag: "E‑commerce",
+    title: "Checkout Accessibility Fixes",
+    tag: "E‑commerce Audit",
     img: "https://i.pinimg.com/1200x/c7/1d/ec/c71dec991f8c1c9f364288b0e87072fc.jpg",
   },
   {
-    title: "Mobile App Flow",
-    tag: "Fintech",
+    title: "Onboarding Funnel Review",
+    tag: "Mobile / Fintech",
     img: "https://i.pinimg.com/1200x/a1/31/a9/a131a9f4cfbe21b07d5ec5ca2834fb7a.jpg",
   },
   {
-    title: "Admin Dashboard",
-    tag: "SaaS",
+    title: "Admin UX Healthcheck",
+    tag: "SaaS Audit",
     img: "https://i.pinimg.com/1200x/d7/7e/fa/d77efa14bcbbc9ac8e221161b86b9d50.jpg",
   },
 ];
 
 const team = [
-  { name: "Asha Patel", role: "Lead Product Designer", avatar: "/avatar1.jpg" },
+  { name: "Asha Patel", role: "Principal UX Auditor", avatar: "/avatar1.jpg" },
   {
     name: "Miguel Santos",
-    role: "Interaction Designer",
+    role: "Accessibility Specialist",
     avatar: "/avatar2.jpg",
   },
-  { name: "Lina Chen", role: "Visual Designer", avatar: "/avatar3.jpg" },
+  { name: "Lina Chen", role: "Conversion Analyst", avatar: "/avatar3.jpg" },
 ];
 
 const testimonials = [
   {
-    quote: "They helped us cut checkout friction by 40% in 6 weeks.",
+    quote:
+      "The audit quickly exposed critical accessibility issues and gave our team a clear plan to fix them — impact was immediate.",
     who: "Serhiy Hipskyy",
     role: "CEO, Universal",
     avatar: "/avatar1.jpg",
     rating: 5,
   },
   {
-    quote: "Delivered a design system that saved our team months of work.",
+    quote:
+      "Actionable findings and prioritised recommendations — we shipped the top three fixes in two sprints and saw conversion improvements.",
     who: "Maya Singh",
-    role: "CTO, FinSystems",
+    role: "Head of Product, FinSystems",
     avatar: "/avatar2.jpg",
     rating: 5,
   },
   {
-    quote: "Prototypes that validated our mobile flows instantly.",
+    quote:
+      "Clear evidence and lightweight testing saved us weeks of guesswork — the roadmap was practical and measurable.",
     who: "Rohit Patel",
-    role: "PM, StartupX",
+    role: "Product Lead, StartupX",
     avatar: "/avatar3.jpg",
     rating: 5,
   },
 ];
 
-const ProductDesign = () => {
+const UxAudit = () => {
   return (
     <>
       <Head>
-        <title>Product Design Services - Enkonix</title>
+        <title>UX/UI Audit Services - Enkonix</title>
         <meta
           name="description"
-          content="End-to-end product design services including user research, interaction design, and design systems."
+          content="Comprehensive UX & UI audits: expert reviews, accessibility checks and prioritized remediation roadmaps to improve usability and conversions."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
@@ -103,13 +115,14 @@ const ProductDesign = () => {
         <section className="relative overflow-hidden bg-linear-to-br from-indigo-600 to-emerald-500 text-white min-h-screen flex items-center justify-center">
           <div className="max-w-7xl mx-auto px-6  ">
             <div className="grid grid-cols-1   gap-10 items-center">
-              <div className="flex justify-center items-center flex-col">
-                <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight">
-                  Product Design that converts — crafted end-to-end
+              <div className="flex justify-center items-center text-center flex-col">
+                <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight ">
+                  UX & UI Audits that expose friction and unlock growth
                 </h1>
                 <p className="mt-4 text-lg opacity-90 max-w-xl">
-                  We help teams ship thoughtful, usable products faster using
-                  research-led design, rapid prototyping and design systems.
+                  We combine analytics, expert review and lightweight user
+                  checks to uncover usability, accessibility and conversion
+                  issues — then prioritise fixes your team can ship.
                 </p>
 
                 <div className="mt-8 flex flex-wrap gap-3">
@@ -117,18 +130,18 @@ const ProductDesign = () => {
                     href="#projects"
                     className="inline-flex items-center rounded-lg bg-white/20 px-4 py-2 text-white hover:bg-white/30"
                   >
-                    See case studies
+                    See audit samples
                   </Link>
                   <Link
                     href="#contact"
                     className="inline-flex items-center rounded-lg bg-white text-indigo-700 px-4 py-2 hover:shadow"
                   >
-                    Get a consult
+                    Request audit
                   </Link>
                 </div>
 
                 <div className="mt-6 flex flex-wrap gap-2 text-sm opacity-95">
-                  {["Research", "Prototyping", "Systems", "UX Audit"].map(
+                  {["Heuristics", "Accessibility", "Funnel", "Analytics"].map(
                     (b) => (
                       <span
                         key={b}
@@ -151,10 +164,10 @@ const ProductDesign = () => {
         >
           <div className="flex flex-col  max-w-7xl">
             <h2 id="features-title" className="text-2xl text-center font-bold">
-              What we do
+              Audit areas
             </h2>
             <p className="mt-2 text-center text-slate-500 dark:text-slate-300 ">
-              Focused services that cover product design end-to-end.
+              The checks we run and the outcomes you can expect from an audit.
             </p>
 
             <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -206,11 +219,11 @@ const ProductDesign = () => {
         >
           <div className=" items-center flex-col w-screen   flex">
             <h2 id="process-title" className="text-2xl font-bold">
-              Our process
+              Audit process
             </h2>
             <p className="mt-2 text-slate-500 dark:text-slate-300 max-w-2xl">
-              A clear, iterative approach that brings stakeholders and users
-              into the same loop.
+              A pragmatic, evidence-based workflow that surfaces problems,
+              validates impact and delivers a prioritized remediation plan.
             </p>
 
             <ol className="mt-8 relative w-full">
@@ -273,10 +286,10 @@ const ProductDesign = () => {
         >
           <div className="flex flex-col max-w-7xl justify-center items-center">
             <h2 id="projects-title" className="text-2xl font-bold">
-              Selected work
+              Audit highlights
             </h2>
             <p className="mt-2 text-slate-500 dark:text-slate-300 max-w-2xl">
-              Short snapshots of recent projects — outcomes first.
+              Example audits and the measurable improvements that followed.
             </p>
 
             <div className="mt-8">
@@ -338,10 +351,11 @@ const ProductDesign = () => {
         >
           <div className="flex flex-col justify-center items-center max-w-7xl">
             <h2 id="testimonials-title" className="text-2xl font-bold">
-              What clients say
+              Client feedback
             </h2>
             <p className="mt-2 text-slate-500 dark:text-slate-300 max-w-2xl">
-              Short quotes from product teams we've helped ship faster.
+              Feedback from product and engineering leaders who commissioned
+              audits.
             </p>
 
             <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -397,11 +411,11 @@ const ProductDesign = () => {
         <section aria-labelledby="team-title" className="py-12">
           <div className="max-w-7xl mx-auto">
             <h2 id="team-title" className="text-2xl font-bold text-center">
-              Meet the team
+              Meet the audit team
             </h2>
             <p className="mt-2 text-center text-slate-500 dark:text-slate-300 max-w-2xl mx-auto">
-              Small, cross-functional teams that ship product designs and
-              systems.
+              Senior auditors, accessibility specialists and conversion analysts
+              who deliver practical recommendations.
             </p>
 
             <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -506,12 +520,10 @@ const ProductDesign = () => {
         {/* Final CTA */}
         <section id="contact" className="py-12 bg-indigo-600 text-white">
           <div className="max-w-3xl flex flex-col mx-auto items-center justify-center text-center">
-            <h2 className="text-2xl font-bold">
-              Ready to design something great?
-            </h2>
+            <h2 className="text-2xl font-bold">Ready for an audit?</h2>
             <p className="mt-2 opacity-90">
-              Tell us about your product challenge and we’ll share a tailored
-              plan and timeline.
+              Tell us what to assess and we’ll return a scoped plan, timeline
+              and estimated impact.
             </p>
 
             <div className="mt-6 flex gap-3">
@@ -519,13 +531,13 @@ const ProductDesign = () => {
                 href="#"
                 className="rounded-md bg-white text-indigo-600 px-4 py-2 font-medium"
               >
-                Send brief
+                Request audit brief
               </Link>
               <Link
                 href="/contact-us"
                 className="rounded-md border border-white/30 px-4 py-2"
               >
-                Schedule call
+                Schedule audit call
               </Link>
             </div>
           </div>
@@ -537,4 +549,4 @@ const ProductDesign = () => {
   );
 };
 
-export default ProductDesign;
+export default UxAudit;
