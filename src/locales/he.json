@@ -18,5 +18,18 @@
     "logout": "התנתק",
     "language": "שפה",
     "adminDashboard": "לוח ניהול"
+  },
+  "footer": {
+    "about": "אנחנו בונים דפי נחיתה אטרקטיביים ובעלי המרה גבוהה וחוויות פרטי מוצר המותאמות למותגי מסחר אלקטרוני. מהיר, נגיש ומעוצב למכירה.",
+    "quickLinks": "קישורים מהירים",
+    "services": "שירותים",
+    "contactUs": "צור קשר",
+    "copyright": "© {{year}} EcomPages. כל הזכויות שמורות.",
+    "contact": {
+      "addressLine1": "123 רחוב איקום",
+      "addressLine2": "עיר המסחר, EC 12345",
+      "email": "hello@ecompages.io",
+      "phone": "+1 (234) 567-890"
+    }
   }
 }

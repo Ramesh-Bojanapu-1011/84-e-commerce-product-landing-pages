@@ -1,26 +1,29 @@
 import React from "react";
 import Link from "next/link";
 import { Mail, Phone, MapPin } from "lucide-react";
-
-const services = [
-  { href: "/services/product-design", label: "Product Page Design" },
-  { href: "/services/ux-audit", label: "UX/UI Audit" },
-  { href: "/services/cro", label: "Conversion Rate Optimization" },
-  { href: "/services/performance", label: "Performance Tuning" },
-  { href: "/services/accessibility", label: "Accessibility Audit" },
-  { href: "/services/integrations", label: "Platform Integration" },
-];
-
-const quickLinks = [
-  { href: "/home1", label: "Home1" },
-  { href: "/home2", label: "Home2" },
-  { href: "/about-us", label: "About Us" },
-  { href: "/services", label: "Services" },
-  { href: "/blog", label: "Blog" },
-  { href: "/contact-us", label: "Contact" },
-];
+import { useTranslation } from "react-i18next";
 
 const SiteFooter: React.FC = () => {
+  const { t } = useTranslation();
+
+  const services = [
+    { title: t("header.productDesign"), href: "/product-design" },
+    { title: t("header.uxAudit"), href: "/ux-audit" },
+    { title: t("header.conversionRateOpt"), href: "/cro" },
+    { title: t("header.performance"), href: "/performance" },
+    { title: t("header.accessibility"), href: "/accessibility" },
+    { title: t("header.integrations"), href: "/integrations" },
+  ];
+
+  const quickLinks = [
+    { title: t("header.home1"), href: "/home1" },
+    { title: t("header.home2"), href: "/home2" },
+    { title: t("header.aboutUs"), href: "/about-us" },
+    { title: t("header.services"), href: "/services" },
+    { title: t("header.blog"), href: "/blog" },
+    { title: t("header.contactUs"), href: "/contact-us" },
+  ];
+
   return (
     <footer className="bg-white dark:bg-slate-900 border-t border-slate-400 dark:border-slate-800 caret-transparent">
       <div className="  mx-auto px-6 py-12">
@@ -36,9 +39,7 @@ const SiteFooter: React.FC = () => {
             />
 
             <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
-              We build attractive, high-converting product landing pages and
-              product detail experiences tailored for ecommerce brands. Fast,
-              accessible and designed to sell.
+              {t("footer.about")}
             </p>
           </div>
 
@@ -46,7 +47,7 @@ const SiteFooter: React.FC = () => {
           <div className="flex md:justify-center">
             <div>
               <h4 className="text-sm font-semibold text-slate-800 dark:text-slate-100 mb-3">
-                Quick Links
+                {t("footer.quickLinks")}
               </h4>
               <ul className="space-y-2">
                 {quickLinks.map((l) => (
@@ -55,7 +56,7 @@ const SiteFooter: React.FC = () => {
                       href={l.href}
                       className="text-sm text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
                     >
-                      {l.label}
+                      {l.title}
                     </Link>
                   </li>
                 ))}
@@ -67,7 +68,7 @@ const SiteFooter: React.FC = () => {
           <div className="flex md:justify-center">
             <div>
               <h4 className="text-sm font-semibold text-slate-800 dark:text-slate-100 mb-3">
-                Services
+                {t("footer.services")}
               </h4>
               <ul className="space-y-2">
                 {services.map((s) => (
@@ -76,7 +77,7 @@ const SiteFooter: React.FC = () => {
                       href={s.href}
                       className="text-sm text-blue-600 hover:text-blue-800 dark:text-blue-400 dark:hover:text-blue-300"
                     >
-                      {s.label}
+                      {s.title}
                     </Link>
                   </li>
                 ))}
@@ -88,35 +89,35 @@ const SiteFooter: React.FC = () => {
           <div className="flex md:justify-center">
             <div>
               <h4 className="text-sm font-semibold text-slate-800 dark:text-slate-100 mb-3">
-                Contact Us
+                {t("footer.contactUs")}
               </h4>
               <div className="space-y-3 text-sm text-slate-600 dark:text-slate-300">
                 <div className="flex items-start gap-2">
                   <MapPin className="w-4 h-4 mt-1 text-slate-500 dark:text-slate-300" />
                   <div>
-                    123 Ecom Street
+                    {t("footer.contact.addressLine1")}
                     <br />
-                    Commerce City, EC 12345
+                    {t("footer.contact.addressLine2")}
                   </div>
                 </div>
 
                 <div className="flex items-center gap-2">
                   <Mail className="w-4 h-4 text-slate-500 dark:text-slate-300" />
                   <a
-                    href="mailto:hello@ecompages.io"
+                    href={`mailto:${t("footer.contact.email")}`}
                     className="text-blue-600 hover:underline dark:text-blue-400"
                   >
-                    hello@ecompages.io
+                    {t("footer.contact.email")}
                   </a>
                 </div>
 
                 <div className="flex items-center gap-2">
                   <Phone className="w-4 h-4 text-slate-500 dark:text-slate-300" />
                   <a
-                    href="tel:+1234567890"
+                    href={`tel:${t("footer.contact.phone")}`}
                     className="text-blue-600 hover:underline dark:text-blue-400"
                   >
-                    +1 (234) 567-890
+                    {t("footer.contact.phone")}
                   </a>
                 </div>
               </div>
@@ -127,7 +128,7 @@ const SiteFooter: React.FC = () => {
         <div className="mt-8 border-t border-slate-100 dark:border-slate-800 pt-6 text-sm text-slate-500 dark:text-slate-400">
           <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-4">
             <div>
-              © {new Date().getFullYear()} EcomPages. All rights reserved.
+              {t("footer.copyright", { year: new Date().getFullYear() })}
             </div>
           </div>
         </div>

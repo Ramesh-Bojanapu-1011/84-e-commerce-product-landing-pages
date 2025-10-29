@@ -18,5 +18,34 @@
     "logout": "Logout",
     "language": "Language",
     "adminDashboard": "Admin Dashboard"
+  },
+  "footer": {
+    "about": "We build attractive, high-converting product landing pages and product detail experiences tailored for ecommerce brands. Fast, accessible and designed to sell.",
+    "quickLinks": "Quick Links",
+    "services": "Services",
+    "contactUs": "Contact Us",
+    "copyright": "© {{year}} EcomPages. All rights reserved.",
+    "quickLinksList": {
+      "home1": "Home1",
+      "home2": "Home2",
+      "aboutUs": "About Us",
+      "services": "Services",
+      "blog": "Blog",
+      "contactUs": "Contact"
+    },
+    "servicesList": {
+      "productPageDesign": "Product Page Design",
+      "uxAudit": "UX/UI Audit",
+      "cro": "Conversion Rate Optimization",
+      "performance": "Performance Tuning",
+      "accessibility": "Accessibility Audit",
+      "integrations": "Platform Integration"
+    },
+    "contact": {
+      "addressLine1": "123 Ecom Street",
+      "addressLine2": "Commerce City, EC 12345",
+      "email": "hello@ecompages.io",
+      "phone": "+1 (234) 567-890"
+    }
   }
 }
