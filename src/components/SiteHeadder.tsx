@@ -1,6 +1,8 @@
-import { ChevronDown, Grid, LogOut, Menu, User } from "lucide-react";
+import { getCurrentUser, handleLogout, User } from "@/lib/localAuth";
+import { ChevronDown, Grid, LogOut, Menu } from "lucide-react";
 import Link from "next/link";
-import React from "react";
+import { useRouter } from "next/router";
+import React, { useEffect, useState } from "react";
 import { ModeToggle } from "./theme/ModeToggle";
 
 const navItems = [
@@ -39,6 +41,15 @@ const SiteHeadder: React.FC = () => {
   const [openProfile, setOpenProfile] = React.useState(false);
   const [openLang, setOpenLang] = React.useState(false);
   const [openNavIndex, setOpenNavIndex] = React.useState<number | null>(null);
+
+  const [user, setUser] = useState<User | null>(null);
+  const router = useRouter();
+
+  useEffect(() => {
+    // read current user from localStorage on the client only
+    const u = getCurrentUser();
+    setUser(u);
+  }, []);
 
   return (
     <header className="w-full bg-white   sticky top-0 z-50 border-b border-slate-200 dark:bg-slate-900/80 dark:border-slate-800 caret-transparent">
@@ -147,7 +158,13 @@ const SiteHeadder: React.FC = () => {
                 aria-expanded={openProfile}
               >
                 <div className="w-8 h-8 rounded-full bg-linear-to-br from-indigo-500 to-blue-500 flex items-center justify-center text-sm font-medium text-white shadow-sm">
-                  <User className="w-4 h-4" />
+                  {user
+                    ? `${(user.firstname || "").charAt(0).toUpperCase()}${(
+                        user.lastname || ""
+                      )
+                        .charAt(0)
+                        .toUpperCase()}`
+                    : "AD"}
                 </div>
                 <span className="hidden sm:inline text-sm text-slate-700 dark:text-slate-200">
                   Account
@@ -158,13 +175,24 @@ const SiteHeadder: React.FC = () => {
               {openProfile && (
                 <div className="absolute right-0 mt-2 w-48 bg-white dark:bg-slate-800 rounded-md shadow-lg ring-1 ring-black/5 border border-slate-100 dark:border-slate-700">
                   <div className="py-1">
-                    <Link
-                      href="/admin"
-                      className="flex items-center gap-2 px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-700"
+                    {user?.role === "admin" && (
+                      <Link
+                        href="/admin"
+                        className="flex items-center gap-2 px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-700"
+                      >
+                        <Grid className="w-4 h-4" /> Admin Dashboard
+                      </Link>
+                    )}
+                    <button
+                      onClick={() => {
+                        // update local storage record and clear current user
+                        handleLogout();
+                        setUser(null);
+                        // redirect to auth page
+                        router.push("/auth");
+                      }}
+                      className="flex items-center gap-2 w-full px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-700"
                     >
-                      <Grid className="w-4 h-4" /> Admin Dashboard
-                    </Link>
-                    <button className="flex items-center gap-2 w-full px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-700">
                       <LogOut className="w-4 h-4" /> Logout
                     </button>
                   </div>

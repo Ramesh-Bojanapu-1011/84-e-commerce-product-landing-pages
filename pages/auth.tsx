@@ -71,7 +71,7 @@ export default function AuthPage() {
     const users = readUsers();
     if (users.find((u) => u.email === email)) {
       return setError(
-        "A user with this email already exists. Please login or use another email."
+        "A user with this email already exists. Please login or use another email.",
       );
     }
 
@@ -116,11 +116,11 @@ export default function AuthPage() {
 
     const users = readUsers();
     const found = users.find(
-      (u) => u.email === email && u.password === password
+      (u) => u.email === email && u.password === password,
     );
     if (!found)
       return setError(
-        "Invalid credentials — please check email/password or register first."
+        "Invalid credentials — please check email/password or register first.",
       );
 
     found.lastLoginTime = new Date().toISOString();
