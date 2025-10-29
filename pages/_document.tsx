@@ -10,7 +10,7 @@ export default function Document() {
           href="https://i.postimg.cc/9XK6Z0gF/favicon.png"
         />
       </Head>
-      <body>
+      <body className="[&::-webkit-scrollbar]:hidden  max-h-screen">
         <Main />
         <NextScript />
       </body>

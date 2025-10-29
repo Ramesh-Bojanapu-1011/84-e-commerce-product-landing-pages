@@ -5,41 +5,41 @@ import Link from "next/link";
 
 const variantFirstUI = () => {
   const featured = {
-    slug: "variant-first-ui-patterns",
-    title: "Variant-first UI patterns for fewer returns",
-    date: "2025-11-12",
-    author: "Samir Rao",
+    slug: "performance-tuning-product-pages",
+    title: "Performance tuning for product pages",
+    date: "2025-10-20",
+    author: "Aisha Khan",
     cover:
-      "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1400&q=80",
     reading: "7 min read",
     intro:
-      "A practical case study: how designing variant-first product pages and clearer expectations reduced returns and support friction while increasing repurchase intent.",
+      "A practical case study: focused performance tuning on product pages — image delivery, critical rendering and JS cost — that improved Core Web Vitals and conversion metrics.",
     sections: [
       {
         title: "The problem",
-        body: `High return rates were eroding margin and creating friction for operations. Customers often reported "item not as expected": unclear product variants, misleading images and missing size/fit guidance. We believed better variant-first UI that set clearer expectations would reduce returns and support load.`,
+        body: `Product pages were slow to load and interactive, especially on mobile. Large hero images, render-blocking CSS and oversized JavaScript bundles increased LCP and INP, causing higher abandonment during the add-to-cart flow.`,
       },
       {
         title: "Research & approach",
-        body: `We combined quantitative signals (returns by SKU, support tickets, heatmaps) with qualitative research (post-purchase interviews and recorded sessions). From this we defined three experiment hypotheses focused on variant clarity, imagery and microcopy around sizing and materials.`,
+        body: `We used lab audits (Lighthouse), Real User Monitoring, and session recordings to prioritize fixes. We focused on high-traffic SKUs and prioritized changes by expected user-visible impact and implementation effort.`,
       },
       {
         title: "What we changed",
-        body: `- Variant-first layout that surfaces selected options and visual swatches near the CTA\n- Consistent, real-product imagery tied to each variant (no generic hero shots)\n- Size guides, fit notes and short social proof snippets adjacent to the action\n- Microcopy clarifying materials and return windows`,
+        body: `- Optimized images with responsive sizes, AVIF fallbacks and efficient delivery\n- Extracted critical CSS and inlined above-the-fold styles\n- Deferred non-essential JS, code-split product widgets and lazy-load reviews\n- Tuned CDN cache policies and accelerated asset TTLs\n- Added lightweight client-side placeholders to reduce layout shift`,
       },
       {
         title: "Results",
-        body: `A 6-week experiment across targeted SKUs produced:\n- -25% Returns rate for tested SKUs\n- -18% Support contacts about fit/expectations\n- +8% Reorder rate (repeat purchase intent)\nThe variant-first pattern showed durable improvement and was rolled into the product template.`,
+        body: `After a 5-week performance sprint across prioritized product pages we observed:\n- LCP reduced by 48% on average\n- INP/interaction latency improved by ~60%\n- Conversion uplift: +9% add-to-cart from product pages\n- Bounce rate on product pages dropped by 12%\nThe improvements were rolled into the platform and added to the release checklist.`,
       },
     ],
   };
   return (
     <>
       <Head>
-        <title>Variant-first UI patterns — Reduce returns</title>
+        <title>Performance tuning for product pages — Case study</title>
         <meta
           name="description"
-          content="Case study: how variant-first product pages and clearer expectations reduced returns, support load and improved repurchase intent."
+          content="How focused performance work on product pages — image delivery, critical CSS and JS-splitting — improved Core Web Vitals and conversions."
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
@@ -89,9 +89,9 @@ const variantFirstUI = () => {
 
                   {/* Quote */}
                   <blockquote className="mt-8 border-l-4 border-amber-400 pl-4 italic text-slate-800 dark:text-slate-100">
-                    “Moving to a variant-first layout clarified expectations for
-                    customers — returns dropped substantially and support
-                    contacts decreased within weeks.”
+                    “Targeted performance tuning removed the friction in the
+                    add-to-cart flow — pages felt faster and conversion improved
+                    within days of the rollout.”
                   </blockquote>
 
                   {/* Key takeaways */}
@@ -99,15 +99,15 @@ const variantFirstUI = () => {
                     <h4 className="text-lg font-semibold">Key takeaways</h4>
                     <ul className="mt-3 list-disc pl-5 text-slate-600 dark:text-slate-300">
                       <li>
-                        Show the selected variant clearly and match images to
-                        it.
+                        Measure real-user metrics and prioritize by user impact.
                       </li>
                       <li>
-                        Surface size, fit and material notes close to the
-                        action.
+                        Optimize critical rendering path (images, CSS,
+                        first-party JS).
                       </li>
                       <li>
-                        Prioritize tests that reduce returns and support volume.
+                        Ship small, testable changes and monitor RUM
+                        post-deploy.
                       </li>
                     </ul>
                   </div>
@@ -119,38 +119,40 @@ const variantFirstUI = () => {
                     <div className="mt-3 grid grid-cols-1 gap-3">
                       <div className="p-3 bg-white dark:bg-slate-800 rounded-lg shadow">
                         <div className="text-2xl font-bold text-emerald-600">
-                          -25%
+                          -48%
                         </div>
                         <div className="text-sm text-slate-500">
-                          Returns rate
+                          LCP (median)
                         </div>
                       </div>
                       <div className="p-3 bg-white dark:bg-slate-800 rounded-lg shadow">
                         <div className="text-2xl font-bold text-emerald-600">
-                          -18%
+                          -60%
                         </div>
                         <div className="text-sm text-slate-500">
-                          Support contacts
+                          INP / interaction latency
                         </div>
                       </div>
                       <div className="p-3 bg-white dark:bg-slate-800 rounded-lg shadow">
                         <div className="text-2xl font-bold text-emerald-600">
-                          +8%
+                          +9%
                         </div>
                         <div className="text-sm text-slate-500">
-                          Reorder rate
+                          Conversion (add-to-cart)
                         </div>
                       </div>
                     </div>
                   </div>
 
                   <div className="mt-6 p-4 rounded-xl bg-indigo-600 text-white text-center">
-                    <div className="text-sm">Want to reduce returns?</div>
+                    <div className="text-sm">
+                      Want to speed up product pages?
+                    </div>
                     <Link
                       href="/contact-us"
                       className="mt-3 inline-block px-4 py-2 bg-white text-indigo-700 rounded-md font-medium"
                     >
-                      Book a returns audit
+                      Book a performance sprint
                     </Link>
                   </div>
                 </aside>
