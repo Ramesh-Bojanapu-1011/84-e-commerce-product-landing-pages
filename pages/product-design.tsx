@@ -1,98 +1,91 @@
+import { Quote } from "lucide-react";
+import Head from "next/head";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
 import SiteFooter from "../src/components/SiteFooter";
 import SiteHeadder from "../src/components/SiteHeadder";
-import Head from "next/head";
-import { Quote, Linkedin, Twitter } from "lucide-react";
-
-const features = [
-  {
-    title: "User Research",
-    desc: "Qualitative & quantitative research to find what users truly need.",
-  },
-  {
-    title: "Interaction Design",
-    desc: "Rapid prototyping and interaction flows that delight.",
-  },
-  {
-    title: "Visual Design",
-    desc: "High-fidelity visual systems and component libraries.",
-  },
-  {
-    title: "Design Systems",
-    desc: "Reusable tokens, components and accessible patterns.",
-  },
-];
-
-const processSteps = [
-  {
-    step: "Discover",
-    copy: "Kick-off, stakeholder interviews and research plan.",
-  },
-  { step: "Define", copy: "Synthesize insights and define measurable goals." },
-  { step: "Design", copy: "Wireframes, prototypes, and iterative testing." },
-  { step: "Deliver", copy: "Handoff, QA, and design system rollout." },
-];
-
-const projects = [
-  {
-    title: "Checkout Redesign",
-    tag: "E‑commerce",
-    img: "https://i.pinimg.com/1200x/c7/1d/ec/c71dec991f8c1c9f364288b0e87072fc.jpg",
-  },
-  {
-    title: "Mobile App Flow",
-    tag: "Fintech",
-    img: "https://i.pinimg.com/1200x/a1/31/a9/a131a9f4cfbe21b07d5ec5ca2834fb7a.jpg",
-  },
-  {
-    title: "Admin Dashboard",
-    tag: "SaaS",
-    img: "https://i.pinimg.com/1200x/d7/7e/fa/d77efa14bcbbc9ac8e221161b86b9d50.jpg",
-  },
-];
-
-const team = [
-  { name: "Asha Patel", role: "Lead Product Designer", avatar: "/avatar1.jpg" },
-  {
-    name: "Miguel Santos",
-    role: "Interaction Designer",
-    avatar: "/avatar2.jpg",
-  },
-  { name: "Lina Chen", role: "Visual Designer", avatar: "/avatar3.jpg" },
-];
-
-const testimonials = [
-  {
-    quote: "They helped us cut checkout friction by 40% in 6 weeks.",
-    who: "Serhiy Hipskyy",
-    role: "CEO, Universal",
-    avatar: "/avatar1.jpg",
-    rating: 5,
-  },
-  {
-    quote: "Delivered a design system that saved our team months of work.",
-    who: "Maya Singh",
-    role: "CTO, FinSystems",
-    avatar: "/avatar2.jpg",
-    rating: 5,
-  },
-  {
-    quote: "Prototypes that validated our mobile flows instantly.",
-    who: "Rohit Patel",
-    role: "PM, StartupX",
-    avatar: "/avatar3.jpg",
-    rating: 5,
-  },
-];
 
 const ProductDesign = () => {
+  const { t } = useTranslation();
+
+  // load arrays/objects from locales
+  const features = t("productDesign.features", {
+    returnObjects: true,
+  }) as Array<{ title: string; desc: string }>;
+  const processSteps = t("productDesign.processSteps", {
+    returnObjects: true,
+  }) as Array<{ step: string; copy: string }>;
+
+  const projects = [
+    {
+      title: t("productDesign.projects.0.title"),
+      tag: t("productDesign.projects.0.tag"),
+      img: "https://images.unsplash.com/photo-1506765515384-028b60a970df?auto=format&fit=crop&w=800&q=80",
+      desc: t("productDesign.projects.0.desc"),
+    },
+    {
+      title: t("productDesign.projects.1.title"),
+      tag: t("productDesign.projects.1.tag"),
+      img: "https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=800&q=80",
+      desc: t("productDesign.projects.1.desc"),
+    },
+    {
+      title: t("productDesign.projects.2.title"),
+      tag: t("productDesign.projects.2.tag"),
+      img: "https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80",
+      desc: t("productDesign.projects.2.desc"),
+    },
+  ];
+
+  const team = [
+    {
+      name: t("productDesign.team.0.name"),
+      role: t("productDesign.team.0.role"),
+      avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+    },
+    {
+      name: t("productDesign.team.1.name"),
+      role: t("productDesign.team.1.role"),
+      avatar: "https://randomuser.me/api/portraits/men/45.jpg",
+    },
+    {
+      name: t("productDesign.team.2.name"),
+      role: t("productDesign.team.2.role"),
+      avatar: "https://randomuser.me/api/portraits/women/12.jpg",
+    },
+  ];
+
+  const testimonials = [
+    {
+      quote: t("productDesign.testimonials.0.quote"),
+      who: t("productDesign.testimonials.0.who"),
+      role: t("productDesign.testimonials.0.role"),
+      rating: 5,
+      avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+    },
+    {
+      quote: t("productDesign.testimonials.1.quote"),
+      who: t("productDesign.testimonials.1.who"),
+      role: t("productDesign.testimonials.1.role"),
+      rating: 5,
+      avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+    },
+    {
+      quote: t("productDesign.testimonials.2.quote"),
+      who: t("productDesign.testimonials.2.who"),
+      role: t("productDesign.testimonials.2.role"),
+      rating: 5,
+      avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+    },
+  ];
+
   return (
     <>
       <Head>
-        <title>Product Design Services - Enkonix</title>
+        <title>{t("productDesign.meta.title")}</title>
         <meta
           name="description"
-          content="End-to-end product design services including user research, interaction design, and design systems."
+          content={t("productDesign.meta.description") as string}
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
@@ -105,11 +98,10 @@ const ProductDesign = () => {
             <div className="grid grid-cols-1   gap-10 items-center">
               <div className="flex justify-center items-center flex-col">
                 <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight">
-                  Product Design that converts — crafted end-to-end
+                  {t("productDesign.hero.title")}
                 </h1>
                 <p className="mt-4 text-lg opacity-90 max-w-xl">
-                  We help teams ship thoughtful, usable products faster using
-                  research-led design, rapid prototyping and design systems.
+                  {t("productDesign.hero.desc")}
                 </p>
 
                 <div className="mt-8 flex flex-wrap gap-3">
@@ -117,27 +109,29 @@ const ProductDesign = () => {
                     href="#projects"
                     className="inline-flex items-center rounded-lg bg-white/20 px-4 py-2 text-white hover:bg-white/30"
                   >
-                    See case studies
+                    {t("productDesign.hero.cta.seeCaseStudies")}
                   </Link>
                   <Link
                     href="#contact"
                     className="inline-flex items-center rounded-lg bg-white text-indigo-700 px-4 py-2 hover:shadow"
                   >
-                    Get a consult
+                    {t("productDesign.hero.cta.getConsult")}
                   </Link>
                 </div>
 
                 <div className="mt-6 flex flex-wrap gap-2 text-sm opacity-95">
-                  {["Research", "Prototyping", "Systems", "UX Audit"].map(
-                    (b) => (
-                      <span
-                        key={b}
-                        className="rounded-full bg-white/10 px-3 py-1"
-                      >
-                        {b}
-                      </span>
-                    ),
-                  )}
+                  {(
+                    t("productDesign.hero.tags", {
+                      returnObjects: true,
+                    }) as string[]
+                  ).map((b) => (
+                    <span
+                      key={b}
+                      className="rounded-full bg-white/10 px-3 py-1"
+                    >
+                      {b}
+                    </span>
+                  ))}
                 </div>
               </div>
             </div>
@@ -151,10 +145,10 @@ const ProductDesign = () => {
         >
           <div className="flex flex-col  max-w-7xl">
             <h2 id="features-title" className="text-2xl text-center font-bold">
-              What we do
+              {t("productDesign.featuresHeader")}
             </h2>
             <p className="mt-2 text-center text-slate-500 dark:text-slate-300 ">
-              Focused services that cover product design end-to-end.
+              {t("productDesign.featuresSubtitle")}
             </p>
 
             <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -206,11 +200,10 @@ const ProductDesign = () => {
         >
           <div className=" items-center flex-col w-screen   flex">
             <h2 id="process-title" className="text-2xl font-bold">
-              Our process
+              {t("productDesign.processHeader")}
             </h2>
             <p className="mt-2 text-slate-500 dark:text-slate-300 max-w-2xl">
-              A clear, iterative approach that brings stakeholders and users
-              into the same loop.
+              {t("productDesign.processSubtitle")}
             </p>
 
             <ol className="mt-8 relative w-full">
@@ -273,10 +266,10 @@ const ProductDesign = () => {
         >
           <div className="flex flex-col max-w-7xl justify-center items-center">
             <h2 id="projects-title" className="text-2xl font-bold">
-              Selected work
+              {t("productDesign.projectsHeader")}
             </h2>
             <p className="mt-2 text-slate-500 dark:text-slate-300 max-w-2xl">
-              Short snapshots of recent projects — outcomes first.
+              {t("productDesign.projectsSubtitle")}
             </p>
 
             <div className="mt-8">
@@ -319,8 +312,8 @@ const ProductDesign = () => {
                         </div>
 
                         <p className="mt-3 hidden sm:block text-sm text-white/80 max-w-prose">
-                          A short summary of the impact and metrics — concise
-                          and outcome focused.
+                          {p.desc ||
+                            (t("productDesign.projectDefaultDesc") as string)}
                         </p>
                       </div>
                     </article>
@@ -338,14 +331,14 @@ const ProductDesign = () => {
         >
           <div className="flex flex-col justify-center items-center max-w-7xl">
             <h2 id="testimonials-title" className="text-2xl font-bold">
-              What clients say
+              {t("productDesign.testimonialsHeader")}
             </h2>
             <p className="mt-2 text-slate-500 dark:text-slate-300 max-w-2xl">
-              Short quotes from product teams we've helped ship faster.
+              {t("productDesign.testimonialsSubtitle")}
             </p>
 
             <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-              {testimonials.map((t, idx) => (
+              {testimonials.map((item, idx) => (
                 <div
                   key={idx}
                   className="relative rounded-xl p-6 bg-white dark:bg-slate-800 border border-slate-200/40 dark:border-slate-700/30 shadow-sm overflow-visible"
@@ -357,7 +350,7 @@ const ProductDesign = () => {
 
                   {/* rating */}
                   <div className="flex items-center gap-1 text-amber-400 mb-3">
-                    {Array.from({ length: t.rating }).map((_, i) => (
+                    {Array.from({ length: item.rating ?? 0 }).map((_, i) => (
                       <svg
                         key={i}
                         className="w-4 h-4"
@@ -371,19 +364,19 @@ const ProductDesign = () => {
                   </div>
 
                   <p className="text-slate-800 dark:text-slate-100">
-                    “{t.quote}”
+                    “{item.quote}”
                   </p>
 
                   <div className="mt-4 flex items-center gap-3">
                     <img
-                      src={t.avatar}
-                      alt={t.who}
+                      src={item.avatar}
+                      alt={item.who}
                       className="h-10 w-10 rounded-full object-cover"
                     />
                     <div>
-                      <div className="font-semibold text-sm">{t.who}</div>
+                      <div className="font-semibold text-sm">{item.who}</div>
                       <div className="text-xs text-slate-500 dark:text-slate-300">
-                        {t.role}
+                        {item.role}
                       </div>
                     </div>
                   </div>
@@ -397,11 +390,10 @@ const ProductDesign = () => {
         <section aria-labelledby="team-title" className="py-12">
           <div className="max-w-7xl mx-auto">
             <h2 id="team-title" className="text-2xl font-bold text-center">
-              Meet the team
+              {t("productDesign.teamHeader")}
             </h2>
             <p className="mt-2 text-center text-slate-500 dark:text-slate-300 max-w-2xl mx-auto">
-              Small, cross-functional teams that ship product designs and
-              systems.
+              {t("productDesign.teamSubtitle")}
             </p>
 
             <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -492,8 +484,7 @@ const ProductDesign = () => {
                       </div>
 
                       <p className="mt-3 text-sm text-slate-600 dark:text-slate-300">
-                        Experienced in product strategy, interaction design and
-                        building design systems that scale.
+                        {t("productDesign.teamBlurb")}
                       </p>
                     </div>
                   </div>
@@ -507,11 +498,10 @@ const ProductDesign = () => {
         <section id="contact" className="py-12 bg-indigo-600 text-white">
           <div className="max-w-3xl flex flex-col mx-auto items-center justify-center text-center">
             <h2 className="text-2xl font-bold">
-              Ready to design something great?
+              {t("productDesign.finalCta.title")}
             </h2>
             <p className="mt-2 opacity-90">
-              Tell us about your product challenge and we’ll share a tailored
-              plan and timeline.
+              {t("productDesign.finalCta.desc")}
             </p>
 
             <div className="mt-6 flex gap-3">
@@ -519,13 +509,13 @@ const ProductDesign = () => {
                 href="#"
                 className="rounded-md bg-white text-indigo-600 px-4 py-2 font-medium"
               >
-                Send brief
+                {t("productDesign.finalCta.sendBrief")}
               </Link>
               <Link
                 href="/contact-us"
                 className="rounded-md border border-white/30 px-4 py-2"
               >
-                Schedule call
+                {t("productDesign.finalCta.scheduleCall")}
               </Link>
             </div>
           </div>

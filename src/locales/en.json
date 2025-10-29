@@ -901,6 +901,118 @@
       "button": "Book a performance sprint"
     }
   },
+  "productDesign": {
+    "meta": {
+      "title": "Product design services — Enkonix",
+      "description": "End-to-end product design services including research, interaction design, and design systems."
+    },
+    "hero": {
+      "badge": "Product design",
+      "title": "Product Design that converts — crafted end-to-end",
+      "desc": "We help teams ship thoughtful, usable products faster using research-led design, rapid prototyping and design systems.",
+      "cta": {
+        "seeCaseStudies": "See case studies",
+        "getConsult": "Get a consult"
+      },
+      "tags": ["Research", "Prototyping", "Systems", "UX Audit"]
+    },
+    "featuresHeader": "What we do",
+    "featuresSubtitle": "Focused services that cover product design end-to-end.",
+    "features": [
+      {
+        "title": "User Research",
+        "desc": "Qualitative & quantitative research to find what users truly need."
+      },
+      {
+        "title": "Interaction Design",
+        "desc": "Rapid prototyping and interaction flows that delight."
+      },
+      {
+        "title": "Visual Design",
+        "desc": "High-fidelity visual systems and component libraries."
+      },
+      {
+        "title": "Design Systems",
+        "desc": "Reusable tokens, components and accessible patterns."
+      }
+    ],
+    "processHeader": "Our process",
+    "processSubtitle": "A clear, iterative approach that brings stakeholders and users into the same loop.",
+    "processSteps": [
+      {
+        "step": "Discover",
+        "copy": "Kick-off, stakeholder interviews and research plan."
+      },
+      {
+        "step": "Define",
+        "copy": "Synthesize insights and define measurable goals."
+      },
+      {
+        "step": "Design",
+        "copy": "Wireframes, prototypes, and iterative testing."
+      },
+      { "step": "Deliver", "copy": "Handoff, QA, and design system rollout." }
+    ],
+    "projectsHeader": "Selected work",
+    "projectsSubtitle": "Short snapshots of recent projects — outcomes first.",
+    "projectDefaultDesc": "A short summary of the impact and metrics — concise and outcome focused.",
+    "projects": [
+      {
+        "title": "Checkout Redesign",
+        "tag": "E‑commerce"
+      },
+      {
+        "title": "Mobile App Flow",
+        "tag": "Fintech"
+      },
+      {
+        "title": "Admin Dashboard",
+        "tag": "SaaS"
+      }
+    ],
+    "testimonialsHeader": "What clients say",
+    "testimonialsSubtitle": "Short quotes from product teams we've helped ship faster.",
+    "testimonials": [
+      {
+        "quote": "They helped us cut checkout friction by 40% in 6 weeks.",
+        "who": "Serhiy Hipskyy",
+        "role": "CEO, Universal"
+      },
+      {
+        "quote": "Delivered a design system that saved our team months of work.",
+        "who": "Maya Singh",
+        "role": "CTO, FinSystems"
+      },
+      {
+        "quote": "Prototypes that validated our mobile flows instantly.",
+        "who": "Rohit Patel",
+        "role": "PM, StartupX"
+      }
+    ],
+    "teamHeader": "Meet the team",
+    "teamSubtitle": "Small, cross-functional teams that ship product designs and systems.",
+    "teamBlurb": "Experienced in product strategy, interaction design and building design systems that scale.",
+    "team": [
+      {
+        "name": "Asha Patel",
+        "role": "Lead Product Designer"
+      },
+      {
+        "name": "Miguel Santos",
+        "role": "Interaction Designer"
+      },
+      {
+        "name": "Lina Chen",
+        "role": "Visual Designer"
+      }
+    ],
+    "finalCta": {
+      "title": "Ready to design something great?",
+      "desc": "Tell us about your product challenge and we’ll share a tailored plan and timeline.",
+      "sendBrief": "Send brief",
+      "scheduleCall": "Schedule call"
+    }
+  },
   "admin": {
     "heading": "Admin Overview",
     "stats": {
