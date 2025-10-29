@@ -751,6 +751,126 @@
       "seeServices": "See services"
     }
   },
+  "conversionRateOpt": {
+    "meta": {
+      "title": "Conversion Rate Optimization — Enkonix",
+      "description": "Experiment-driven CRO: audits, A/B testing, landing page optimization and personalization to grow revenue."
+    },
+    "hero": {
+      "title": "Conversion Rate Optimization that grows revenue",
+      "desc": "Experiment-driven CRO: audits, prioritized tests and scalable rollouts to lift conversions and average order value.",
+      "ctaCaseStudies": "See case studies",
+      "ctaConsult": "Get a consult",
+      "badges": ["A/B Testing", "Analytics", "Personalization", "Microcopy"]
+    },
+    "featuresHeader": "What we do",
+    "featuresSubtitle": "Focused CRO services — diagnose, test, and scale the changes that move revenue.",
+    "features": [
+      {
+        "title": "Funnel Analysis",
+        "desc": "Pinpoint drop-offs with event-level analytics and session insights."
+      },
+      {
+        "title": "A/B & MVT",
+        "desc": "Experiment-driven changes validated by statistical significance."
+      },
+      {
+        "title": "Landing Page Optimization",
+        "desc": "Data-led copy, layout and microcopy tweaks to boost CTA lift."
+      },
+      {
+        "title": "Personalization",
+        "desc": "Targeted experiences that increase relevance and conversions."
+      }
+    ],
+    "processHeader": "Our process",
+    "processSubtitle": "A clear, iterative approach to discover friction, validate ideas and ship wins fast.",
+    "processSteps": [
+      {
+        "step": "Audit",
+        "copy": "Analyze analytics, recordings and user flows to find quick wins."
+      },
+      {
+        "step": "Hypothesize",
+        "copy": "Create prioritized experiment backlog with expected impact."
+      },
+      {
+        "step": "Experiment",
+        "copy": "Run A/B tests and multivariate experiments to validate ideas."
+      },
+      {
+        "step": "Scale",
+        "copy": "Roll out winners, document playbooks and automate personalization."
+      }
+    ],
+    "projectsHeader": "Selected work",
+    "projectsSubtitle": "Short snapshots of recent projects — outcomes first.",
+    "projects": [
+      {
+        "title": "Checkout Conversion Lift",
+        "tag": "E‑commerce",
+        "desc": "Increased checkout completion by 22% through streamlined flows and clearer CTAs."
+      },
+      {
+        "title": "Homepage Experimentation",
+        "tag": "Retail",
+        "desc": "Boosted homepage click-through by 15% with targeted hero content and personalized recommendations."
+      },
+      {
+        "title": "Pricing Page Tests",
+        "tag": "SaaS",
+        "desc": "Optimized pricing page layout and copy, resulting in a 12% increase in sign-ups."
+      }
+    ],
+    "projectDefaultDesc": "A short summary of the impact and metrics — concise and outcome focused.",
+    "testimonialsHeader": "What clients say",
+    "testimonialsSubtitle": "Short quotes from growth teams who've seen measurable conversion wins.",
+    "testimonials": [
+      {
+        "quote": "A/B testing with this team increased checkout conversion by 28% in three months.",
+        "who": "Dana Morales",
+        "role": "Head of Growth, Shoplane",
+        "avatar": "/avatar1.jpg",
+        "rating": 5
+      },
+      {
+        "quote": "Their hypotheses were surgical — we saw measurable revenue impact fast.",
+        "who": "Eren K.",
+        "role": "VP Product, FinEdge",
+        "avatar": "/avatar2.jpg",
+        "rating": 5
+      },
+      {
+        "quote": "They helped us prioritize the right experiments and save months of effort.",
+        "who": "Maya Singh",
+        "role": "Growth Lead, B2B SaaS",
+        "avatar": "/avatar3.jpg",
+        "rating": 5
+      }
+    ],
+    "teamHeader": "Meet the team",
+    "teamSubtitle": "Small, cross-functional growth teams focused on experiments, analytics and rapid iteration.",
+    "teamBlurb": "Experienced in product strategy, interaction design and building design systems that scale.",
+    "team": [
+      { "name": "Asha Patel", "role": "CRO Lead", "avatar": "/avatar1.jpg" },
+      {
+        "name": "Miguel Santos",
+        "role": "Experimentation Engineer",
+        "avatar": "/avatar2.jpg"
+      },
+      {
+        "name": "Lina Chen",
+        "role": "Conversion Copywriter",
+        "avatar": "/avatar3.jpg"
+      }
+    ],
+    "finalCta": {
+      "title": "Ready to increase conversions?",
+      "desc": "Share your funnel and goals — we’ll propose the highest-impact experiments and a roadmap to scale winners.",
+      "sendBrief": "Send brief",
+      "scheduleCall": "Schedule call"
+    }
+  },
   "heroRedesign": {
     "meta": {
       "title": "Hero redesign case study — E-commerce Product Pages",

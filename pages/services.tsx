@@ -16,7 +16,11 @@ const servicesList = [
     icon: <Star className="w-6 h-6" />,
     href: "/services/ux-audit",
   },
-  { slug: "cro", icon: <Zap className="w-6 h-6" />, href: "/services/conversion-rate-opt" },
+  {
+    slug: "cro",
+    icon: <Zap className="w-6 h-6" />,
+    href: "/services/conversion-rate-opt",
+  },
   {
     slug: "performance",
     icon: <Zap className="w-6 h-6" />,
