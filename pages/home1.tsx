@@ -3,7 +3,16 @@ import Head from "next/head";
 import Link from "next/link";
 import SiteHeadder from "@/components/SiteHeadder";
 import SiteFooter from "@/components/SiteFooter";
-import { ShoppingBag, Star, Zap, Percent, Users, Globe } from "lucide-react";
+import {
+  ShoppingBag,
+  Star,
+  Zap,
+  Percent,
+  Users,
+  Globe,
+  CarTaxiFrontIcon,
+  ShoppingBagIcon,
+} from "lucide-react";
 import { useTranslation } from "react-i18next";
 
 export default function Home1() {
@@ -30,7 +39,7 @@ export default function Home1() {
       name: t("home1.testimonials.items.0.name"),
       role: t("home1.testimonials.items.0.role"),
       quote: t("home1.testimonials.items.0.quote"),
-      img: "https://i.postimg.cc/3x3QzSGq/user1.jpg",
+      img: "https://randomuser.me/api/portraits/men/89.jpg",
 
       rating: 5,
     },
@@ -38,14 +47,14 @@ export default function Home1() {
       name: t("home1.testimonials.items.1.name"),
       role: t("home1.testimonials.items.1.role"),
       quote: t("home1.testimonials.items.1.quote"),
-      img: "https://i.postimg.cc/3x3QzSGq/user2.jpg",
+      img: "https://randomuser.me/api/portraits/women/65.jpg",
       rating: 4,
     },
     {
       name: t("home1.testimonials.items.2.name"),
       role: t("home1.testimonials.items.2.role"),
       quote: t("home1.testimonials.items.2.quote"),
-      img: "https://i.postimg.cc/3x3QzSGq/user3.jpg",
+      img: " https://randomuser.me/api/portraits/men/32.jpg ",
       rating: 5,
     },
   ];
@@ -84,14 +93,7 @@ export default function Home1() {
               <div>
                 <div className="inline-flex items-center gap-3 mb-4">
                   <div className="w-10 h-10 rounded-full bg-linear-to-r from-indigo-500 to-blue-500 flex items-center justify-center text-white shadow">
-                    <svg
-                      className="w-5 h-5"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                    >
-                      <path d="M3 3h18v18H3z" strokeWidth="0" />
-                    </svg>
+                    <ShoppingBagIcon />
                   </div>
                   <span className="text-sm font-medium text-slate-600 dark:text-slate-300">
                     {t("home1.hero.badge")}
@@ -146,28 +148,10 @@ export default function Home1() {
                   {/* Theme-colored mockup — uses site gradients instead of the image's palette */}
                   <div className="mt-4 rounded-lg overflow-hidden h-64 flex items-center justify-center">
                     <div className="w-56 h-40 rounded-xl flex items-center justify-center text-white shadow-lg bg-linear-to-r from-indigo-500 to-blue-600">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        className="w-16 h-16"
-                        stroke="currentColor"
-                      >
-                        <rect
-                          x="3"
-                          y="6"
-                          width="18"
-                          height="13"
-                          rx="2"
-                          strokeWidth="1.5"
-                        />
-                        <path
-                          d="M16 3a2 2 0 0 0-4 0"
-                          strokeWidth="1.5"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
+                      <img
+                        src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcTh5eIXdLvowFJLLEMN6__kaQU1Ds7epn3krG74EFrp-5YPmsDldYrLysV1crFOu7hL7L-BCvNfnBeNDMeDhSdZpNXSD9rkaA"
+                        alt=""
+                      />
                     </div>
                   </div>
 
@@ -277,21 +261,14 @@ export default function Home1() {
                 </div>
 
                 <div className="mt-6 flex items-center gap-6">
-                  <div className="w-64 h-44 rounded-xl flex items-center justify-center text-white shadow-lg bg-linear-to-r from-indigo-500 to-blue-600">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      className="w-20 h-20"
-                      stroke="currentColor"
-                    >
-                      <circle cx="12" cy="12" r="8" strokeWidth="1.5" />
-                      <path
-                        d="M8 12h8"
-                        strokeWidth="1.5"
-                        strokeLinecap="round"
-                      />
-                    </svg>
+                  <div className="w-64 h-54 rounded-xl flex items-center justify-center text-white shadow-lg bg-linear-to-r from-indigo-500 to-blue-600">
+                    <img
+                      src="https://i.pinimg.com/originals/d5/23/54/d52354713a70071df8040e79e8bb0f7c.gif"
+                      alt=""
+                      height={100}
+                      width={100}
+                      className=" h-full w-full object-cover  object-center rounded-xl  "
+                    />
                   </div>
 
                   <div className="flex-1">
@@ -319,21 +296,10 @@ export default function Home1() {
                 <div className="rounded-xl bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 p-4 shadow">
                   <div className="flex items-center gap-4">
                     <div className="w-20 h-16 rounded-md bg-linear-to-r from-blue-500 to-indigo-500 flex items-center justify-center text-white">
-                      <svg
-                        className="w-8 h-8"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                      >
-                        <rect
-                          x="3"
-                          y="6"
-                          width="18"
-                          height="12"
-                          rx="2"
-                          strokeWidth="1.5"
-                        />
-                      </svg>
+                      <img
+                        src="https://i.pinimg.com/1200x/c3/9d/cc/c39dcc1fbedf0d448708f7e8cde6a555.jpg"
+                        alt=""
+                      />
                     </div>
                     <div className="flex-1">
                       <div className="font-semibold text-slate-900 dark:text-white">
@@ -352,22 +318,10 @@ export default function Home1() {
                 <div className="rounded-xl bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 p-4 shadow">
                   <div className="flex items-center gap-4">
                     <div className="w-20 h-16 rounded-md bg-linear-to-r from-indigo-500 to-blue-600 flex items-center justify-center text-white">
-                      <svg
-                        className="w-8 h-8"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                      >
-                        <path d="M3 7h18" strokeWidth="1.5" />
-                        <rect
-                          x="3"
-                          y="7"
-                          width="18"
-                          height="12"
-                          rx="2"
-                          strokeWidth="1.5"
-                        />
-                      </svg>
+                      <img
+                        src="https://i.pinimg.com/1200x/97/1e/54/971e54075b225616c4f50b9036cc8286.jpg"
+                        alt=""
+                      />
                     </div>
                     <div className="flex-1">
                       <div className="font-semibold text-slate-900 dark:text-white">
@@ -466,7 +420,11 @@ export default function Home1() {
                   <div className="mt-6 flex items-center justify-between">
                     <div className="flex items-center gap-3">
                       <div className="w-12 h-12 rounded-full flex items-center justify-center text-white bg-linear-to-r from-blue-600 to-indigo-600 font-semibold">
-                        <img src={t.img} alt="" />
+                        <img
+                          src={t.img}
+                          alt=""
+                          className=" rounded-full object-center object-cover"
+                        />
                       </div>
                       <div>
                         <div className="font-semibold text-slate-900 dark:text-white">
