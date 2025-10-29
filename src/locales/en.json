@@ -47,5 +47,131 @@
       "email": "hello@ecompages.io",
       "phone": "+1 (234) 567-890"
     }
+  },
+  "home1": {
+    "hero": {
+      "badge": "E-commerce templates",
+      "title": "Product landing pages that convert — fast",
+      "desc": "Ship ready-made product pages designed for conversions: galleries, variants, reviews and fast checkout flows — all optimized for performance and SEO.",
+      "bullets": [
+        "Fast LCP",
+        "Accessible by default",
+        "SEO-friendly markup",
+        "Cart & variant-ready"
+      ],
+      "browseTemplates": "Browse templates",
+      "contactSales": "Contact sales"
+    },
+    "productCard": {
+      "featured": "Featured",
+      "productName": "Smartwidget X",
+      "price": "$249",
+      "variants": "Variants: 3",
+      "shipsWorldwide": "Ships worldwide"
+    },
+    "features": {
+      "header": "Core Features",
+      "subtitle": "Everything you need to present products beautifully and sell more.",
+      "list": [
+        {
+          "title": "Product-first UI",
+          "desc": "Focused layouts that highlight product features and variants."
+        },
+        {
+          "title": "Ratings & Reviews",
+          "desc": "Built-in sections to show social proof and user feedback."
+        },
+        {
+          "title": "Performance",
+          "desc": "Optimized images & code for fast LCP and conversion."
+        },
+        {
+          "title": "Promotions",
+          "desc": "Ready areas for discounts, bundles and countdowns."
+        },
+        {
+          "title": "Personalization",
+          "desc": "Custom variants, badges and dynamic content."
+        },
+        {
+          "title": "International & Multi-currency",
+          "desc": "Built-in multi-currency and shipping support for global stores."
+        }
+      ]
+    },
+    "benefits": {
+      "header": "Why choose these pages?",
+      "subtitle": "Built for stores: performance, conversions and easy customization.",
+      "list": [
+        {
+          "title": "Performance first",
+          "desc": "Optimized images, code-splitting and fast LCP to keep customers engaged."
+        },
+        {
+          "title": "Personalized & flexible",
+          "desc": "Component-driven blocks and variant-ready layouts you can tailor to any product."
+        },
+        {
+          "title": "Proven conversion patterns",
+          "desc": "Sections and flows that increase add-to-cart and checkout completion rates."
+        }
+      ]
+    },
+    "showcase": {
+      "header": "Product Showcase",
+      "subtitle": "Highlighted product experiences that match your store's brand.",
+      "featured": {
+        "desc": "Immersive sound, comfortable fit, and long battery life — perfect for product pages and demos.",
+        "label": "Featured",
+        "name": "Aurora Headset Pro",
+        "price": "$179",
+        "features": [
+          "Active noise cancellation",
+          "30hr battery",
+          "Quick-pairing"
+        ]
+      },
+      "mini1": {
+        "name": "MiniCam 2",
+        "desc": "Compact action camera for lifestyle shoots.",
+        "price": "$89"
+      },
+      "mini2": {
+        "name": "ChargePad",
+        "desc": "Wireless charging pad with fast charge support.",
+        "price": "$39"
+      }
+    },
+    "testimonials": {
+      "header": "What customers say",
+      "items": [
+        {
+          "name": "Aisha Khan",
+          "role": "Head of Ops, RetailX",
+          "quote": "These templates shortened our time-to-market and increased conversions by double digits.",
+          "rating": 5
+        },
+        {
+          "name": "Liam Smith",
+          "role": "Founder, GadgetCo",
+          "quote": "Ready-made pages and smart defaults saved us weeks of design and testing.",
+          "rating": 5
+        },
+        {
+          "name": "Maya Patel",
+          "role": "CEO, ShopFine",
+          "quote": "Clean, fast, and easy to customize — our product pages finally match our brand.",
+          "rating": 4
+        }
+      ]
+    },
+    "cta": {
+      "header": "Ready to ship better product pages?",
+      "desc": "Start with a template and customize to your brand. Fast setup, built for conversions.",
+      "getStarted": "Get Started",
+      "contactSales": "Contact Sales",
+      "seeAllFeatures": "See all features",
+      "learnMore": "Learn more →"
+    }
   }
 }

@@ -4,86 +4,68 @@ import Link from "next/link";
 import SiteHeadder from "@/components/SiteHeadder";
 import SiteFooter from "@/components/SiteFooter";
 import { ShoppingBag, Star, Zap, Percent, Users, Globe } from "lucide-react";
-
-const features = [
-  {
-    icon: <ShoppingBag className="w-6 h-6" />,
-    title: "Product-first UI",
-    desc: "Focused layouts that highlight product features and variants.",
-  },
-  {
-    icon: <Star className="w-6 h-6" />,
-    title: "Ratings & Reviews",
-    desc: "Built-in sections to show social proof and user feedback.",
-  },
-  {
-    icon: <Zap className="w-6 h-6" />,
-    title: "Performance",
-    desc: "Optimized images & code for fast LCP and conversion.",
-  },
-  {
-    icon: <Percent className="w-6 h-6" />,
-    title: "Promotions",
-    desc: "Ready areas for discounts, bundles and countdowns.",
-  },
-  {
-    icon: <Users className="w-6 h-6" />,
-    title: "Personalization",
-    desc: "Custom variants, badges and dynamic content.",
-  },
-  {
-    icon: <Globe className="w-6 h-6" />,
-    title: "International & Multi-currency",
-    desc: "Built-in multi-currency and shipping support for global stores.",
-  },
-];
-
-const benefits = [
-  {
-    icon: <Zap className="w-6 h-6" />,
-    title: "Performance first",
-    desc: "Optimized images, code-splitting and fast LCP to keep customers engaged.",
-    bg: "from-indigo-500 to-blue-500",
-  },
-  {
-    icon: <Users className="w-6 h-6" />,
-    title: "Personalized & flexible",
-    desc: "Component-driven blocks and variant-ready layouts you can tailor to any product.",
-    bg: "from-blue-500 to-indigo-600",
-  },
-  {
-    icon: <Star className="w-6 h-6" />,
-    title: "Proven conversion patterns",
-    desc: "Sections and flows that increase add-to-cart and checkout completion rates.",
-    bg: "from-indigo-600 to-blue-500",
-  },
-];
-
-const testimonials = [
-  {
-    name: "Aisha Khan",
-    role: "Head of Ops, RetailX",
-    quote:
-      "These templates shortened our time-to-market and increased conversions by double digits.",
-    rating: 5,
-  },
-  {
-    name: "Liam Smith",
-    role: "Founder, GadgetCo",
-    quote:
-      "Ready-made pages and smart defaults saved us weeks of design and testing.",
-    rating: 5,
-  },
-  {
-    name: "Maya Patel",
-    role: "CEO, ShopFine",
-    quote:
-      "Clean, fast, and easy to customize — our product pages finally match our brand.",
-    rating: 4,
-  },
-];
+import { useTranslation } from "react-i18next";
 
 export default function Home1() {
+  const { t } = useTranslation();
+
+  // load arrays/objects from translations (returnObjects:true lets i18next return arrays/objects)
+  const features = t("home1.features.list", { returnObjects: true }) as Array<{
+    title: string;
+    desc: string;
+  }>;
+  const benefits = t("home1.benefits.list", { returnObjects: true }) as Array<{
+    title: string;
+    desc: string;
+  }>;
+  // const testimonials = t("home1.testimonials.items", { returnObjects: true }) as Array<{
+  //   name: string;
+  //   role: string;
+  //   quote: string;
+  //   rating: number;
+  // }>;
+
+  const testimonials = [
+    {
+      name: t("home1.testimonials.items.0.name"),
+      role: t("home1.testimonials.items.0.role"),
+      quote: t("home1.testimonials.items.0.quote"),
+      img: "https://i.postimg.cc/3x3QzSGq/user1.jpg",
+
+      rating: 5,
+    },
+    {
+      name: t("home1.testimonials.items.1.name"),
+      role: t("home1.testimonials.items.1.role"),
+      quote: t("home1.testimonials.items.1.quote"),
+      img: "https://i.postimg.cc/3x3QzSGq/user2.jpg",
+      rating: 4,
+    },
+    {
+      name: t("home1.testimonials.items.2.name"),
+      role: t("home1.testimonials.items.2.role"),
+      quote: t("home1.testimonials.items.2.quote"),
+      img: "https://i.postimg.cc/3x3QzSGq/user3.jpg",
+      rating: 5,
+    },
+  ];
+
+  // keep icons local and map by index
+  const featureIcons = [
+    <ShoppingBag className="w-6 h-6" key="fi0" />,
+    <Star className="w-6 h-6" key="fi1" />,
+    <Zap className="w-6 h-6" key="fi2" />,
+    <Percent className="w-6 h-6" key="fi3" />,
+    <Users className="w-6 h-6" key="fi4" />,
+    <Globe className="w-6 h-6" key="fi5" />,
+  ];
+
+  const benefitIcons = [
+    <Zap className="w-6 h-6" key="bi0" />,
+    <Users className="w-6 h-6" key="bi1" />,
+    <Star className="w-6 h-6" key="bi2" />,
+  ];
+
   return (
     <>
       <Head>
@@ -115,51 +97,34 @@ export default function Home1() {
                     </svg>
                   </div>
                   <span className="text-sm font-medium text-slate-600 dark:text-slate-300">
-                    E-commerce templates
+                    {t("home1.hero.badge")}
                   </span>
                 </div>
 
                 <h2 className="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white leading-tight">
-                  Product landing pages that convert — fast
+                  {t("home1.hero.title")}
                 </h2>
 
                 <p className="mt-4 text-lg text-slate-600 dark:text-slate-300 max-w-xl">
-                  Ship ready-made product pages designed for conversions:
-                  galleries, variants, reviews and fast checkout flows — all
-                  optimized for performance and SEO.
+                  {t("home1.hero.desc")}
                 </p>
 
                 <ul className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-2 max-w-md text-sm text-slate-600 dark:text-slate-300">
-                  <li className="flex items-center gap-2">
-                    <span className="w-3 h-3 bg-blue-600 rounded-full" /> Fast
-                    LCP
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="w-3 h-3 bg-blue-600 rounded-full" />{" "}
-                    Accessible by default
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="w-3 h-3 bg-blue-600 rounded-full" />{" "}
-                    SEO-friendly markup
-                  </li>
-                  <li className="flex items-center gap-2">
-                    <span className="w-3 h-3 bg-blue-600 rounded-full" /> Cart &
-                    variant-ready
-                  </li>
+                  {(
+                    t("home1.hero.bullets", { returnObjects: true }) as string[]
+                  ).map((b: string, i: number) => (
+                    <li key={i} className="flex items-center gap-2">
+                      <span className="w-3 h-3 bg-blue-600 rounded-full" /> {b}
+                    </li>
+                  ))}
                 </ul>
 
                 <div className="mt-6 flex flex-wrap gap-3">
                   <Link
-                    href="/templates"
+                    href="/contact-us"
                     className="inline-flex items-center gap-2 bg-linear-to-r from-blue-600 to-indigo-600 text-white px-5 py-3 rounded-lg shadow hover:opacity-95"
                   >
-                    Browse templates
-                  </Link>
-                  <Link
-                    href="/contact-us"
-                    className="inline-flex items-center gap-2 px-5 py-3 rounded-lg border border-slate-200 dark:border-slate-700"
-                  >
-                    Contact sales
+                    {t("home1.hero.contactSales")}
                   </Link>
                 </div>
               </div>
@@ -170,14 +135,14 @@ export default function Home1() {
                   <div className="flex items-center justify-between">
                     <div>
                       <div className="text-xs uppercase text-slate-500 dark:text-slate-400">
-                        Featured
+                        {t("home1.productCard.featured")}
                       </div>
                       <h3 className="mt-1 text-lg font-semibold text-slate-900 dark:text-white">
-                        Smartwidget X
+                        {t("home1.productCard.productName")}
                       </h3>
                     </div>
                     <div className="text-sm font-medium text-slate-700 dark:text-slate-300">
-                      $249
+                      {t("home1.productCard.price")}
                     </div>
                   </div>
 
@@ -211,10 +176,12 @@ export default function Home1() {
 
                   <div className="mt-4 flex items-center justify-between">
                     <div className="flex items-center gap-3">
-                      <div className="text-sm text-slate-600">Variants: 3</div>
+                      <div className="text-sm text-slate-600">
+                        {t("home1.productCard.variants")}
+                      </div>
                       <div className="text-sm text-slate-600">•</div>
                       <div className="text-sm text-slate-600">
-                        Ships worldwide
+                        {t("home1.productCard.shipsWorldwide")}
                       </div>
                     </div>
 
@@ -234,10 +201,10 @@ export default function Home1() {
         <section className="py-16 bg-white dark:bg-slate-900">
           <div className="max-w-6xl mx-auto px-6 lg:px-8">
             <h3 className="text-2xl font-semibold text-slate-900 dark:text-white text-center">
-              Core Features
+              {t("home1.features.header")}
             </h3>
             <p className="mt-2 text-center text-slate-600 dark:text-slate-300">
-              Everything you need to present products beautifully and sell more.
+              {t("home1.features.subtitle")}
             </p>
 
             <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -256,7 +223,7 @@ export default function Home1() {
                         }`}
                       >
                         {/* icon inherits size */}
-                        {f.icon}
+                        {featureIcons[idx % featureIcons.length]}
                       </div>
                     </div>
                     <div>
@@ -271,7 +238,7 @@ export default function Home1() {
                           href="/features"
                           className="text-sm font-medium text-blue-600 dark:text-blue-400 hover:underline"
                         >
-                          Learn more →
+                          {t("home1.cta.learnMore")}
                         </Link>
                       </div>
                     </div>
@@ -289,10 +256,10 @@ export default function Home1() {
         <section className="py-16">
           <div className="max-w-6xl mx-auto px-6 lg:px-8">
             <h3 className="text-2xl font-semibold text-slate-900 dark:text-white text-center">
-              Product Showcase
+              {t("home1.showcase.header")}
             </h3>
             <p className="mt-2 text-center text-slate-600 dark:text-slate-300">
-              Highlighted product experiences that match your store's brand.
+              {t("home1.showcase.subtitle")}
             </p>
 
             <div className="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
@@ -300,13 +267,15 @@ export default function Home1() {
               <div className="rounded-2xl bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 p-6 shadow-lg">
                 <div className="flex items-center justify-between">
                   <div>
-                    <div className="text-sm text-slate-500">Featured</div>
+                    <div className="text-sm text-slate-500">
+                      {t("home1.showcase.featured.label")}
+                    </div>
                     <h4 className="mt-1 text-2xl font-semibold text-slate-900 dark:text-white">
-                      Aurora Headset Pro
+                      {t("home1.showcase.featured.name")}
                     </h4>
                   </div>
                   <div className="text-xl font-bold text-slate-900 dark:text-white">
-                    $179
+                    {t("home1.showcase.featured.price")}
                   </div>
                 </div>
 
@@ -330,22 +299,19 @@ export default function Home1() {
 
                   <div className="flex-1">
                     <p className="text-sm text-slate-600 dark:text-slate-300">
-                      Immersive sound, comfortable fit, and long battery life —
-                      perfect for product pages and demos.
+                      {t("home1.showcase.featured.desc")}
                     </p>
                     <ul className="mt-4 text-sm text-slate-600 dark:text-slate-300 grid grid-cols-1 gap-2">
-                      <li className="flex items-center gap-2">
-                        <span className="w-2 h-2 rounded-full bg-blue-600" />{" "}
-                        Active noise cancellation
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <span className="w-2 h-2 rounded-full bg-blue-600" />{" "}
-                        30hr battery
-                      </li>
-                      <li className="flex items-center gap-2">
-                        <span className="w-2 h-2 rounded-full bg-blue-600" />{" "}
-                        Quick-pairing
-                      </li>
+                      {(
+                        t("home1.showcase.featured.features", {
+                          returnObjects: true,
+                        }) as string[]
+                      ).map((f, i) => (
+                        <li key={i} className="flex items-center gap-2">
+                          <span className="w-2 h-2 rounded-full bg-blue-600" />{" "}
+                          {f}
+                        </li>
+                      ))}
                     </ul>
                   </div>
                 </div>
@@ -374,10 +340,10 @@ export default function Home1() {
                     </div>
                     <div className="flex-1">
                       <div className="font-semibold text-slate-900 dark:text-white">
-                        MiniCam 2
+                        {t("home1.showcase.mini1.name")}
                       </div>
                       <div className="text-sm text-slate-600 dark:text-slate-300">
-                        Compact action camera for lifestyle shoots.
+                        {t("home1.showcase.mini1.desc")}
                       </div>
                     </div>
                     <div className="text-sm font-semibold text-slate-900 dark:text-white">
@@ -408,10 +374,10 @@ export default function Home1() {
                     </div>
                     <div className="flex-1">
                       <div className="font-semibold text-slate-900 dark:text-white">
-                        ChargePad
+                        {t("home1.showcase.mini2.name")}
                       </div>
                       <div className="text-sm text-slate-600 dark:text-slate-300">
-                        Wireless charging pad with fast charge support.
+                        {t("home1.showcase.mini2.desc")}
                       </div>
                     </div>
                     <div className="text-sm font-semibold text-slate-900 dark:text-white">
@@ -428,23 +394,27 @@ export default function Home1() {
         <section className="py-16 bg-white dark:bg-slate-900">
           <div className="max-w-7xl mx-auto px-6 lg:px-8">
             <h3 className="text-2xl font-semibold text-slate-900 dark:text-white text-center">
-              Why choose these pages?
+              {t("home1.benefits.header")}
             </h3>
             <p className="mt-2 text-center text-slate-600 dark:text-slate-300">
-              Built for stores: performance, conversions and easy customization.
+              {t("home1.benefits.subtitle")}
             </p>
 
             <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {benefits.map((b) => (
+              {benefits.map((b, idx) => (
                 <div
                   key={b.title}
                   className="p-6 rounded-xl bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 shadow-sm"
                 >
                   <div className="flex items-start gap-4">
                     <div
-                      className={`shrink-0 w-12 h-12 rounded-lg flex items-center justify-center text-white bg-linear-to-r ${b.bg}`}
+                      className={`shrink-0 w-12 h-12 rounded-lg flex items-center justify-center text-white bg-linear-to-r ${
+                        idx % 2 === 0
+                          ? "from-indigo-500 to-blue-500"
+                          : "from-blue-500 to-indigo-600"
+                      }`}
                     >
-                      {b.icon}
+                      {benefitIcons[idx % benefitIcons.length]}
                     </div>
                     <div>
                       <h4 className="font-semibold text-slate-900 dark:text-white md:text-nowrap">
@@ -464,7 +434,7 @@ export default function Home1() {
                 href="/features"
                 className="inline-flex items-center gap-2 bg-linear-to-r from-blue-600 to-indigo-600 text-white px-5 py-3 rounded-lg shadow"
               >
-                See all features
+                {t("home1.cta.seeAllFeatures")}
               </Link>
             </div>
           </div>
@@ -474,7 +444,7 @@ export default function Home1() {
         <section className="py-16">
           <div className="max-w-6xl mx-auto px-6 lg:px-8">
             <h3 className="text-2xl font-semibold text-slate-900 dark:text-white text-center">
-              What customers say
+              {t("home1.testimonials.header")}
             </h3>
             <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
               {testimonials.map((t) => (
@@ -499,11 +469,7 @@ export default function Home1() {
                   <div className="mt-6 flex items-center justify-between">
                     <div className="flex items-center gap-3">
                       <div className="w-12 h-12 rounded-full flex items-center justify-center text-white bg-linear-to-r from-blue-600 to-indigo-600 font-semibold">
-                        {t.name
-                          .split(" ")
-                          .map((n) => n[0])
-                          .slice(0, 2)
-                          .join("")}
+                        <img src={t.img} alt="" />
                       </div>
                       <div>
                         <div className="font-semibold text-slate-900 dark:text-white">
@@ -537,25 +503,20 @@ export default function Home1() {
         {/* Section 6 — Final CTA / Contact */}
         <section className="py-16 bg-blue-600 text-white">
           <div className="max-w-6xl mx-auto px-6 lg:px-8 text-center">
-            <h3 className="text-2xl font-semibold">
-              Ready to ship better product pages?
-            </h3>
-            <p className="mt-2 max-w-2xl mx-auto">
-              Start with a template and customize to your brand. Fast setup,
-              built for conversions.
-            </p>
+            <h3 className="text-2xl font-semibold">{t("home1.cta.header")}</h3>
+            <p className="mt-2 max-w-2xl mx-auto">{t("home1.cta.desc")}</p>
             <div className="mt-6 flex items-center justify-center gap-3">
               <Link
                 href="/auth"
                 className="bg-white text-blue-600 px-6 py-3 rounded-md font-semibold"
               >
-                Get Started
+                {t("home1.cta.getStarted")}
               </Link>
               <Link
                 href="/contact-us"
                 className="text-white px-4 py-3 rounded-md border border-white/30"
               >
-                Contact Sales
+                {t("home1.cta.contactSales")}
               </Link>
             </div>
           </div>
