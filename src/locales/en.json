@@ -1465,6 +1465,7 @@
     ],
     "teamHeader": "Meet the team",
     "teamSubtitle": "Small, cross-functional accessibility teams pairing engineers, designers and QA.",
+    "teamBlurb": "Experienced in WCAG standards, assistive tech and building inclusive products.",
     "team": [
       {
         "name": "Amina Shah",
@@ -1482,6 +1483,121 @@
     "finalCta": {
       "title": "Ready to make your product accessible?",
       "desc": "Share a URL or a user flow — we’ll propose a remediation plan and validation checklist.",
+      "sendBrief": "Send brief",
+      "scheduleCall": "Schedule call"
+    }
+  },
+  "integrations": {
+    "meta": {
+      "title": "Integrations & Connectors — Enkonix",
+      "description": "Connect your stack: APIs, webhooks, analytics and data pipelines engineered for reliability and observability."
+    },
+    "hero": {
+      "title": "Integrations that make your product act as one",
+      "desc": "We build secure, observable integrations — from event tracking to payment systems — so your teams can rely on a single source of truth.",
+      "ctaCaseStudies": "See case studies",
+      "ctaConsult": "Get a consult",
+      "badges": ["API", "Webhooks", "ETL", "SaaS"]
+    },
+    "featuresHeader": "What we do",
+    "featuresSubtitle": "Reliable integration projects: planning, secure implementation and long-term observability.",
+    "features": [
+      {
+        "title": "API & Webhooks",
+        "desc": "Reliable, secure endpoints and webhook workflows to keep systems in sync."
+      },
+      {
+        "title": "Analytics & Events",
+        "desc": "Robust event tracking and schema design for accurate analytics and attribution."
+      },
+      {
+        "title": "Payment & Checkout",
+        "desc": "Seamless integrations with gateways and fraud providers for safer checkouts."
+      },
+      {
+        "title": "Data Pipelines",
+        "desc": "ETL, streaming and warehouse connectors to centralize product and user data."
+      }
+    ],
+    "processHeader": "Our process",
+    "processSubtitle": "A practical plan → connect → transform → monitor workflow to keep critical data flowing.",
+    "processSteps": [
+      {
+        "step": "Plan",
+        "copy": "Define data models, auth, rate limits and rollback plans before connecting systems."
+      },
+      {
+        "step": "Connect",
+        "copy": "Implement secure connectors, retries and idempotency for robust integrations."
+      },
+      {
+        "step": "Map & Transform",
+        "copy": "Align schemas, enrich events and transform payloads for downstream consumers."
+      },
+      {
+        "step": "Monitor",
+        "copy": "Setup alerts, observability and replay tools to detect and resolve sync issues quickly."
+      }
+    ],
+    "projectsHeader": "Selected work",
+    "projectsSubtitle": "Short snapshots of recent projects — outcomes first.",
+    "projects": [
+      {
+        "title": "Analytics Migration",
+        "tag": "Retail",
+        "desc": "Migrated event tracking to a new analytics platform with zero data loss and improved schema consistency."
+      },
+      {
+        "title": "Payment Gateway Consolidation",
+        "tag": "E‑commerce",
+        "desc": "Unified multiple payment gateways into a single integration, reducing errors by 30% and simplifying reconciliation."
+      },
+      {
+        "title": "CRM Sync & Enrichment",
+        "tag": "SaaS",
+        "desc": "Built a reliable data pipeline to sync product usage events to the CRM, improving sales outreach and retention."
+      }
+    ],
+    "projectDefaultDesc": "A short summary of the impact and metrics — concise and outcome focused.",
+    "testimonialsHeader": "What clients say",
+    "testimonialsSubtitle": "Short quotes from engineering and data teams who gained reliable pipelines and fewer incidents.",
+    "testimonials": [
+      {
+        "quote": "Their integration work unified our analytics and CRM data — now we act on reliable signals.",
+        "who": "Raj P.",
+        "role": "Head of Data, ShopCo"
+      },
+      {
+        "quote": "Payments consolidation reduced checkout errors by 35% and simplified reconciliation.",
+        "who": "Claire M.",
+        "role": "Finance Lead, RetailX"
+      },
+      {
+        "quote": "Robust monitoring alerted us to a sync issue before customers were affected — saved hours of firefighting.",
+        "who": "Noah T.",
+        "role": "Platform Engineer, SaaSWorks"
+      }
+    ],
+    "teamHeader": "Meet the team",
+    "teamSubtitle": "Small, cross-functional integrations teams pairing architects, backend engineers and solutions leads.",
+    "teamBlurb": "Experienced in API design, data pipelines and building reliable, observable integrations.",
+    "team": [
+      {
+        "name": "Hannah Li",
+        "role": "Integrations Architect"
+      },
+      {
+        "name": "Jorge Silva",
+        "role": "Backend Engineer"
+      },
+      {
+        "name": "Emily Park",
+        "role": "Solutions Engineer"
+      }
+    ],
+    "finalCta": {
+      "title": "Ready to connect your stack?",
+      "desc": "Tell us which systems matter — we’ll propose a secure integration plan, mapping and monitoring approach.",
       "sendBrief": "Send brief",
       "scheduleCall": "Schedule call"
     }

@@ -1,136 +1,112 @@
+import i18n from "@/i18n";
+import { Quote } from "lucide-react";
+import Head from "next/head";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
 import SiteFooter from "../src/components/SiteFooter";
 import SiteHeadder from "../src/components/SiteHeadder";
-import Head from "next/head";
-import { Quote, Linkedin, Twitter } from "lucide-react";
 
-const features = [
-  {
-    title: "API & Webhooks",
-    desc: "Reliable, secure endpoints and webhook workflows to keep systems in sync.",
-  },
-  {
-    title: "Analytics & Events",
-    desc: "Robust event tracking and schema design for accurate analytics and attribution.",
-  },
-  {
-    title: "Payment & Checkout",
-    desc: "Seamless integrations with gateways and fraud providers for safer checkouts.",
-  },
-  {
-    title: "Data Pipelines",
-    desc: "ETL, streaming and warehouse connectors to centralize product and user data.",
-  },
-];
+// content is loaded from locales so all visible strings exist per-language
 
-const processSteps = [
-  {
-    step: "Plan",
-    copy: "Define data models, auth, rate limits and rollback plans before connecting systems.",
-  },
-  {
-    step: "Connect",
-    copy: "Implement secure connectors, retries and idempotency for robust integrations.",
-  },
-  {
-    step: "Map & Transform",
-    copy: "Align schemas, enrich events and transform payloads for downstream consumers.",
-  },
-  {
-    step: "Monitor",
-    copy: "Setup alerts, observability and replay tools to detect and resolve sync issues quickly.",
-  },
-];
+const PerformanceEnhancementPage = () => {
+  const { t } = useTranslation();
 
-const projects = [
-  {
-    title: "Analytics Migration",
-    tag: "Retail",
-    img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    title: "Payment Gateway Consolidation",
-    tag: "E‑commerce",
-    img: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    title: "CRM Sync & Enrichment",
-    tag: "SaaS",
-    img: "https://images.unsplash.com/photo-1559526324-593bc073d938?auto=format&fit=crop&w=1200&q=80",
-  },
-];
+  const features = t("integrations.features", {
+    returnObjects: true,
+  }) as Array<{
+    title: string;
+    desc: string;
+  }>;
+  const processSteps = t("integrations.processSteps", {
+    returnObjects: true,
+  }) as Array<{ step: string; copy: string }>;
 
-const team = [
-  {
-    name: "Hannah Li",
-    role: "Integrations Architect",
-    avatar: "/avatar1.jpg",
-  },
-  {
-    name: "Jorge Silva",
-    role: "Backend Engineer",
-    avatar: "/avatar2.jpg",
-  },
-  {
-    name: "Emily Park",
-    role: "Solutions Engineer",
-    avatar: "/avatar3.jpg",
-  },
-];
+  const projects = [
+    {
+      title: t("integrations.projects.0.title"),
+      tag: t("integrations.projects.0.tag"),
+      img: " https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1200&q=80",
+      desc: t("integrations.projects.0.desc"),
+    },
+    {
+      title: t("integrations.projects.1.title"),
+      tag: t("integrations.projects.1.tag"),
+      img: "  https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1200&q=80",
+      desc: t("integrations.projects.1.desc"),
+    },
+    {
+      title: t("integrations.projects.2.title"),
+      tag: t("integrations.projects.2.tag"),
+      img: "  https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
+      desc: t("integrations.projects.2.desc"),
+    },
+  ];
 
-const testimonials = [
-  {
-    quote:
-      "Their integration work unified our analytics and CRM data — now we act on reliable signals.",
-    who: "Raj P.",
-    role: "Head of Data, ShopCo",
-    avatar: "/avatar1.jpg",
-    rating: 5,
-  },
-  {
-    quote:
-      "Payments consolidation reduced checkout errors by 35% and simplified reconciliation.",
-    who: "Claire M.",
-    role: "Finance Lead, RetailX",
-    avatar: "/avatar2.jpg",
-    rating: 5,
-  },
-  {
-    quote:
-      "Robust monitoring alerted us to a sync issue before customers were affected — saved hours of firefighting.",
-    who: "Noah T.",
-    role: "Platform Engineer, SaaSWorks",
-    avatar: "/avatar3.jpg",
-    rating: 5,
-  },
-];
+  const team = [
+    {
+      name: t("integrations.team.0.name"),
+      role: t("integrations.team.0.role"),
+      avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+    },
+    {
+      name: t("integrations.team.1.name"),
+      role: t("integrations.team.1.role"),
+      avatar: "https://randomuser.me/api/portraits/men/45.jpg",
+    },
+    {
+      name: t("integrations.team.2.name"),
+      role: t("integrations.team.2.role"),
+      avatar: "https://randomuser.me/api/portraits/women/12.jpg",
+    },
+  ];
 
-const IntegrationServicesPage = () => {
+  const testimonials = [
+    {
+      quote: t("integrations.testimonials.0.quote"),
+      who: t("integrations.testimonials.0.who"),
+      role: t("integrations.testimonials.0.role"),
+      rating: 5,
+      avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+    },
+    {
+      quote: t("integrations.testimonials.1.quote"),
+      who: t("integrations.testimonials.1.who"),
+      role: t("integrations.testimonials.1.role"),
+      rating: 5,
+      avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+    },
+    {
+      quote: t("integrations.testimonials.2.quote"),
+      who: t("integrations.testimonials.2.who"),
+      role: t("integrations.testimonials.2.role"),
+      rating: 5,
+      avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+    },
+  ];
+
   return (
     <>
       <Head>
-        <title>Integrations & Connectors - Enkonix</title>
+        <title>{t("integrations.meta.title")}</title>
         <meta
           name="description"
-          content="Connect your stack: APIs, webhooks, analytics and data pipelines engineered for reliability and observability."
+          content={t("integrations.meta.description") as string}
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
       <SiteHeadder />
-      <main className=" caret-transparent ">
+      <main className=" caret-transparent  bg-linear-to-br from-blue-50 to-white dark:from-slate-900 dark:to-slate-800 ">
         {/* Hero */}
         <section className="relative overflow-hidden bg-linear-to-br from-indigo-600 to-emerald-500 text-white min-h-screen flex items-center justify-center">
           <div className="max-w-7xl mx-auto px-6  ">
             <div className="grid grid-cols-1   gap-10 items-center">
-              <div className="flex justify-center items-center flex-col">
-                <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight">
-                  Integrations that make your product act as one
+              <div className="flex justify-center items-center text-center flex-col">
+                <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight ">
+                  {t("integrations.hero.title")}
                 </h1>
                 <p className="mt-4 text-lg opacity-90 max-w-xl">
-                  We build secure, observable integrations — from event tracking
-                  to payment systems — so your teams can rely on a single source
-                  of truth.
+                  {t("integrations.hero.desc")}
                 </p>
 
                 <div className="mt-8 flex flex-wrap gap-3">
@@ -138,18 +114,22 @@ const IntegrationServicesPage = () => {
                     href="#projects"
                     className="inline-flex items-center rounded-lg bg-white/20 px-4 py-2 text-white hover:bg-white/30"
                   >
-                    See case studies
+                    {t("integrations.hero.ctaCaseStudies")}
                   </Link>
                   <Link
                     href="#contact"
                     className="inline-flex items-center rounded-lg bg-white text-indigo-700 px-4 py-2 hover:shadow"
                   >
-                    Get a consult
+                    {t("integrations.hero.ctaConsult")}
                   </Link>
                 </div>
 
                 <div className="mt-6 flex flex-wrap gap-2 text-sm opacity-95">
-                  {["API", "Webhooks", "ETL", "SaaS"].map((b) => (
+                  {(
+                    t("integrations.hero.badges", {
+                      returnObjects: true,
+                    }) as string[]
+                  ).map((b) => (
                     <span
                       key={b}
                       className="rounded-full bg-white/10 px-3 py-1"
@@ -166,22 +146,24 @@ const IntegrationServicesPage = () => {
         {/* Features */}
         <section
           aria-labelledby="features-title"
-          className=" flex justify-center py-12 items-center   "
+          className=" flex justify-center py-12 items-center bg-white dark:bg-slate-900   "
         >
           <div className="flex flex-col  max-w-7xl">
-            <h2 id="features-title" className="text-2xl text-center font-bold">
-              What we do
+            <h2
+              id="features-title"
+              className="text-2xl text-center font-bold dark:text-slate-100"
+            >
+              {t("integrations.featuresHeader")}
             </h2>
             <p className="mt-2 text-center text-slate-500 dark:text-slate-300 ">
-              Reliable integration projects: planning, secure implementation and
-              long-term observability.
+              {t("integrations.featuresSubtitle")}
             </p>
 
             <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {features.map((f, idx) => (
                 <article
                   key={idx}
-                  className="group relative rounded-2xl overflow-hidden bg-white/60 dark:bg-slate-900/50 border border-slate-200/30 dark:border-slate-700/20 p-6 shadow-xl hover:shadow-2xl transition transform hover:-translate-y-2"
+                  className="group relative rounded-2xl overflow-hidden bg-white/60 dark:bg-slate-900/50 border border-transparent hover:border-slate-200/20 p-6 shadow-md hover:shadow-xl transition-transform duration-300 hover:-translate-y-2 backdrop-blur-sm"
                 >
                   <div className="flex items-start gap-4">
                     <div className="shrink-0">
@@ -225,12 +207,14 @@ const IntegrationServicesPage = () => {
           className=" flex   justify-center py-12 items-center "
         >
           <div className=" items-center flex-col w-screen   flex">
-            <h2 id="process-title" className="text-2xl font-bold">
-              Our process
+            <h2
+              id="process-title"
+              className="text-2xl font-bold dark:text-slate-100"
+            >
+              {t("integrations.processHeader")}
             </h2>
             <p className="mt-2 text-slate-500 dark:text-slate-300 max-w-2xl">
-              A practical plan → connect → transform → monitor workflow to keep
-              critical data flowing.
+              {t("integrations.processSubtitle")}
             </p>
 
             <ol className="mt-8 relative w-full">
@@ -247,8 +231,16 @@ const IntegrationServicesPage = () => {
                       key={p.step}
                       className={` flex    items-center  ${
                         i % 2 === 0
-                          ? " md:justify-start md:ml-10  flex-row-reverse"
-                          : " md:justify-start md:mr-10"
+                          ? ` md:justify-start flex-row-reverse ${
+                              i18n.language == "en"
+                                ? `  md:ml-10 `
+                                : `  md:mr-10 `
+                            }`
+                          : ` md:justify-start ${
+                              i18n.language == "en"
+                                ? `  md:mr-10 `
+                                : `  md:ml-10 `
+                            }`
                       }`}
                       aria-label={`Step ${i + 1}: ${p.step}`}
                     >
@@ -259,7 +251,9 @@ const IntegrationServicesPage = () => {
                         }`}
                       >
                         <div className="bg-white/70 dark:bg-slate-800/60 p-6 rounded-lg shadow-sm">
-                          <h4 className="text-lg font-semibold">{p.step}</h4>
+                          <h4 className="text-lg font-semibold dark:text-slate-100">
+                            {p.step}
+                          </h4>
                           <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
                             {p.copy}
                           </p>
@@ -289,14 +283,17 @@ const IntegrationServicesPage = () => {
         <section
           id="projects"
           aria-labelledby="projects-title"
-          className="flex w-full justify-center "
+          className="flex w-full justify-center bg-white dark:bg-slate-900 py-7 "
         >
-          <div className="flex flex-col max-w-7xl justify-center items-center">
-            <h2 id="projects-title" className="text-2xl font-bold">
-              Selected work
+          <div className="flex flex-col max-w-7xl   justify-center items-center">
+            <h2
+              id="projects-title"
+              className="text-2xl font-bold dark:text-slate-100"
+            >
+              {t("integrations.projectsHeader")}
             </h2>
             <p className="mt-2 text-slate-500 dark:text-slate-300 max-w-2xl">
-              Short snapshots of recent projects — outcomes first.
+              {t("integrations.projectsSubtitle")}
             </p>
 
             <div className="mt-8">
@@ -312,7 +309,7 @@ const IntegrationServicesPage = () => {
                   return (
                     <article
                       key={p.title}
-                      className={`group relative overflow-hidden rounded-xl shadow-lg ${baseClasses} bg-slate-50 dark:bg-slate-900/50 py-5 `}
+                      className={`group relative overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-transform duration-300 ${baseClasses} bg-slate-50 dark:bg-slate-900/50 py-5 border border-transparent hover:border-white/10`}
                       aria-labelledby={`project-${idx}`}
                     >
                       <div
@@ -339,8 +336,8 @@ const IntegrationServicesPage = () => {
                         </div>
 
                         <p className="mt-3 hidden sm:block text-sm text-white/80 max-w-prose">
-                          A short summary of the impact and metrics — concise
-                          and outcome focused.
+                          {p.desc ||
+                            (t("integrations.projectDefaultDesc") as string)}
                         </p>
                       </div>
                     </article>
@@ -357,19 +354,21 @@ const IntegrationServicesPage = () => {
           className="flex justify-center items-center py-20"
         >
           <div className="flex flex-col justify-center items-center max-w-7xl">
-            <h2 id="testimonials-title" className="text-2xl font-bold">
-              What clients say
+            <h2
+              id="testimonials-title"
+              className="text-2xl dark:text-slate-100 font-bold"
+            >
+              {t("integrations.testimonialsHeader")}
             </h2>
             <p className="mt-2 text-slate-500 dark:text-slate-300 max-w-2xl">
-              Short quotes from engineering and data teams who gained reliable
-              pipelines and fewer incidents.
+              {t("integrations.testimonialsSubtitle")}
             </p>
 
             <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-              {testimonials.map((t, idx) => (
+              {testimonials.map((item, idx) => (
                 <div
                   key={idx}
-                  className="relative rounded-xl p-6 bg-white dark:bg-slate-800 border border-slate-200/40 dark:border-slate-700/30 shadow-sm overflow-visible"
+                  className="relative rounded-2xl p-6 bg-white/95 dark:bg-slate-800/60 ring-1 ring-slate-100/40 hover:ring-2 hover:ring-amber-200/30 shadow-md hover:shadow-xl transition-transform duration-300 hover:-translate-y-1 overflow-visible"
                 >
                   {/* quote badge */}
                   <div className="absolute -top-5 left-6 h-12 w-12 rounded-full bg-linear-to-br from-emerald-400 to-indigo-600 text-white flex items-center justify-center shadow-2xl">
@@ -378,7 +377,7 @@ const IntegrationServicesPage = () => {
 
                   {/* rating */}
                   <div className="flex items-center gap-1 text-amber-400 mb-3">
-                    {Array.from({ length: t.rating }).map((_, i) => (
+                    {Array.from({ length: item.rating ?? 0 }).map((_, i) => (
                       <svg
                         key={i}
                         className="w-4 h-4"
@@ -392,19 +391,21 @@ const IntegrationServicesPage = () => {
                   </div>
 
                   <p className="text-slate-800 dark:text-slate-100">
-                    “{t.quote}”
+                    “{item.quote}”
                   </p>
 
                   <div className="mt-4 flex items-center gap-3">
                     <img
-                      src={t.avatar}
-                      alt={t.who}
+                      src={item.avatar}
+                      alt={item.who}
                       className="h-10 w-10 rounded-full object-cover"
                     />
                     <div>
-                      <div className="font-semibold text-sm">{t.who}</div>
+                      <div className="font-semibold text-sm dark:text-slate-100">
+                        {item.who}
+                      </div>
                       <div className="text-xs text-slate-500 dark:text-slate-300">
-                        {t.role}
+                        {item.role}
                       </div>
                     </div>
                   </div>
@@ -415,21 +416,26 @@ const IntegrationServicesPage = () => {
         </section>
 
         {/* Team */}
-        <section aria-labelledby="team-title" className="py-12">
+        <section
+          aria-labelledby="team-title"
+          className="py-12 bg-white dark:bg-slate-900  "
+        >
           <div className="max-w-7xl mx-auto">
-            <h2 id="team-title" className="text-2xl font-bold text-center">
-              Meet the team
+            <h2
+              id="team-title"
+              className="text-2xl dark:text-slate-100 font-bold text-center"
+            >
+              {t("integrations.teamHeader")}
             </h2>
             <p className="mt-2 text-center text-slate-500 dark:text-slate-300 max-w-2xl mx-auto">
-              Small, cross-functional integrations teams pairing architects,
-              backend engineers and solutions leads.
+              {t("integrations.teamSubtitle")}
             </p>
 
             <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {team.map((m) => (
                 <div
                   key={m.name}
-                  className="group relative rounded-xl overflow-hidden bg-white dark:bg-slate-900/40 border border-slate-100/60 dark:border-slate-700/30 p-6 shadow-sm hover:shadow-lg transition transform hover:-translate-y-1"
+                  className="group relative rounded-2xl overflow-hidden bg-white/95 dark:bg-slate-900/50 border   hover:border-slate-200/20 p-6 shadow-2xl hover:shadow-xl transition-transform duration-300 hover:-translate-y-1"
                 >
                   <div className="flex items-start gap-4">
                     <img
@@ -441,7 +447,9 @@ const IntegrationServicesPage = () => {
                     <div className="flex-1">
                       <div className="flex items-center justify-between">
                         <div>
-                          <div className="font-semibold text-lg">{m.name}</div>
+                          <div className="font-semibold dark:text-slate-100 text-lg">
+                            {m.name}
+                          </div>
                           <div className="text-sm text-slate-500 dark:text-slate-300">
                             {m.role}
                           </div>
@@ -513,8 +521,7 @@ const IntegrationServicesPage = () => {
                       </div>
 
                       <p className="mt-3 text-sm text-slate-600 dark:text-slate-300">
-                        Experienced in product strategy, interaction design and
-                        building design systems that scale.
+                        {t("integrations.teamBlurb")}
                       </p>
                     </div>
                   </div>
@@ -527,24 +534,23 @@ const IntegrationServicesPage = () => {
         {/* Final CTA */}
         <section id="contact" className="py-12 bg-indigo-600 text-white">
           <div className="max-w-3xl flex flex-col mx-auto items-center justify-center text-center">
-            <h2 className="text-2xl font-bold">Ready to connect your stack?</h2>
-            <p className="mt-2 opacity-90">
-              Tell us which systems matter — we’ll propose a secure integration
-              plan, mapping and monitoring approach.
-            </p>
+            <h2 className="text-2xl font-bold">
+              {t("integrations.finalCta.title")}
+            </h2>
+            <p className="mt-2 opacity-90">{t("integrations.finalCta.desc")}</p>
 
             <div className="mt-6 flex gap-3">
               <Link
                 href="#"
                 className="rounded-md bg-white text-indigo-600 px-4 py-2 font-medium"
               >
-                Send brief
+                {t("integrations.finalCta.sendBrief")}
               </Link>
               <Link
                 href="/contact-us"
                 className="rounded-md border border-white/30 px-4 py-2"
               >
-                Schedule call
+                {t("integrations.finalCta.scheduleCall")}
               </Link>
             </div>
           </div>
@@ -556,4 +562,4 @@ const IntegrationServicesPage = () => {
   );
 };
 
-export default IntegrationServicesPage;
+export default PerformanceEnhancementPage;

@@ -149,7 +149,10 @@ const PerformanceEnhancementPage = () => {
           className=" flex justify-center py-12 items-center bg-white dark:bg-slate-900   "
         >
           <div className="flex flex-col  max-w-7xl">
-            <h2 id="features-title" className="text-2xl text-center font-bold dark:text-slate-100">
+            <h2
+              id="features-title"
+              className="text-2xl text-center font-bold dark:text-slate-100"
+            >
               {t("accessibility.featuresHeader")}
             </h2>
             <p className="mt-2 text-center text-slate-500 dark:text-slate-300 ">
@@ -204,7 +207,10 @@ const PerformanceEnhancementPage = () => {
           className=" flex   justify-center py-12 items-center "
         >
           <div className=" items-center flex-col w-screen   flex">
-            <h2 id="process-title" className="text-2xl font-bold dark:text-slate-100">
+            <h2
+              id="process-title"
+              className="text-2xl font-bold dark:text-slate-100"
+            >
               {t("accessibility.processHeader")}
             </h2>
             <p className="mt-2 text-slate-500 dark:text-slate-300 max-w-2xl">
@@ -245,7 +251,9 @@ const PerformanceEnhancementPage = () => {
                         }`}
                       >
                         <div className="bg-white/70 dark:bg-slate-800/60 p-6 rounded-lg shadow-sm">
-                          <h4 className="text-lg font-semibold dark:text-slate-100">{p.step}</h4>
+                          <h4 className="text-lg font-semibold dark:text-slate-100">
+                            {p.step}
+                          </h4>
                           <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
                             {p.copy}
                           </p>
@@ -278,7 +286,10 @@ const PerformanceEnhancementPage = () => {
           className="flex w-full justify-center bg-white dark:bg-slate-900 py-7 "
         >
           <div className="flex flex-col max-w-7xl   justify-center items-center">
-            <h2 id="projects-title" className="text-2xl font-bold dark:text-slate-100">
+            <h2
+              id="projects-title"
+              className="text-2xl font-bold dark:text-slate-100"
+            >
               {t("accessibility.projectsHeader")}
             </h2>
             <p className="mt-2 text-slate-500 dark:text-slate-300 max-w-2xl">
@@ -343,7 +354,10 @@ const PerformanceEnhancementPage = () => {
           className="flex justify-center items-center py-20"
         >
           <div className="flex flex-col justify-center items-center max-w-7xl">
-            <h2 id="testimonials-title" className="text-2xl dark:text-slate-100 font-bold">
+            <h2
+              id="testimonials-title"
+              className="text-2xl dark:text-slate-100 font-bold"
+            >
               {t("accessibility.testimonialsHeader")}
             </h2>
             <p className="mt-2 text-slate-500 dark:text-slate-300 max-w-2xl">
@@ -387,7 +401,9 @@ const PerformanceEnhancementPage = () => {
                       className="h-10 w-10 rounded-full object-cover"
                     />
                     <div>
-                      <div className="font-semibold text-sm dark:text-slate-100">{item.who}</div>
+                      <div className="font-semibold text-sm dark:text-slate-100">
+                        {item.who}
+                      </div>
                       <div className="text-xs text-slate-500 dark:text-slate-300">
                         {item.role}
                       </div>
@@ -405,7 +421,10 @@ const PerformanceEnhancementPage = () => {
           className="py-12 bg-white dark:bg-slate-900  "
         >
           <div className="max-w-7xl mx-auto">
-            <h2 id="team-title" className="text-2xl dark:text-slate-100 font-bold text-center">
+            <h2
+              id="team-title"
+              className="text-2xl dark:text-slate-100 font-bold text-center"
+            >
               {t("accessibility.teamHeader")}
             </h2>
             <p className="mt-2 text-center text-slate-500 dark:text-slate-300 max-w-2xl mx-auto">
@@ -428,7 +447,9 @@ const PerformanceEnhancementPage = () => {
                     <div className="flex-1">
                       <div className="flex items-center justify-between">
                         <div>
-                          <div className="font-semibold dark:text-slate-100 text-lg">{m.name}</div>
+                          <div className="font-semibold dark:text-slate-100 text-lg">
+                            {m.name}
+                          </div>
                           <div className="text-sm text-slate-500 dark:text-slate-300">
                             {m.role}
                           </div>
