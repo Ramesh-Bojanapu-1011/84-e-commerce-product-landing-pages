@@ -117,7 +117,7 @@ const SiteHeadder: React.FC = () => {
           {/* Right: actions */}
           <div className="flex items-center gap-3">
             {/* Language selector */}
-            <div className="relative">
+            <div className="relative not-md:hidden">
               <button
                 onClick={() => setOpenLang((s) => !s)}
                 className="inline-flex items-center gap-1 px-3 py-1 rounded-md text-sm border border-slate-200 bg-white dark:bg-slate-900 dark:border-slate-700"
@@ -147,8 +147,10 @@ const SiteHeadder: React.FC = () => {
               )}
             </div>
 
-            {/* Theme toggle */}
-            <ModeToggle />
+            <div className="not-md:hidden">
+              {/* Theme toggle */}
+              <ModeToggle />
+            </div>
 
             {/* Profile */}
             <div className="relative">
@@ -177,7 +179,7 @@ const SiteHeadder: React.FC = () => {
                   <div className="py-1">
                     {user?.role === "admin" && (
                       <Link
-                        href="/admin"
+                        href="/admin-dashboard"
                         className="flex items-center gap-2 px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-700"
                       >
                         <Grid className="w-4 h-4" /> Admin Dashboard
@@ -258,7 +260,7 @@ const SiteHeadder: React.FC = () => {
                   <summary className="cursor-pointer px-2 py-1">
                     Language
                   </summary>
-                  <div className="pl-3 mt-1 space-y-1">
+                  <div className="pl-3 absolute bg-white mt-1 space-y-1">
                     {languages.map((l) => (
                       <button
                         key={l.code}

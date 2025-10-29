@@ -110,7 +110,7 @@ export default function AuthPage() {
       };
       setCurrent(admin);
       setMessage("Welcome, admin — redirecting to dashboard...");
-      setTimeout(() => router.push("/admin"), 700);
+      setTimeout(() => router.push("/admin-dashboard"), 700);
       return;
     }
 
