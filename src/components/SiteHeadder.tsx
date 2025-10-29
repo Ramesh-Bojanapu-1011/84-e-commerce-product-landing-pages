@@ -4,31 +4,8 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
 import { ModeToggle } from "./theme/ModeToggle";
-
-const navItems = [
-  {
-    title: "Home",
-    submenu: [
-      { title: "Home 1", href: "/home1" },
-      { title: "Home 2", href: "/home-2" },
-    ],
-  },
-  { title: "About Us", href: "/about-us" },
-  {
-    title: "Services",
-    submenu: [
-      { title: "All services", href: "/services" },
-      { title: "Product Design", href: "/product-design" },
-      { title: "UX/UI Audit", href: "/ux-audit" },
-      { title: "Conversion Rate Opt.", href: "/cro" },
-      { title: "Performance", href: "/performance" },
-      { title: "Accessibility", href: "/accessibility" },
-      { title: "Integrations", href: "/integrations" },
-    ],
-  },
-  { title: "Blog", href: "/blog" },
-  { title: "Contact Us", href: "/contact-us" },
-];
+import { useTranslation } from "react-i18next";
+import { applyLanguage } from "@/i18n";
 
 const languages = [
   { code: "en", label: "English(EN)" },
@@ -45,11 +22,39 @@ const SiteHeadder: React.FC = () => {
   const [user, setUser] = useState<User | null>(null);
   const router = useRouter();
 
+  const { t } = useTranslation();
+
   useEffect(() => {
     // read current user from localStorage on the client only
     const u = getCurrentUser();
     setUser(u);
   }, []);
+
+  // build nav items from translations so they update when language changes
+  const navItems = [
+    {
+      title: t("header.home"),
+      submenu: [
+        { title: t("header.home1"), href: "/home1" },
+        { title: t("header.home2"), href: "/home-2" },
+      ],
+    },
+    { title: t("header.aboutUs"), href: "/about-us" },
+    {
+      title: t("header.services"),
+      submenu: [
+        { title: t("header.allServices"), href: "/services" },
+        { title: t("header.productDesign"), href: "/product-design" },
+        { title: t("header.uxAudit"), href: "/ux-audit" },
+        { title: t("header.conversionRateOpt"), href: "/cro" },
+        { title: t("header.performance"), href: "/performance" },
+        { title: t("header.accessibility"), href: "/accessibility" },
+        { title: t("header.integrations"), href: "/integrations" },
+      ],
+    },
+    { title: t("header.blog"), href: "/blog" },
+    { title: t("header.contactUs"), href: "/contact-us" },
+  ];
 
   return (
     <header className="w-full bg-white   sticky top-0 z-50 border-b border-slate-200 dark:bg-slate-900/80 dark:border-slate-800 caret-transparent">
@@ -123,7 +128,7 @@ const SiteHeadder: React.FC = () => {
                 className="inline-flex items-center gap-1 px-3 py-1 rounded-md text-sm border border-slate-200 bg-white dark:bg-slate-900 dark:border-slate-700"
                 aria-expanded={openLang}
               >
-                Language
+                {t("header.language")}
                 <ChevronDown className="w-4 h-4" />
               </button>
 
@@ -134,7 +139,8 @@ const SiteHeadder: React.FC = () => {
                       <button
                         key={l.code}
                         onClick={() => {
-                          // placeholder for i18n change
+                          // apply language and close menu
+                          applyLanguage(l.code);
                           setOpenLang(false);
                         }}
                         className="w-full text-left px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-700"
@@ -169,7 +175,7 @@ const SiteHeadder: React.FC = () => {
                     : "AD"}
                 </div>
                 <span className="hidden sm:inline text-sm text-slate-700 dark:text-slate-200">
-                  Account
+                  {t("header.profile")}
                 </span>
                 <ChevronDown className="w-4 h-4" />
               </button>
@@ -182,7 +188,8 @@ const SiteHeadder: React.FC = () => {
                         href="/admin-dashboard"
                         className="flex items-center gap-2 px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-700"
                       >
-                        <Grid className="w-4 h-4" /> Admin Dashboard
+                        <Grid className="w-4 h-4" />{" "}
+                        {t("header.adminDashboard")}
                       </Link>
                     )}
                     <button
@@ -195,7 +202,7 @@ const SiteHeadder: React.FC = () => {
                       }}
                       className="flex items-center gap-2 w-full px-4 py-2 text-sm text-slate-700 hover:bg-slate-50 dark:text-slate-200 dark:hover:bg-slate-700"
                     >
-                      <LogOut className="w-4 h-4" /> Logout
+                      <LogOut className="w-4 h-4" /> {t("header.logout")}
                     </button>
                   </div>
                 </div>
@@ -258,7 +265,7 @@ const SiteHeadder: React.FC = () => {
               <div>
                 <details>
                   <summary className="cursor-pointer px-2 py-1">
-                    Language
+                    {t("header.language")}
                   </summary>
                   <div className="pl-3 absolute bg-white mt-1 space-y-1">
                     {languages.map((l) => (

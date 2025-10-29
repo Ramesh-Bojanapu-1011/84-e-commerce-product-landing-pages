@@ -1,1 +1,22 @@
-{}
+{
+  "header": {
+    "home": "الرئيسية",
+    "home1": "الصفحة الرئيسية 1",
+    "home2": "الصفحة الرئيسية 2",
+    "aboutUs": "من نحن",
+    "services": "الخدمات",
+    "allServices": "كل الخدمات",
+    "productDesign": "تصميم المنتج",
+    "uxAudit": "تدقيق تجربة المستخدم",
+    "conversionRateOpt": "تحسين معدل التحويل",
+    "performance": "الأداء",
+    "accessibility": "إمكانية الوصول",
+    "integrations": "التكاملات",
+    "blog": "المدونة",
+    "contactUs": "اتصل بنا",
+    "profile": "الحساب",
+    "logout": "تسجيل الخروج",
+    "language": "اللغة",
+    "adminDashboard": "لوحة الإدارة"
+  }
+}

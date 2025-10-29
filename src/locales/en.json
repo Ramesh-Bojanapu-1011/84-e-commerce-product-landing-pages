@@ -1,1 +1,22 @@
-{}
+{
+  "header": {
+    "home": "Home",
+    "home1": "Home 1",
+    "home2": "Home 2",
+    "aboutUs": "About Us",
+    "services": "Services",
+    "allServices": "All services",
+    "productDesign": "Product Design",
+    "uxAudit": "UX/UI Audit",
+    "conversionRateOpt": "Conversion Rate Opt.",
+    "performance": "Performance",
+    "accessibility": "Accessibility",
+    "integrations": "Integrations",
+    "blog": "Blog",
+    "contactUs": "Contact Us",
+    "profile": "Account",
+    "logout": "Logout",
+    "language": "Language",
+    "adminDashboard": "Admin Dashboard"
+  }
+}

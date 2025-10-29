@@ -1,1 +1,22 @@
-{}
+{
+  "header": {
+    "home": "בית",
+    "home1": "בית 1",
+    "home2": "בית 2",
+    "aboutUs": "עלינו",
+    "services": "שירותים",
+    "allServices": "כל השירותים",
+    "productDesign": "עיצוב מוצר",
+    "uxAudit": "ביקורת חוויית משתמש",
+    "conversionRateOpt": "אופטימיזציית שיעור המרה",
+    "performance": "ביצועים",
+    "accessibility": "נגישות",
+    "integrations": "אינטגרציות",
+    "blog": "בלוג",
+    "contactUs": "צור קשר",
+    "profile": "חשבון",
+    "logout": "התנתק",
+    "language": "שפה",
+    "adminDashboard": "לוח ניהול"
+  }
+}
