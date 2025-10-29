@@ -22,12 +22,42 @@ export default function Home2() {
     title: string;
     desc: string;
   }>;
-  const gallery = t("home2.gallery", { returnObjects: true }) as Array<{
-    id: number;
-    title: string;
-    price: number;
-    desc: string;
-  }>;
+  // const gallery = t("home2.gallery", { returnObjects: true }) as Array<{
+  //   id: number;
+  //   title: string;
+  //   price: number;
+  //   desc: string;
+  // }>;
+  const gallery = [
+    {
+      id: 1,
+      title: t("home2.gallery.0.title"),
+      price: 99,
+      desc: t("home2.gallery.0.desc"),
+      img: "https://i.pinimg.com/736x/02/40/af/0240afa6a4159b5e6aa5961cffeae3fb.jpg",
+    },
+    {
+      id: 2,
+      title:  t("home2.gallery.1.title"),
+      price: 199,
+      desc:  t("home2.gallery.1.desc"),
+      img: "https://i.pinimg.com/736x/a7/b2/01/a7b2014d08144a31e109fffff912b07e.jpg",
+    },
+    {
+      id: 3,
+      title:  t("home2.gallery.2.title"),
+      price: 149,
+      desc:  t("home2.gallery.2.desc"),
+      img: "https://i.pinimg.com/1200x/9d/8a/12/9d8a120cf5f5b8259a31618a742db7c1.jpg",
+    },
+    {
+      id: 4,
+      title:  t("home2.gallery.3.title"),
+      price: 79,
+      desc:   t("home2.gallery.3.desc"),
+      img: "https://i.pinimg.com/1200x/85/93/34/859334876ba72c88ea4416b4b802a3e2.jpg",
+    },
+  ];
   const componentsList = t("home2.components", {
     returnObjects: true,
   }) as Array<{ id: string; title: string; desc: string }>;
@@ -112,14 +142,12 @@ export default function Home2() {
                 </div>
 
                 <div className="mt-4 h-48 flex items-center justify-center rounded-xl bg-white/10">
-                  <svg
-                    className="w-24 h-24 opacity-90"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                  >
-                    <circle cx="12" cy="12" r="8" strokeWidth="1.5" />
-                  </svg>
+                  <img
+                    src="https://i.pinimg.com/1200x/1b/86/23/1b8623f4693a51b8f144ca46d97f44e0.jpg"
+                    alt=""
+                    
+                    className="h-full w-full object-cover object-center rounded-xl"
+                  />
                 </div>
               </div>
             </div>
@@ -249,21 +277,7 @@ export default function Home2() {
                     </div>
 
                     {/* placeholder art */}
-                    <svg
-                      className="w-28 h-28 text-slate-300"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                    >
-                      <rect
-                        x="3"
-                        y="6"
-                        width="18"
-                        height="12"
-                        rx="2"
-                        stroke="currentColor"
-                        strokeWidth="1.5"
-                      />
-                    </svg>
+                    <img src={p.img} alt="" className="h-full w-full object-cover object-center" />
                   </div>
 
                   <div className="p-4">
