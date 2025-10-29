@@ -2,44 +2,36 @@ import SiteFooter from "@/components/SiteFooter";
 import SiteHeadder from "@/components/SiteHeadder";
 import Head from "next/head";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
 
 const variantFirstUI = () => {
+  const { t } = useTranslation();
   const featured = {
     slug: "performance-tuning-product-pages",
-    title: "Performance tuning for product pages",
-    date: "2025-10-20",
-    author: "Aisha Khan",
+    title: t("performanceTuning.featured.title"),
+    date: t("performanceTuning.featured.date"),
+    author: t("performanceTuning.featured.author"),
     cover:
       "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1400&q=80",
-    reading: "7 min read",
-    intro:
-      "A practical case study: focused performance tuning on product pages — image delivery, critical rendering and JS cost — that improved Core Web Vitals and conversion metrics.",
-    sections: [
-      {
-        title: "The problem",
-        body: `Product pages were slow to load and interactive, especially on mobile. Large hero images, render-blocking CSS and oversized JavaScript bundles increased LCP and INP, causing higher abandonment during the add-to-cart flow.`,
-      },
-      {
-        title: "Research & approach",
-        body: `We used lab audits (Lighthouse), Real User Monitoring, and session recordings to prioritize fixes. We focused on high-traffic SKUs and prioritized changes by expected user-visible impact and implementation effort.`,
-      },
-      {
-        title: "What we changed",
-        body: `- Optimized images with responsive sizes, AVIF fallbacks and efficient delivery\n- Extracted critical CSS and inlined above-the-fold styles\n- Deferred non-essential JS, code-split product widgets and lazy-load reviews\n- Tuned CDN cache policies and accelerated asset TTLs\n- Added lightweight client-side placeholders to reduce layout shift`,
-      },
-      {
-        title: "Results",
-        body: `After a 5-week performance sprint across prioritized product pages we observed:\n- LCP reduced by 48% on average\n- INP/interaction latency improved by ~60%\n- Conversion uplift: +9% add-to-cart from product pages\n- Bounce rate on product pages dropped by 12%\nThe improvements were rolled into the platform and added to the release checklist.`,
-      },
-    ],
+    reading: t("performanceTuning.featured.reading"),
+    intro: t("performanceTuning.featured.intro"),
   };
+  const sections = t("performanceTuning.sections", {
+    returnObjects: true,
+  }) as Array<{ title: string; body: string }>;
+  const keyTakeaways = t("performanceTuning.keyTakeaways.items", {
+    returnObjects: true,
+  }) as string[];
+  const metrics = t("performanceTuning.metrics", {
+    returnObjects: true,
+  }) as Array<{ value: string; label: string }>;
   return (
     <>
       <Head>
-        <title>Performance tuning for product pages — Case study</title>
+        <title>{t("performanceTuning.meta.title")}</title>
         <meta
           name="description"
-          content="How focused performance work on product pages — image delivery, critical CSS and JS-splitting — improved Core Web Vitals and conversions."
+          content={t("performanceTuning.meta.description")}
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
@@ -57,7 +49,7 @@ const variantFirstUI = () => {
               <div className="absolute left-6 bottom-6 text-white">
                 <div>
                   <div className="text-sm uppercase bg-white/10 px-3 py-1 rounded-full inline-block">
-                    Case study
+                    {t("performanceTuning.label")}
                   </div>
                   <h2 className="mt-3 text-3xl font-extrabold leading-tight">
                     {featured.title}
@@ -76,7 +68,7 @@ const variantFirstUI = () => {
 
               <div className="mt-8 grid grid-cols-1 lg:grid-cols-3 gap-6">
                 <div className="lg:col-span-2">
-                  {featured.sections.map((s) => (
+                  {sections.map((s) => (
                     <section key={s.title} className="mt-6">
                       <h3 className="text-xl font-semibold text-slate-900 dark:text-white">
                         {s.title}
@@ -89,70 +81,53 @@ const variantFirstUI = () => {
 
                   {/* Quote */}
                   <blockquote className="mt-8 border-l-4 border-amber-400 pl-4 italic text-slate-800 dark:text-slate-100">
-                    “Targeted performance tuning removed the friction in the
-                    add-to-cart flow — pages felt faster and conversion improved
-                    within days of the rollout.”
+                    {t("performanceTuning.quote")}
                   </blockquote>
 
                   {/* Key takeaways */}
                   <div className="mt-8">
-                    <h4 className="text-lg font-semibold">Key takeaways</h4>
+                    <h4 className="text-lg font-semibold">
+                      {t("performanceTuning.keyTakeaways.title")}
+                    </h4>
                     <ul className="mt-3 list-disc pl-5 text-slate-600 dark:text-slate-300">
-                      <li>
-                        Measure real-user metrics and prioritize by user impact.
-                      </li>
-                      <li>
-                        Optimize critical rendering path (images, CSS,
-                        first-party JS).
-                      </li>
-                      <li>
-                        Ship small, testable changes and monitor RUM
-                        post-deploy.
-                      </li>
+                      {keyTakeaways.map((k) => (
+                        <li key={k}>{k}</li>
+                      ))}
                     </ul>
                   </div>
                 </div>
 
                 <aside className="mt-6 lg:mt-0">
                   <div className="p-4 rounded-xl bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-700">
-                    <div className="text-sm text-slate-500">Impact</div>
+                    <div className="text-sm text-slate-500">
+                      {t("performanceTuning.impact.title")}
+                    </div>
                     <div className="mt-3 grid grid-cols-1 gap-3">
-                      <div className="p-3 bg-white dark:bg-slate-800 rounded-lg shadow">
-                        <div className="text-2xl font-bold text-emerald-600">
-                          -48%
+                      {metrics.map((m) => (
+                        <div
+                          key={m.label}
+                          className="p-3 bg-white dark:bg-slate-800 rounded-lg shadow"
+                        >
+                          <div className="text-2xl font-bold text-emerald-600">
+                            {m.value}
+                          </div>
+                          <div className="text-sm text-slate-500">
+                            {m.label}
+                          </div>
                         </div>
-                        <div className="text-sm text-slate-500">
-                          LCP (median)
-                        </div>
-                      </div>
-                      <div className="p-3 bg-white dark:bg-slate-800 rounded-lg shadow">
-                        <div className="text-2xl font-bold text-emerald-600">
-                          -60%
-                        </div>
-                        <div className="text-sm text-slate-500">
-                          INP / interaction latency
-                        </div>
-                      </div>
-                      <div className="p-3 bg-white dark:bg-slate-800 rounded-lg shadow">
-                        <div className="text-2xl font-bold text-emerald-600">
-                          +9%
-                        </div>
-                        <div className="text-sm text-slate-500">
-                          Conversion (add-to-cart)
-                        </div>
-                      </div>
+                      ))}
                     </div>
                   </div>
 
                   <div className="mt-6 p-4 rounded-xl bg-indigo-600 text-white text-center">
                     <div className="text-sm">
-                      Want to speed up product pages?
+                      {t("performanceTuning.cta.question")}
                     </div>
                     <Link
                       href="/contact-us"
                       className="mt-3 inline-block px-4 py-2 bg-white text-indigo-700 rounded-md font-medium"
                     >
-                      Book a performance sprint
+                      {t("performanceTuning.cta.button")}
                     </Link>
                   </div>
                 </aside>
