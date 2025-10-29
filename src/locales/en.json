@@ -797,6 +797,59 @@
       "button": "Book a quick consult"
     }
   },
+  "variantUI": {
+    "meta": {
+      "title": "Variant-first UI patterns — Reduce returns",
+      "description": "Case study: how variant-first product pages and clearer expectations reduced returns, support load and improved repurchase intent."
+    },
+    "label": "Case study",
+    "featured": {
+      "title": "Variant-first UI patterns for fewer returns",
+      "date": "2025-11-12",
+      "author": "Samir Rao",
+      "reading": "7 min read",
+      "intro": "A practical case study: how designing variant-first product pages and clearer expectations reduced returns and support friction while increasing repurchase intent."
+    },
+    "sections": [
+      {
+        "title": "The problem",
+        "body": "High return rates were eroding margin and creating friction for operations. Customers often reported \"item not as expected\": unclear product variants, misleading images and missing size/fit guidance. We believed better variant-first UI that set clearer expectations would reduce returns and support load."
+      },
+      {
+        "title": "Research & approach",
+        "body": "We combined quantitative signals (returns by SKU, support tickets, heatmaps) with qualitative research (post-purchase interviews and recorded sessions). From this we defined three experiment hypotheses focused on variant clarity, imagery and microcopy around sizing and materials."
+      },
+      {
+        "title": "What we changed",
+        "body": "- Variant-first layout that surfaces selected options and visual swatches near the CTA\n- Consistent, real-product imagery tied to each variant (no generic hero shots)\n- Size guides, fit notes and short social proof snippets adjacent to the action\n- Microcopy clarifying materials and return windows"
+      },
+      {
+        "title": "Results",
+        "body": "A 6-week experiment across targeted SKUs produced:\n- -25% Returns rate for tested SKUs\n- -18% Support contacts about fit/expectations\n- +8% Reorder rate (repeat purchase intent)\nThe variant-first pattern showed durable improvement and was rolled into the product template."
+      }
+    ],
+    "quote": "Moving to a variant-first layout clarified expectations for customers — returns dropped substantially and support contacts decreased within weeks.",
+    "keyTakeaways": {
+      "title": "Key takeaways",
+      "items": [
+        "Show the selected variant clearly and match images to it.",
+        "Surface size, fit and material notes close to the action.",
+        "Prioritize tests that reduce returns and support volume."
+      ]
+    },
+    "impact": {
+      "title": "Impact"
+    },
+    "metrics": [
+      { "value": "-25%", "label": "Returns rate" },
+      { "value": "-18%", "label": "Support contacts" },
+      { "value": "+8%", "label": "Reorder rate" }
+    ],
+    "cta": {
+      "question": "Want to reduce returns?",
+      "button": "Book a returns audit"
+    }
+  },
   "admin": {
     "heading": "Admin Overview",
     "stats": {
