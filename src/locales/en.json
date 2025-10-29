@@ -643,5 +643,106 @@
         "subscribe": "Subscribe"
       }
     }
+  },
+  "contact": {
+    "meta": {
+      "title": "Contact — E-commerce Product Pages",
+      "description": "Contact our team for audits, consulting and design work focused on product pages."
+    },
+    "hero": {
+      "title": "Let's build better product pages together",
+      "desc": "Tell us about your challenge — audits, design systems or performance work. We'll reply within 1 business day.",
+      "ctaContact": "Contact us",
+      "ctaServices": "Explore services"
+    },
+    "quick": {
+      "title": "Quick details",
+      "desc": "Share a few top-level details and we'll reply with a short plan and next steps."
+    },
+    "form": {
+      "srSent": "Thanks — we received your message.",
+      "toastTitle": "Message sent",
+      "toastBody": "Thanks — we received your message. We'll reply shortly.",
+      "nameLabel": "Full name",
+      "namePlaceholder": "Jane Doe",
+      "emailLabel": "Email",
+      "emailPlaceholder": "you@company.com",
+      "messageLabel": "Message",
+      "messagePlaceholder": "Short summary of your goals",
+      "subscribe": "Subscribe to occasional tips",
+      "sending": "Sending…",
+      "sendMessage": "Send message"
+    },
+    "otherWays": {
+      "title": "Other ways to reach us",
+      "desc": "Pick a channel that suits you."
+    },
+    "methods": {
+      "emailTitle": "Email",
+      "emailDesc": "General inquiries and proposals",
+      "phoneTitle": "Phone",
+      "phoneDesc": "Mon–Fri, 9am–6pm (UTC)",
+      "supportTitle": "Support",
+      "supportDesc": "Technical and onboarding help"
+    },
+    "locations": {
+      "title": "Our locations",
+      "desc": "We're distributed — reach out to the office closest to you.",
+      "mapPlaceholder": "Map placeholder",
+      "emailLink": "Email",
+      "requestMeeting": "Request meeting"
+    },
+    "faq": {
+      "title": "Frequently asked",
+      "desc": "Answers to common questions about our services, engagements and process.",
+      "items": [
+        {
+          "q": "How long does an audit take?",
+          "a": "A lightweight audit typically takes 5–10 business days; deeper audits depend on scope."
+        },
+        {
+          "q": "Do you work with existing design systems?",
+          "a": "Yes — we integrate with your tokens and components, and provide migration guidance."
+        },
+        {
+          "q": "What are your engagement models?",
+          "a": "We offer fixed-scope audits, time-and-materials engagements, and bundled discovery + implementation packages."
+        },
+        {
+          "q": "How do you handle timezones for distributed teams?",
+          "a": "We coordinate overlapping hours and set clear async updates; our team spans several timezones."
+        }
+      ]
+    },
+    "services": {
+      "0": {
+        "title": "UI & UX audits",
+        "desc": "Conversion-focused design reviews"
+      },
+      "1": {
+        "title": "Performance tuning",
+        "desc": "LCP, TTFB and bundle optimisations"
+      },
+      "2": {
+        "title": "Component systems",
+        "desc": "Design tokens & reusable components"
+      }
+    },
+    "quotes": {
+      "0": {
+        "who": "NovaShop",
+        "text": "The UI Kit saved us weeks — highly recommended."
+      },
+      "1": {
+        "who": "Cartly",
+        "text": "Performance improvements reduced LCP by ~0.9s."
+      }
+    },
+    "cta": {
+      "title": "Ready to get started?",
+      "desc": "Book a short discovery call and we'll share a tailored plan.",
+      "email": "Email us",
+      "seeServices": "See services"
+    }
   }
 }

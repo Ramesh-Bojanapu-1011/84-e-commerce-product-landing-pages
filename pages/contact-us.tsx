@@ -1,15 +1,17 @@
-import { useState } from "react";
-import Head from "next/head";
-import SiteHeadder from "@/components/SiteHeadder";
 import SiteFooter from "@/components/SiteFooter";
+import SiteHeadder from "@/components/SiteHeadder";
+import { Mail, Phone } from "lucide-react";
+import Head from "next/head";
 import Link from "next/link";
-import { EqualApproximatelyIcon, Mail, Phone } from "lucide-react";
+import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 function FormNewLook({
   contactMethods,
 }: {
   contactMethods: { title: string; value: string; desc?: string }[];
 }) {
+  const { t } = useTranslation();
   const [status, setStatus] = useState<"idle" | "sending" | "sent">("idle");
 
   return (
@@ -17,11 +19,10 @@ function FormNewLook({
       {/* decorative left panel (hidden on small) */}
       <div className="hidden md:flex flex-col items-start justify-center rounded-lg p-6 bg-linear-to-br from-indigo-50 to-rose-50 dark:from-slate-800 dark:to-slate-900">
         <h4 className="text-lg font-semibold text-slate-900 dark:text-white">
-          Quick details
+          {t("contact.quick.title")}
         </h4>
         <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
-          Share a few top-level details and we'll reply with a short plan and
-          next steps.
+          {t("contact.quick.desc")}
         </p>
 
         <div className="mt-4 w-full space-y-3">
@@ -86,7 +87,7 @@ function FormNewLook({
       <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-md border border-slate-100 dark:border-slate-700 p-6">
         {/* inline accessible status (kept for screen readers) */}
         <div role="status" aria-live="polite" className="sr-only">
-          {status === "sent" ? "Thanks — we received your message." : ""}
+          {status === "sent" ? t("contact.form.srSent") : ""}
         </div>
 
         {/* popup toast */}
@@ -99,10 +100,8 @@ function FormNewLook({
           }`}
         >
           <div className="rounded-lg bg-emerald-50 dark:bg-emerald-900/30 border border-emerald-100 dark:border-emerald-700 p-3 shadow-md text-emerald-800 dark:text-emerald-200">
-            <div className="font-medium">Message sent</div>
-            <div className="text-sm">
-              Thanks — we received your message. We'll reply shortly.
-            </div>
+            <div className="font-medium">{t("contact.form.toastTitle")}</div>
+            <div className="text-sm">{t("contact.form.toastBody")}</div>
           </div>
         </div>
 
@@ -120,38 +119,38 @@ function FormNewLook({
         >
           <label className="flex flex-col">
             <span className="text-sm text-slate-700 dark:text-slate-300">
-              Full name
+              {t("contact.form.nameLabel")}
             </span>
             <input
               name="name"
               required
-              placeholder="Jane Doe"
+              placeholder={t("contact.form.namePlaceholder")}
               className="mt-1 block w-full px-4 py-3 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500"
             />
           </label>
 
           <label className="flex flex-col">
             <span className="text-sm text-slate-700 dark:text-slate-300">
-              Email
+              {t("contact.form.emailLabel")}
             </span>
             <input
               name="email"
               type="email"
               required
-              placeholder="you@company.com"
+              placeholder={t("contact.form.emailPlaceholder")}
               className="mt-1 block w-full px-4 py-3 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500"
             />
           </label>
 
           <label className="flex flex-col">
             <span className="text-sm text-slate-700 dark:text-slate-300">
-              Message
+              {t("contact.form.messageLabel")}
             </span>
             <textarea
               name="message"
               rows={4}
               required
-              placeholder="Short summary of your goals"
+              placeholder={t("contact.form.messagePlaceholder")}
               className="mt-1 block w-full px-4 py-3 rounded-lg border border-slate-200 dark:border-slate-700 bg-white dark:bg-slate-800 focus:outline-none focus:ring-2 focus:ring-indigo-500"
             />
           </label>
@@ -162,7 +161,7 @@ function FormNewLook({
                 type="checkbox"
                 className="w-4 h-4 rounded border dark:border-slate-600"
               />
-              <span>Subscribe to occasional tips</span>
+              <span> {t("contact.form.subscribe")}</span>
             </label>
 
             <button
@@ -170,7 +169,11 @@ function FormNewLook({
               disabled={status === "sending"}
               className="ml-auto px-5 py-3 bg-indigo-600 text-white rounded-md disabled:opacity-60"
             >
-              {status === "sending" ? "Sending…" : "Send message"}
+              {status === "sending" ? (
+                <>{t("contact.form.sending")}</>
+              ) : (
+                <>{t("contact.form.sendMessage")}</>
+              )}
             </button>
           </div>
         </form>
@@ -180,46 +183,51 @@ function FormNewLook({
 }
 
 export default function ContactUs() {
+  const { t } = useTranslation();
+
   const contactMethods = [
     {
-      title: "Email",
+      title: t("contact.methods.emailTitle"),
       value: "hello@example.com",
-      desc: "General inquiries and proposals",
+      desc: t("contact.methods.emailDesc"),
     },
     {
-      title: "Phone",
+      title: t("contact.methods.phoneTitle"),
       value: "+1 (555) 123-4567",
-      desc: "Mon–Fri, 9am–6pm (UTC)",
+      desc: t("contact.methods.phoneDesc"),
     },
     {
-      title: "Support",
+      title: t("contact.methods.supportTitle"),
       value: "support@example.com",
-      desc: "Technical and onboarding help",
+      desc: t("contact.methods.supportDesc"),
     },
   ];
 
   const services = [
-    { title: "UI & UX audits", desc: "Conversion-focused design reviews" },
-    { title: "Performance tuning", desc: "LCP, TTFB and bundle optimisations" },
-    { title: "Component systems", desc: "Design tokens & reusable components" },
+    {
+      title: t("contact.services.0.title"),
+      desc: t("contact.services.0.desc"),
+    },
+    {
+      title: t("contact.services.1.title"),
+      desc: t("contact.services.1.desc"),
+    },
+    {
+      title: t("contact.services.2.title"),
+      desc: t("contact.services.2.desc"),
+    },
   ];
 
   const quotes = [
-    {
-      who: "NovaShop",
-      text: "The UI Kit saved us weeks — highly recommended.",
-    },
-    { who: "Cartly", text: "Performance improvements reduced LCP by ~0.9s." },
+    { who: t("contact.quotes.0.who"), text: t("contact.quotes.0.text") },
+    { who: t("contact.quotes.1.who"), text: t("contact.quotes.1.text") },
   ];
 
   return (
     <>
       <Head>
-        <title>Contact — E-commerce Product Pages</title>
-        <meta
-          name="description"
-          content="Contact our team for audits, consulting and design work focused on product pages."
-        />
+        <title>{t("contact.meta.title")}</title>
+        <meta name="description" content={t("contact.meta.description")} />
       </Head>
 
       <div className="min-h-screen bg-linear-to-br from-white to-blue-50 dark:from-slate-900 dark:to-slate-800 caret-transparent">
@@ -229,11 +237,10 @@ export default function ContactUs() {
         <section className=" flex items-center min-h-screen justify-center   text-center">
           <div className="max-w-4xl mx-auto px-6 lg:px-8">
             <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white">
-              Let's build better product pages together
+              {t("contact.hero.title")}
             </h1>
             <p className="mt-4 text-lg text-slate-600 dark:text-slate-300">
-              Tell us about your challenge — audits, design systems or
-              performance work. We'll reply within 1 business day.
+              {t("contact.hero.desc")}
             </p>
 
             <div className="mt-8 flex items-center justify-center gap-3">
@@ -241,13 +248,13 @@ export default function ContactUs() {
                 href="#contact-form"
                 className="px-6 py-3 rounded-md bg-indigo-600 text-white"
               >
-                Contact us
+                {t("contact.hero.ctaContact")}
               </a>
               <Link
                 href="/services"
                 className="px-6 py-3 rounded-md border border-slate-200 dark:border-slate-700"
               >
-                Explore services
+                {t("contact.hero.ctaServices")}
               </Link>
             </div>
           </div>
@@ -257,10 +264,10 @@ export default function ContactUs() {
         <section className="py-12 bg-white dark:bg-slate-900">
           <div className="max-w-4xl mx-auto px-6 lg:px-8">
             <h3 className="text-xl font-semibold text-slate-900 dark:text-white text-center">
-              Other ways to reach us
+              {t("contact.otherWays.title")}
             </h3>
             <p className="mt-2 text-center text-slate-600 dark:text-slate-300">
-              Pick a channel that suits you.
+              {t("contact.otherWays.desc")}
             </p>
 
             <div className="mt-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -370,10 +377,10 @@ export default function ContactUs() {
         <section className="py-12 bg-white dark:bg-slate-900  ">
           <div className="max-w-5xl mx-auto px-6 lg:px-8">
             <h3 className="text-xl font-semibold text-slate-900 dark:text-white text-center">
-              Our locations
+              {t("contact.locations.title")}
             </h3>
             <p className="mt-2 text-center text-slate-600 dark:text-slate-300">
-              We're distributed — reach out to the office closest to you.
+              {t("contact.locations.desc")}
             </p>
 
             <div className="mt-6 grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -425,20 +432,20 @@ export default function ContactUs() {
                           href={`mailto:${loc.contact}`}
                           className="text-sm text-indigo-600 dark:text-indigo-400"
                         >
-                          Email
+                          {t("contact.locations.emailLink")}
                         </a>
                         <a
                           href={`#contact-form`}
                           className="text-sm text-slate-500 dark:text-slate-300"
                         >
-                          Request meeting
+                          {t("contact.locations.requestMeeting")}
                         </a>
                       </div>
                     </div>
                   </div>
 
                   <div className="mt-4 h-32 rounded-md bg-slate-100 dark:bg-slate-900 flex items-center justify-center text-slate-400">
-                    Map placeholder
+                    {t("contact.locations.mapPlaceholder")}
                   </div>
                 </div>
               ))}
@@ -450,32 +457,19 @@ export default function ContactUs() {
         <section id="faq" className="py-12 ">
           <div className="max-w-4xl mx-auto px-6 lg:px-8">
             <h3 className="text-xl font-semibold text-slate-900 dark:text-white text-center">
-              Frequently asked
+              {t("contact.faq.title")}
             </h3>
             <p className="mt-2 text-center text-slate-600 dark:text-slate-300">
-              Answers to common questions about our services, engagements and
-              process.
+              {t("contact.faq.desc")}
             </p>
 
             <div className="mt-6 space-y-3">
-              {[
-                {
-                  q: "How long does an audit take?",
-                  a: "A lightweight audit typically takes 5–10 business days; deeper audits depend on scope.",
-                },
-                {
-                  q: "Do you work with existing design systems?",
-                  a: "Yes — we integrate with your tokens and components, and provide migration guidance.",
-                },
-                {
-                  q: "What are your engagement models?",
-                  a: "We offer fixed-scope audits, time-and-materials engagements, and bundled discovery + implementation packages.",
-                },
-                {
-                  q: "How do you handle timezones for distributed teams?",
-                  a: "We coordinate overlapping hours and set clear async updates; our team spans several timezones.",
-                },
-              ].map((f) => (
+              {(
+                t("contact.faq.items", { returnObjects: true }) as {
+                  q: string;
+                  a: string;
+                }[]
+              ).map((f) => (
                 <details
                   key={f.q}
                   className="group bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 rounded-lg p-4"
@@ -513,22 +507,22 @@ export default function ContactUs() {
         <section className="py-12 bg-white dark:bg-slate-900">
           <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
             <div className="bg-indigo-600 text-white rounded-2xl p-8">
-              <h3 className="text-2xl font-semibold">Ready to get started?</h3>
-              <p className="mt-2">
-                Book a short discovery call and we'll share a tailored plan.
-              </p>
+              <h3 className="text-2xl font-semibold">
+                {t("contact.cta.title")}
+              </h3>
+              <p className="mt-2">{t("contact.cta.desc")}</p>
               <div className="mt-4 flex items-center justify-center gap-3">
                 <a
                   href="mailto:hello@example.com"
                   className="px-5 py-3 bg-white text-indigo-600 rounded-md"
                 >
-                  Email us
+                  {t("contact.cta.email")}
                 </a>
                 <Link
                   href="/services"
                   className="px-5 py-3 border border-white rounded-md"
                 >
-                  See services
+                  {t("contact.cta.seeServices")}
                 </Link>
               </div>
             </div>
