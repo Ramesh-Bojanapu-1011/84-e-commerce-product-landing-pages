@@ -132,7 +132,7 @@ export default function BlogPage() {
 
                     <div className="mt-4 flex items-center justify-between">
                       <Link
-                        href={`/blog/${p.slug}`}
+                        href={`/${p.slug}`}
                         className="inline-flex items-center gap-2 text-sm font-medium text-indigo-600 dark:text-indigo-400"
                         aria-label={`Read ${p.title}`}
                       >
@@ -153,7 +153,32 @@ export default function BlogPage() {
                         </svg>
                       </Link>
 
-                      <div className="text-sm text-slate-400">Share</div>
+                      <div
+                        onClick={async () => {
+                          if (!navigator.share) {
+                            // Fallback: copy URL to clipboard, show a modal, etc.
+                            return;
+                          }
+
+                          try {
+                            await navigator.share({
+                              title: document.title,
+                              text: "Check this out",
+                              url: `${window.location.origin}/${p.slug}`,
+                            });
+                             
+                          } catch (err: any) {
+                             
+                            console.error(
+                              "Share failed or was cancelled:",
+                              err
+                            );
+                          }
+                        }}
+                        className="text-sm text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 cursor-pointer  "
+                      >
+                        Share
+                      </div>
                     </div>
                   </div>
                 </article>
