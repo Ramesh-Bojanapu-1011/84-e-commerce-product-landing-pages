@@ -44,17 +44,17 @@ const UxAudit = () => {
     {
       name: t("uxAudit.team.0.name"),
       role: t("uxAudit.team.0.role"),
-      avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+      avatar: " https://randomuser.me/api/portraits/women/65.jpg",
     },
     {
       name: t("uxAudit.team.1.name"),
       role: t("uxAudit.team.1.role"),
-      avatar: "https://randomuser.me/api/portraits/men/45.jpg",
+      avatar: " https://randomuser.me/api/portraits/men/32.jpg",
     },
     {
       name: t("uxAudit.team.2.name"),
       role: t("uxAudit.team.2.role"),
-      avatar: "https://randomuser.me/api/portraits/women/12.jpg",
+      avatar: " https://randomuser.me/api/portraits/men/85.jpg",
     },
   ];
 
@@ -64,21 +64,21 @@ const UxAudit = () => {
       who: t("uxAudit.testimonials.0.who"),
       role: t("uxAudit.testimonials.0.role"),
       rating: 5,
-      avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+      avatar: "https://randomuser.me/api/portraits/men/32.jpg",
     },
     {
       quote: t("uxAudit.testimonials.1.quote"),
       who: t("uxAudit.testimonials.1.who"),
       role: t("uxAudit.testimonials.1.role"),
       rating: 5,
-      avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+      avatar: " https://randomuser.me/api/portraits/women/65.jpg",
     },
     {
       quote: t("uxAudit.testimonials.2.quote"),
       who: t("uxAudit.testimonials.2.who"),
       role: t("uxAudit.testimonials.2.role"),
       rating: 5,
-      avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+      avatar: " https://randomuser.me/api/portraits/men/85.jpg",
     },
   ];
 
@@ -273,7 +273,7 @@ const UxAudit = () => {
           aria-labelledby="projects-title"
           className="flex w-full justify-center bg-white dark:bg-slate-900 py-7 "
         >
-          <div className="flex flex-col w-screen   justify-center items-center">
+          <div className="flex flex-col  max-w-7xl   justify-center items-center">
             <h2 id="projects-title" className="text-2xl font-bold">
               {t("uxAudit.projectsHeader")}
             </h2>
@@ -321,8 +321,7 @@ const UxAudit = () => {
                         </div>
 
                         <p className="mt-3 hidden sm:block text-sm text-white/80 max-w-prose">
-                          {p.desc ||
-                            (t("uxAudit.projectDefaultDesc") as string)}
+                          {t("uxAudit.projectDefaultDesc")}
                         </p>
                       </div>
                     </article>
