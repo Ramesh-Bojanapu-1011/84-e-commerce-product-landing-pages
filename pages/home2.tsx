@@ -4,93 +4,55 @@ import Link from "next/link";
 import SiteHeadder from "@/components/SiteHeadder";
 import SiteFooter from "@/components/SiteFooter";
 import { ShoppingCart, Package, Globe, Zap, Star, Users } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import i18n from "@/i18n";
 
-const highlights = [
-  {
-    icon: <ShoppingCart className="w-6 h-6" />,
-    title: "Conversion-ready UI",
-    desc: "Pre-built product blocks and CTAs tuned for higher add-to-cart rates.",
-  },
-  {
-    icon: <Package className="w-6 h-6" />,
-    title: "Variant-first product cards",
-    desc: "Flexible variant and bundle layouts for modern storefronts.",
-  },
-  {
-    icon: <Globe className="w-6 h-6" />,
-    title: "International-ready",
-    desc: "Multi-currency and locale-friendly components out of the box.",
-  },
-];
-
-const gallery = [
-  { id: 1, title: "Nimbus Speaker", price: 129 },
-  { id: 2, title: "Aurora Headphones", price: 149 },
-  { id: 3, title: "Lumen Lamp", price: 89 },
-  { id: 4, title: "Breeze Fan", price: 99 },
-];
-
-const steps = [
-  {
-    id: 1,
-    title: "Pick a template",
-    desc: "Choose a layout that matches your product and brand.",
-    icon: <Zap className="w-10 h-10" />,
-  },
-  {
-    id: 2,
-    title: "Customize",
-    desc: "Swap images, update text, and connect variants in minutes.",
-    icon: <Users className="w-10 h-10" />,
-  },
-  {
-    id: 3,
-    title: "Launch & iterate",
-    desc: "Monitor metrics and A/B test sections to improve conversions.",
-    icon: <Star className="w-10 h-10" />,
-  },
-];
-
-const componentsList = [
-  {
-    id: "hero",
-    title: "Product hero",
-    desc: "Large hero with images, price, and prominent CTA to convert visitors.",
-    icon: <Package className="w-6 h-6" />,
-  },
-  {
-    id: "variants",
-    title: "Variant selector",
-    desc: "Size, color and bundle pickers that map cleanly to your store's SKUs.",
-    icon: <ShoppingCart className="w-6 h-6" />,
-  },
-  {
-    id: "reviews",
-    title: "Reviews & ratings",
-    desc: "Customer feedback, star ratings and verified purchaser badges.",
-    icon: <Star className="w-6 h-6" />,
-  },
-  {
-    id: "upsell",
-    title: "Cross-sell modules",
-    desc: "Related products, bundles and post-purchase recommendations.",
-    icon: <Zap className="w-6 h-6" />,
-  },
-  {
-    id: "intl",
-    title: "International-ready",
-    desc: "Locale & currency-aware blocks plus RTL support.",
-    icon: <Globe className="w-6 h-6" />,
-  },
-  {
-    id: "checkout",
-    title: "Optimized checkout",
-    desc: "Fast, accessible checkout flows with minimal friction.",
-    icon: <Users className="w-6 h-6" />,
-  },
-];
+// We'll keep icons local and read textual content from translations.
 
 export default function Home2() {
+  const { t } = useTranslation();
+
+  // load arrays/objects from translations
+  const highlights = t("home2.highlights", { returnObjects: true }) as Array<{
+    title: string;
+    desc: string;
+  }>;
+  const steps = t("home2.steps", { returnObjects: true }) as Array<{
+    id: number;
+    title: string;
+    desc: string;
+  }>;
+  const gallery = t("home2.gallery", { returnObjects: true }) as Array<{
+    id: number;
+    title: string;
+    price: number;
+    desc: string;
+  }>;
+  const componentsList = t("home2.components", {
+    returnObjects: true,
+  }) as Array<{ id: string; title: string; desc: string }>;
+
+  // icons kept locally and paired by index
+  const highlightIcons = [
+    <ShoppingCart className="w-6 h-6" key="hi0" />,
+    <Package className="w-6 h-6" key="hi1" />,
+    <Globe className="w-6 h-6" key="hi2" />,
+  ];
+
+  const stepIcons = [
+    <Zap className="w-10 h-10" key="si0" />,
+    <Users className="w-10 h-10" key="si1" />,
+    <Star className="w-10 h-10" key="si2" />,
+  ];
+
+  const componentIcons = {
+    hero: <Package className="w-6 h-6" key="ci-hero" />,
+    variants: <ShoppingCart className="w-6 h-6" key="ci-variants" />,
+    reviews: <Star className="w-6 h-6" key="ci-reviews" />,
+    upsell: <Zap className="w-6 h-6" key="ci-upsell" />,
+    intl: <Globe className="w-6 h-6" key="ci-intl" />,
+    checkout: <Users className="w-6 h-6" key="ci-checkout" />,
+  } as Record<string, React.ReactElement>;
   return (
     <>
       <Head>
@@ -101,7 +63,7 @@ export default function Home2() {
         />
       </Head>
 
-      <div className="min-h-screen bg-linear-to-br from-white to-blue-50 dark:from-slate-900 dark:to-slate-800">
+      <div className="min-h-screen bg-linear-to-br from-white to-blue-50 dark:from-slate-900 dark:to-slate-800   caret-transparent">
         <SiteHeadder />
 
         {/* Section 1 — Hero */}
@@ -109,42 +71,29 @@ export default function Home2() {
           <div className="max-w-6xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
             <div>
               <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white">
-                Build product pages that sell — faster
+                {t("home2.hero.title")}
               </h1>
               <p className="mt-4 text-lg text-slate-600 dark:text-slate-300 max-w-xl">
-                Launch high-converting product pages with curated components,
-                fast images, and best-practice layouts. Plug them into your
-                store and iterate quickly.
+                {t("home2.hero.desc")}
               </p>
 
               <div className="mt-6 flex flex-wrap gap-3">
                 <Link
-                  href="/templates"
+                  href="/contact-us"
                   className="inline-flex items-center gap-2 bg-linear-to-r from-blue-600 to-indigo-600 text-white px-5 py-3 rounded-lg shadow"
                 >
-                  Explore templates
-                </Link>
-                <Link
-                  href="/contact-us"
-                  className="inline-flex items-center gap-2 px-5 py-3 rounded-lg border border-slate-200 dark:border-slate-700"
-                >
-                  Contact sales
+                  {t("home2.hero.contactSales")}
                 </Link>
               </div>
 
               <div className="mt-8 flex flex-wrap gap-4 text-sm text-slate-600 dark:text-slate-300">
-                <div className="inline-flex items-center gap-2">
-                  <span className="w-3 h-3 bg-blue-600 rounded-full" />{" "}
-                  Performance-first
-                </div>
-                <div className="inline-flex items-center gap-2">
-                  <span className="w-3 h-3 bg-blue-600 rounded-full" /> SEO &
-                  accessibility
-                </div>
-                <div className="inline-flex items-center gap-2">
-                  <span className="w-3 h-3 bg-blue-600 rounded-full" />{" "}
-                  Mobile-optimized
-                </div>
+                {(
+                  t("home2.hero.badges", { returnObjects: true }) as string[]
+                ).map((b, i) => (
+                  <div key={i} className="inline-flex items-center gap-2">
+                    <span className="w-3 h-3 bg-blue-600 rounded-full" /> {b}
+                  </div>
+                ))}
               </div>
             </div>
 
@@ -152,9 +101,11 @@ export default function Home2() {
               <div className="rounded-3xl p-6 bg-linear-to-r from-indigo-500 to-blue-600 text-white shadow-2xl">
                 <div className="flex items-center justify-between">
                   <div>
-                    <div className="text-sm opacity-90">Featured</div>
+                    <div className="text-sm opacity-90">
+                      {t("home2.hero.featuredProduct")}
+                    </div>
                     <h3 className="mt-1 text-xl font-semibold">
-                      Nimbus Speaker
+                      {t("home2.hero.featuredProduct")}
                     </h3>
                   </div>
                   <div className="text-lg font-bold">$129</div>
@@ -170,16 +121,6 @@ export default function Home2() {
                     <circle cx="12" cy="12" r="8" strokeWidth="1.5" />
                   </svg>
                 </div>
-
-                <div className="mt-4 flex items-center justify-between">
-                  <div className="text-sm opacity-90">Ships worldwide</div>
-                  <Link
-                    href="/product/nimbus"
-                    className="bg-white text-indigo-700 px-4 py-2 rounded-md font-medium"
-                  >
-                    Quick view
-                  </Link>
-                </div>
               </div>
             </div>
           </div>
@@ -189,11 +130,10 @@ export default function Home2() {
         <section className="py-12 bg-white dark:bg-slate-900">
           <div className="max-w-6xl mx-auto px-6 lg:px-8">
             <h3 className="text-2xl font-semibold text-slate-900 dark:text-white text-center">
-              What this theme gives you
+              {t("home2.highlightsHeader")}
             </h3>
             <p className="mt-2 text-center text-slate-600 dark:text-slate-300">
-              Handcrafted components built for product storytelling and
-              conversions.
+              {t("home2.highlightsSubtitle")}
             </p>
 
             <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -207,7 +147,7 @@ export default function Home2() {
 
                   <div className="relative flex items-start gap-4">
                     <div className="shrink-0 w-12 h-12 rounded-lg flex items-center justify-center text-white bg-linear-to-r from-indigo-500 to-blue-500">
-                      {h.icon}
+                      {highlightIcons[idx % highlightIcons.length]}
                     </div>
 
                     <div>
@@ -237,10 +177,10 @@ export default function Home2() {
         <section className="py-16">
           <div className="max-w-6xl mx-auto px-6 lg:px-8">
             <h3 className="text-2xl font-semibold text-slate-900 dark:text-white text-center">
-              How it works
+              {t("home2.stepsHeader")}
             </h3>
             <p className="mt-2 text-center text-slate-600 dark:text-slate-300">
-              Three steps to launch a product page
+              {t("home2.stepsSubtitle")}
             </p>
 
             <div className="mt-8 space-y-12">
@@ -256,14 +196,20 @@ export default function Home2() {
                   >
                     <div className="w-44 h-44 rounded-2xl bg-linear-to-r from-indigo-50 to-blue-50 dark:from-slate-800 dark:to-slate-700 flex items-center justify-center shadow-lg">
                       <div className="w-20 h-20 rounded-lg bg-linear-to-r from-indigo-500 to-blue-600 flex items-center justify-center text-white">
-                        {s.icon}
+                        {stepIcons[idx % stepIcons.length]}
                       </div>
                     </div>
                   </div>
 
                   <div
                     className={`${
-                      idx % 2 === 1 ? "md:order-1 md:text-right" : ""
+                      idx % 2 === 1
+                        ? `md:order-1 ${
+                            i18n.language == "en"
+                              ? `md:text-right`
+                              : `md:text-left`
+                          } `
+                        : ""
                     }`}
                   >
                     <div className="text-sm text-slate-500">Step {s.id}</div>
@@ -284,10 +230,10 @@ export default function Home2() {
         <section className="py-16 bg-white dark:bg-slate-900">
           <div className="max-w-6xl mx-auto px-6 lg:px-8">
             <h3 className="text-2xl font-semibold text-slate-900 dark:text-white text-center">
-              Product gallery
+              {t("home2.galleryHeader")}
             </h3>
             <p className="mt-2 text-center text-slate-600 dark:text-slate-300">
-              Showcase product variants, angles and context shots.
+              {t("home2.gallerySubtitle")}
             </p>
 
             <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -325,13 +271,10 @@ export default function Home2() {
                       <div className="font-semibold text-slate-900 dark:text-white">
                         {p.title}
                       </div>
-                      <div className="text-sm text-slate-500">
-                        Free shipping
-                      </div>
                     </div>
 
                     <div className="mt-2 text-sm text-slate-600 dark:text-slate-300">
-                      Short caption about this product view.
+                      {p.desc}
                     </div>
                   </div>
                 </div>
@@ -344,11 +287,10 @@ export default function Home2() {
         <section className="py-16 bg-slate-50 dark:bg-slate-900">
           <div className="max-w-6xl mx-auto px-6 lg:px-8">
             <h3 className="text-2xl font-semibold text-slate-900 dark:text-white text-center">
-              Components included
+              {t("home2.componentsHeader")}
             </h3>
             <p className="mt-2 text-center text-slate-600 dark:text-slate-300">
-              Ready-made blocks you can mix-and-match to build product pages
-              quickly.
+              {t("home2.componentsSubtitle")}
             </p>
 
             <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -362,7 +304,7 @@ export default function Home2() {
 
                   {/* overlapping icon */}
                   <div className="absolute left-6 -top-6 w-12 h-12 rounded-lg flex items-center justify-center text-white bg-linear-to-r from-indigo-500 to-blue-600 shadow-md">
-                    {c.icon}
+                    {componentIcons[c.id]}
                   </div>
 
                   <div className="mt-4 pl-0">

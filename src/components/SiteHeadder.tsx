@@ -36,7 +36,7 @@ const SiteHeadder: React.FC = () => {
       title: t("header.home"),
       submenu: [
         { title: t("header.home1"), href: "/home1" },
-        { title: t("header.home2"), href: "/home-2" },
+        { title: t("header.home2"), href: "/home2" },
       ],
     },
     { title: t("header.aboutUs"), href: "/about-us" },

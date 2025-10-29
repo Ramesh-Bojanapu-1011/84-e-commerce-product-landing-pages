@@ -173,5 +173,118 @@
       "seeAllFeatures": "See all features",
       "learnMore": "Learn more →"
     }
+  },
+  "home2": {
+    "hero": {
+      "featuredProduct": "Nimbus Speaker",
+      "title": "Build product pages that sell — faster",
+      "desc": "Launch high-converting product pages with curated components, fast images, and best-practice layouts. Plug them into your store and iterate quickly.",
+      "exploreTemplates": "Explore templates",
+      "contactSales": "Contact sales",
+      "badges": ["Performance-first", "SEO & accessibility", "Mobile-optimized"]
+    },
+    "highlights": [
+      {
+        "title": "Conversion-ready UI",
+        "desc": "Pre-built product blocks and CTAs tuned for higher add-to-cart rates."
+      },
+      {
+        "title": "Variant-first product cards",
+        "desc": "Flexible variant and bundle layouts for modern storefronts."
+      },
+      {
+        "title": "International-ready",
+        "desc": "Multi-currency and locale-friendly components out of the box."
+      }
+    ],
+    "highlightsHeader": "What this theme gives you",
+    "highlightsSubtitle": "Handcrafted components built for product storytelling and conversions.",
+    "steps": [
+      {
+        "id": 1,
+        "title": "Pick a template",
+        "desc": "Choose a layout that matches your product and brand."
+      },
+      {
+        "id": 2,
+        "title": "Customize",
+        "desc": "Swap images, update text, and connect variants in minutes."
+      },
+      {
+        "id": 3,
+        "title": "Launch & iterate",
+        "desc": "Monitor metrics and A/B test sections to improve conversions."
+      }
+    ],
+    "gallery": [
+      {
+        "id": 1,
+        "title": "Nimbus Speaker",
+        "price": 129,
+        "desc": "High-fidelity wireless speaker with deep bass."
+      },
+      {
+        "id": 2,
+        "title": "Aurora Headphones",
+        "price": 149,
+        "desc": "Noise-cancelling headphones with 30hr battery life."
+      },
+      {
+        "id": 3,
+        "title": "Lumen Lamp",
+        "price": 89,
+        "desc": "Adjustable desk lamp with warm and cool light settings."
+      },
+      {
+        "id": 4,
+        "title": "Breeze Fan",
+        "price": 99,
+        "desc": "Quiet, energy-efficient fan with multiple speed settings."
+      }
+    ],
+    "components": [
+      {
+        "id": "hero",
+        "title": "Product hero",
+        "desc": "Large hero with images, price, and prominent CTA to convert visitors."
+      },
+      {
+        "id": "variants",
+        "title": "Variant selector",
+        "desc": "Size, color and bundle pickers that map cleanly to your store's SKUs."
+      },
+      {
+        "id": "reviews",
+        "title": "Reviews & ratings",
+        "desc": "Customer feedback, star ratings and verified purchaser badges."
+      },
+      {
+        "id": "upsell",
+        "title": "Cross-sell modules",
+        "desc": "Related products, bundles and post-purchase recommendations."
+      },
+      {
+        "id": "intl",
+        "title": "International-ready",
+        "desc": "Locale & currency-aware blocks plus RTL support."
+      },
+      {
+        "id": "checkout",
+        "title": "Optimized checkout",
+        "desc": "Fast, accessible checkout flows with minimal friction."
+      }
+    ],
+    "stepsHeader": "How it works",
+    "stepsSubtitle": "Three steps to launch a product page",
+    "galleryHeader": "Product gallery",
+    "gallerySubtitle": "Showcase product variants, angles and context shots.",
+    "componentsHeader": "Components included",
+    "componentsSubtitle": "Ready-made blocks you can mix-and-match to build product pages quickly.",
+    "finalCta": {
+      "title": "Ready to ship beautiful product pages?",
+      "desc": "Start with a template, customize, and convert more visitors into customers.",
+      "getTemplates": "Get templates",
+      "talkToSales": "Talk to sales"
+    }
   }
 }
