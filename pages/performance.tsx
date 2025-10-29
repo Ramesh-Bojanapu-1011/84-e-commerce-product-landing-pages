@@ -66,21 +66,21 @@ const PerformanceEnhancementPage = () => {
       who: t("performance.testimonials.0.who"),
       role: t("performance.testimonials.0.role"),
       rating: 5,
-      avatar:  "https://randomuser.me/api/portraits/women/85.jpg",
+      avatar: "https://randomuser.me/api/portraits/women/85.jpg",
     },
     {
       quote: t("performance.testimonials.1.quote"),
       who: t("performance.testimonials.1.who"),
       role: t("performance.testimonials.1.role"),
       rating: 5,
-      avatar:  "https://randomuser.me/api/portraits/men/52.jpg",
+      avatar: "https://randomuser.me/api/portraits/men/52.jpg",
     },
     {
       quote: t("performance.testimonials.2.quote"),
       who: t("performance.testimonials.2.who"),
       role: t("performance.testimonials.2.role"),
       rating: 5,
-      avatar:  "https://randomuser.me/api/portraits/women/29.jpg",
+      avatar: "https://randomuser.me/api/portraits/women/29.jpg",
     },
   ];
 
