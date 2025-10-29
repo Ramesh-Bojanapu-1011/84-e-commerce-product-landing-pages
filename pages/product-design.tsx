@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useTranslation } from "react-i18next";
 import SiteFooter from "../src/components/SiteFooter";
 import SiteHeadder from "../src/components/SiteHeadder";
+import i18n from "@/i18n";
 
 const ProductDesign = () => {
   const { t } = useTranslation();
@@ -91,7 +92,7 @@ const ProductDesign = () => {
       </Head>
 
       <SiteHeadder />
-      <main className=" caret-transparent ">
+      <main className=" caret-transparent bg-linear-to-br from-blue-50 to-white dark:from-slate-900 dark:to-slate-800 ">
         {/* Hero */}
         <section className="relative overflow-hidden bg-linear-to-br from-indigo-600 to-emerald-500 text-white min-h-screen flex items-center justify-center">
           <div className="max-w-7xl mx-auto px-6  ">
@@ -141,7 +142,7 @@ const ProductDesign = () => {
         {/* Features */}
         <section
           aria-labelledby="features-title"
-          className=" flex justify-center py-12 items-center   "
+          className=" flex justify-center py-12 items-center bg-white dark:bg-slate-900   "
         >
           <div className="flex flex-col  max-w-7xl">
             <h2 id="features-title" className="text-2xl text-center font-bold">
@@ -155,7 +156,7 @@ const ProductDesign = () => {
               {features.map((f, idx) => (
                 <article
                   key={idx}
-                  className="group relative rounded-2xl overflow-hidden bg-white/60 dark:bg-slate-900/50 border border-slate-200/30 dark:border-slate-700/20 p-6 shadow-xl hover:shadow-2xl transition transform hover:-translate-y-2"
+                  className="group relative rounded-2xl overflow-hidden bg-white/60 dark:bg-slate-900/50 border border-transparent hover:border-slate-200/20 p-6 shadow-md hover:shadow-xl transition-transform duration-300 hover:-translate-y-2 backdrop-blur-sm"
                 >
                   <div className="flex items-start gap-4">
                     <div className="shrink-0">
@@ -220,8 +221,16 @@ const ProductDesign = () => {
                       key={p.step}
                       className={` flex    items-center  ${
                         i % 2 === 0
-                          ? " md:justify-start md:ml-10  flex-row-reverse"
-                          : " md:justify-start md:mr-10"
+                          ? ` md:justify-start flex-row-reverse ${
+                              i18n.language == "en"
+                                ? `  md:ml-10 `
+                                : `  md:mr-10 `
+                            }`
+                          : ` md:justify-start ${
+                              i18n.language == "en"
+                                ? `  md:mr-10 `
+                                : `  md:ml-10 `
+                            }`
                       }`}
                       aria-label={`Step ${i + 1}: ${p.step}`}
                     >
@@ -262,9 +271,9 @@ const ProductDesign = () => {
         <section
           id="projects"
           aria-labelledby="projects-title"
-          className="flex w-full justify-center "
+          className="flex w-full justify-center bg-white dark:bg-slate-900 py-7 "
         >
-          <div className="flex flex-col max-w-7xl justify-center items-center">
+          <div className="flex flex-col w-screen   justify-center items-center">
             <h2 id="projects-title" className="text-2xl font-bold">
               {t("productDesign.projectsHeader")}
             </h2>
@@ -285,7 +294,7 @@ const ProductDesign = () => {
                   return (
                     <article
                       key={p.title}
-                      className={`group relative overflow-hidden rounded-xl shadow-lg ${baseClasses} bg-slate-50 dark:bg-slate-900/50 py-5 `}
+                      className={`group relative overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-transform duration-300 ${baseClasses} bg-slate-50 dark:bg-slate-900/50 py-5 border border-transparent hover:border-white/10`}
                       aria-labelledby={`project-${idx}`}
                     >
                       <div
@@ -341,7 +350,7 @@ const ProductDesign = () => {
               {testimonials.map((item, idx) => (
                 <div
                   key={idx}
-                  className="relative rounded-xl p-6 bg-white dark:bg-slate-800 border border-slate-200/40 dark:border-slate-700/30 shadow-sm overflow-visible"
+                  className="relative rounded-2xl p-6 bg-white/95 dark:bg-slate-800/60 ring-1 ring-slate-100/40 hover:ring-2 hover:ring-amber-200/30 shadow-md hover:shadow-xl transition-transform duration-300 hover:-translate-y-1 overflow-visible"
                 >
                   {/* quote badge */}
                   <div className="absolute -top-5 left-6 h-12 w-12 rounded-full bg-linear-to-br from-emerald-400 to-indigo-600 text-white flex items-center justify-center shadow-2xl">
@@ -387,7 +396,7 @@ const ProductDesign = () => {
         </section>
 
         {/* Team */}
-        <section aria-labelledby="team-title" className="py-12">
+        <section aria-labelledby="team-title" className="py-12 bg-white dark:bg-slate-900  ">
           <div className="max-w-7xl mx-auto">
             <h2 id="team-title" className="text-2xl font-bold text-center">
               {t("productDesign.teamHeader")}
@@ -400,7 +409,7 @@ const ProductDesign = () => {
               {team.map((m) => (
                 <div
                   key={m.name}
-                  className="group relative rounded-xl overflow-hidden bg-white dark:bg-slate-900/40 border border-slate-100/60 dark:border-slate-700/30 p-6 shadow-sm hover:shadow-lg transition transform hover:-translate-y-1"
+                  className="group relative rounded-2xl overflow-hidden bg-white/95 dark:bg-slate-900/50 border   hover:border-slate-200/20 p-6 shadow-2xl hover:shadow-xl transition-transform duration-300 hover:-translate-y-1"
                 >
                   <div className="flex items-start gap-4">
                     <img
