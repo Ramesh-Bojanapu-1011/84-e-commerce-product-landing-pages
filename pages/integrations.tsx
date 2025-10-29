@@ -56,7 +56,7 @@ const PerformanceEnhancementPage = () => {
     {
       name: t("integrations.team.2.name"),
       role: t("integrations.team.2.role"),
-      avatar: "https://randomuser.me/api/portraits/women/12.jpg",
+      avatar: "https://randomuser.me/api/portraits/women/32.jpg",
     },
   ];
 
@@ -66,21 +66,21 @@ const PerformanceEnhancementPage = () => {
       who: t("integrations.testimonials.0.who"),
       role: t("integrations.testimonials.0.role"),
       rating: 5,
-      avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+      avatar: "https://randomuser.me/api/portraits/men/68.jpg",
     },
     {
       quote: t("integrations.testimonials.1.quote"),
       who: t("integrations.testimonials.1.who"),
       role: t("integrations.testimonials.1.role"),
       rating: 5,
-      avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+      avatar: "https://randomuser.me/api/portraits/men/45.jpg",
     },
     {
       quote: t("integrations.testimonials.2.quote"),
       who: t("integrations.testimonials.2.who"),
       role: t("integrations.testimonials.2.role"),
       rating: 5,
-      avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+      avatar: "https://randomuser.me/api/portraits/men/32.jpg",
     },
   ];
 
@@ -368,7 +368,7 @@ const PerformanceEnhancementPage = () => {
               {testimonials.map((item, idx) => (
                 <div
                   key={idx}
-                  className="relative rounded-2xl p-6 bg-white/95 dark:bg-slate-800/60 ring-1 ring-slate-100/40 hover:ring-2 hover:ring-amber-200/30 shadow-md hover:shadow-xl transition-transform duration-300 hover:-translate-y-1 overflow-visible"
+                  className="relative rounded-2xl p-6 bg-white/95 dark:bg-slate-800/60 ring-1 ring-slate-100/40 hover:ring-2 hover:ring-amber-200/30 shadow-md hover:shadow-xl transition-transform duration-300 hover:-translate-y-1 overflow-visible flex flex-col justify-between"
                 >
                   {/* quote badge */}
                   <div className="absolute -top-5 left-6 h-12 w-12 rounded-full bg-linear-to-br from-emerald-400 to-indigo-600 text-white flex items-center justify-center shadow-2xl">

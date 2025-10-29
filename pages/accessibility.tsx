@@ -56,7 +56,7 @@ const PerformanceEnhancementPage = () => {
     {
       name: t("accessibility.team.2.name"),
       role: t("accessibility.team.2.role"),
-      avatar: " https://randomuser.me/api/portraits/women/12.jpg",
+      avatar: "https://randomuser.me/api/portraits/women/12.jpg",
     },
   ];
 
