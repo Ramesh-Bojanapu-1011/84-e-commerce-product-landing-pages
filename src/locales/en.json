@@ -751,6 +751,52 @@
       "seeServices": "See services"
     }
   },
+  "heroRedesign": {
+    "meta": {
+      "title": "Hero redesign case study — E-commerce Product Pages",
+      "description": "A case study on how a focused hero redesign improved add-to-cart and revenue metrics."
+    },
+    "label": "Case study",
+    "featured": {
+      "title": "Hero redesign that lifted conversions"
+    },
+    "intro": "A concise case study: how a focused hero redesign — clearer value prop, visual hierarchy and a simplified CTA — produced measurable lifts in add-to-cart and revenue.",
+    "sections": [
+      {
+        "title": "The problem",
+        "body": "The original hero had too many competing elements: multiple CTAs, unclear value proposition and heavy visual noise. Analytics showed a large drop-off on hero impressions and low click-through to product actions. We hypothesised a simpler hero focusing on one action would increase intent and reduce decision friction."
+      },
+      {
+        "title": "Research & approach",
+        "body": "We ran a quick mixed-method audit: session recordings, heatmaps and a short round of usability interviews. From that we built hypotheses and prioritized them into an A/B test with a clear success metric: increase add-to-cart events on the hero funnel."
+      },
+      {
+        "title": "What we changed",
+        "body": "- Single clear CTA that describes the immediate benefit\n- Stronger headline that communicates value within 3 seconds\n- Cleaner hero image with product in-context and a subtle trust bar\n- Reduced secondary links and simplified microcopy"
+      },
+      {
+        "title": "Results",
+        "body": "After a 4-week A/B test across 100k visitors the variant with the redesigned hero delivered:\n- +32% Add-to-cart rate\n- +18% Click-through to product details\n- +12% Revenue per visitor\nThe variant held statistically significant improvement and became the new control."
+      }
+    ],
+    "quote": "The new hero cut decision time in half and the measurable uplift exceeded our expectations — the conversion impact was immediate.",
+    "keyTakeaways": {
+      "title": "Key takeaways",
+      "items": [
+        "Clarity beats cleverness — lead with the value.",
+        "One primary CTA reduces decision friction.",
+        "Test with real traffic and measure revenue impact."
+      ]
+    },
+    "impact": {
+      "title": "Impact",
+      "labels": ["Add-to-cart", "Revenue / visitor", "Experiment length"]
+    },
+    "cta": {
+      "question": "Want similar results?",
+      "button": "Book a quick consult"
+    }
+  },
   "admin": {
     "heading": "Admin Overview",
     "stats": {
