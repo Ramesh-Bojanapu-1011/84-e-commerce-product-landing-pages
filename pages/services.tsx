@@ -142,20 +142,6 @@ export default function ServicesPage() {
                     <div className="mt-6">
                       <span className="inline-flex items-center text-sm font-medium text-indigo-600 group-hover:underline">
                         {t("services.learnMore")}
-                        <svg
-                          className="ml-2 w-4 h-4"
-                          fill="none"
-                          stroke="currentColor"
-                          viewBox="0 0 24 24"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth="2"
-                            d="M17 8l4 4m0 0l-4 4m4-4H3"
-                          ></path>
-                        </svg>
                       </span>
                     </div>
                   </div>
@@ -272,9 +258,6 @@ export default function ServicesPage() {
                   <div className="mt-6 flex items-center justify-between">
                     <span className="text-sm text-slate-500 dark:text-slate-400">
                       {t("services.features.trusted")}
-                    </span>
-                    <span className="text-sm text-indigo-600 dark:text-indigo-400 font-medium">
-                      {t("services.features.learn")}
                     </span>
                   </div>
                 </div>

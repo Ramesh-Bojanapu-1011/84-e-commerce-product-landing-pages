@@ -507,5 +507,141 @@
       "contact": "Talk to us",
       "templates": "Try templates"
     }
+  },
+  "blog": {
+    "meta": {
+      "title": "Blog — E-commerce Product Pages",
+      "description": "Articles and guides about product pages, variants, performance and conversion."
+    },
+    "hero": {
+      "title": "Insights on product pages, performance and conversion",
+      "desc": "Our collection of posts, experiments and practical guides for building high-converting product experiences.",
+      "cta": {
+        "allPosts": "All posts",
+        "services": "Our services"
+      }
+    },
+    "section": {
+      "latest": {
+        "title": "Latest posts",
+        "desc": "Short, practical posts and case studies related to product pages."
+      }
+    },
+    "posts": [
+      {
+        "title": "Hero redesign that lifted conversions",
+        "excerpt": "How a focused hero redesign and clearer CTA flow increased add-to-cart by 32%.",
+        "date": "2025-10-01",
+        "author": "Olivia Hart",
+        "cover": ""
+      },
+      {
+        "title": "Variant-first UI patterns for fewer returns",
+        "excerpt": "Lessons from introducing variant-first layouts and clearer SKU mapping.",
+        "date": "2025-08-12",
+        "author": "Matt Rivera",
+        "cover": ""
+      },
+      {
+        "title": "Performance tuning for product pages",
+        "excerpt": "Optimisations that lowered LCP and sped up checkout flows.",
+        "date": "2025-06-30",
+        "author": "Liam Chen",
+        "cover": ""
+      }
+    ],
+    "card": {
+      "articleLabel": "Article",
+      "coverPlaceholder": "Cover",
+      "readArticle": "Read article",
+      "readArticleAria": "Read {{title}}",
+      "readTime": "{{minutes}} min read",
+      "share": "Share",
+      "shareText": "Check this out"
+    },
+    "authors": {
+      "title": "Authors",
+      "desc": "Meet the small team behind these posts. Connect with them or read more.",
+      "people": [
+        {
+          "name": "Olivia Hart",
+          "role": "Product Designer",
+          "bio": "Designs focused on clarity and conversion. Loves microcopy and A/B testing.",
+          "avatar": "OH",
+          "twitter": "https://twitter.com/oliviahart",
+          "linkedin": "https://www.linkedin.com/in/oliviahart"
+        },
+        {
+          "name": "Matt Rivera",
+          "role": "Frontend Engineer",
+          "bio": "Builds performant, accessible UIs and component systems.",
+          "avatar": "MR",
+          "twitter": "https://twitter.com/mattrivera",
+          "linkedin": "https://www.linkedin.com/in/mattrivera"
+        },
+        {
+          "name": "Liam Chen",
+          "role": "Performance Engineer",
+          "bio": "Optimises loading, metrics and real-user performance.",
+          "avatar": "LC",
+          "twitter": "https://twitter.com/liamchen",
+          "linkedin": "https://www.linkedin.com/in/liamchen"
+        }
+      ]
+    },
+    "testimonials": {
+      "title": "What people say",
+      "desc": "Short testimonials from teams who used our patterns and guides.",
+      "items": [
+        {
+          "quote": "The UI Kit saved us weeks — the components are well thought out and easy to adapt.",
+          "name": "Asha Patel",
+          "role": "Head of Product, NovaShop",
+          "initials": "AP"
+        },
+        {
+          "quote": "Following the performance guide helped us reduce LCP by 0.9s on average.",
+          "name": "Carlos Mendes",
+          "role": "Frontend Lead, Cartly",
+          "initials": "CM"
+        },
+        {
+          "quote": "The analytics checklist made our event tracking consistent across the product.",
+          "name": "Fatima Noor",
+          "role": "Growth Analyst, Marketly",
+          "initials": "FN"
+        }
+      ]
+    },
+    "faq": {
+      "title": "Frequently asked",
+      "desc": "Answers to common questions about our templates, guides and best practices.",
+      "items": [
+        {
+          "q": "How do I use the UI Kit?",
+          "a": "Download the UI Kit, install the token package, and import the sample components into your app. Start by copying the hero and header patterns."
+        },
+        {
+          "q": "Are the performance tips applicable to server-side rendered pages?",
+          "a": "Yes — many tips are generic. Prioritise image optimization, critical CSS and reducing blocking scripts. Server-side rendering benefits from edge caching and CDN rules."
+        },
+        {
+          "q": "Can I adapt the templates to other design systems?",
+          "a": "Absolutely — the templates are intentionally minimal and token-driven so you can map them to your design system variables."
+        },
+        {
+          "q": "Do you offer professional help?",
+          "a": "Yes — check the Services page to see our engagement models or contact us via the contact form."
+        }
+      ]
+    },
+    "newsletter": {
+      "title": "Get product page tips",
+      "desc": "Subscribe for short, tactical posts about design, performance and conversion.",
+      "form": {
+        "placeholder": "you@company.com",
+        "subscribe": "Subscribe"
+      }
+    }
   }
 }

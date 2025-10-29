@@ -3,6 +3,7 @@ import SiteHeadder from "@/components/SiteHeadder";
 import { Star } from "lucide-react";
 import Head from "next/head";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
 
 interface Post {
   slug: string;
@@ -14,43 +15,67 @@ interface Post {
 }
 
 export default function BlogPage() {
+  const { t } = useTranslation();
+
   const posts: Post[] = [
     {
       slug: "hero-redesign",
-      title: "Hero redesign that lifted conversions",
-      excerpt:
-        "How a focused hero redesign and clearer CTA flow increased add-to-cart by 32%.",
-      date: "2025-10-01",
-      author: "Olivia Hart",
+      title: t("blog.posts.0.title"),
+      excerpt: t("blog.posts.0.excerpt"),
+      date: t("blog.posts.0.date"),
+      author: t("blog.posts.0.author"),
       cover: "",
     },
     {
       slug: "variant-ui",
-      title: "Variant-first UI patterns for fewer returns",
-      excerpt:
-        "Lessons from introducing variant-first layouts and clearer SKU mapping.",
-      date: "2025-08-12",
-      author: "Matt Rivera",
+      title: t("blog.posts.1.title"),
+      excerpt: t("blog.posts.1.excerpt"),
+      date: t("blog.posts.1.date"),
+      author: t("blog.posts.1.author"),
       cover: "",
     },
     {
       slug: "performance-tuning",
-      title: "Performance tuning for product pages",
-      excerpt: "Optimisations that lowered LCP and sped up checkout flows.",
-      date: "2025-06-30",
-      author: "Liam Chen",
+      title: t("blog.posts.2.title"),
+      excerpt: t("blog.posts.2.excerpt"),
+      date: t("blog.posts.2.date"),
+      author: t("blog.posts.2.author"),
       cover: "",
+    },
+  ];
+
+  const authors = [
+    {
+      name: t("blog.authors.people.0.name"),
+      role: t("blog.authors.people.0.role"),
+      bio: t("blog.authors.people.0.bio"),
+      avatar: "https://i.postimg.cc/3x3QzSGq/author1.jpg",
+      twitter: "https://twitter.com/janedoe",
+      linkedin: "https://linkedin.com/in/janedoe",
+    },
+    {
+      name: t("blog.authors.people.1.name"),
+      role: t("blog.authors.people.1.role"),
+      bio: t("blog.authors.people.1.bio"),
+      avatar: "https://i.postimg.cc/3x3QzSGq/author2.jpg",
+      twitter: "https://twitter.com/johnsmith",
+      linkedin: "https://linkedin.com/in/johnsmith",
+    },
+    {
+      name: t("blog.authors.people.2.name"),
+      role: t("blog.authors.people.2.role"),
+      bio: t("blog.authors.people.2.bio"),
+      avatar: "https://i.postimg.cc/3x3QzSGq/author3.jpg",
+      twitter: "https://twitter.com/emilyjohnson",
+      linkedin: "https://linkedin.com/in/emilyjohnson",
     },
   ];
 
   return (
     <>
       <Head>
-        <title>Blog — E-commerce Product Pages</title>
-        <meta
-          name="description"
-          content="Articles and guides about product pages, variants, performance and conversion."
-        />
+        <title>{t("blog.meta.title")}</title>
+        <meta name="description" content={t("blog.meta.description")} />
       </Head>
 
       <div className="min-h-screen bg-linear-to-br from-white to-blue-50 dark:from-slate-900 dark:to-slate-800 caret-transparent">
@@ -60,11 +85,10 @@ export default function BlogPage() {
         <section className=" min-h-screen flex items-center justify-center text-center   ">
           <div className="max-w-6xl mx-auto px-6 lg:px-8 text-center">
             <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white">
-              Insights on product pages, performance and conversion
+              {t("blog.hero.title")}
             </h1>
             <p className="mt-4 text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto">
-              Our collection of posts, experiments and practical guides for
-              building high-converting product experiences.
+              {t("blog.hero.desc")}
             </p>
 
             <div className="mt-8 flex items-center justify-center gap-3">
@@ -72,13 +96,13 @@ export default function BlogPage() {
                 href="#blogs"
                 className="px-5 py-3 rounded-md bg-indigo-600 text-white"
               >
-                All posts
+                {t("blog.hero.cta.allPosts")}
               </Link>
               <Link
                 href="/services"
                 className="px-5 py-3 rounded-md border border-slate-200 dark:border-slate-700"
               >
-                Our services
+                {t("blog.hero.cta.services")}
               </Link>
             </div>
           </div>
@@ -88,10 +112,10 @@ export default function BlogPage() {
         <section id="blogs" className="py-12 bg-white dark:bg-slate-900">
           <div className="max-w-6xl mx-auto px-6 lg:px-8">
             <h3 className="text-2xl font-semibold text-slate-900 dark:text-white text-center">
-              Latest posts
+              {t("blog.section.latest.title")}
             </h3>
             <p className="mt-2 text-center text-slate-600 dark:text-slate-300">
-              Short, practical posts and case studies related to product pages.
+              {t("blog.section.latest.desc")}
             </p>
 
             <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -104,12 +128,14 @@ export default function BlogPage() {
                   <div className="relative h-44 sm:h-48">
                     <div className="absolute inset-0 bg-slate-100 dark:bg-slate-900 flex items-center justify-center">
                       {/* placeholder cover - replace with Image when available */}
-                      <div className="text-slate-400">{p.cover || "Cover"}</div>
+                      <div className="text-slate-400">
+                        <img src={p.cover} alt={p.slug} />
+                      </div>
                     </div>
                     <div className="absolute inset-0 bg-linear-to-t from-black/30 to-transparent pointer-events-none" />
                     <div className="absolute left-4 top-4">
                       <span className="inline-flex items-center px-3 py-1 rounded-full text-xs bg-white/90 dark:bg-black/60 text-slate-800 dark:text-slate-100 backdrop-blur">
-                        {"Article"}
+                        {t("blog.card.articleLabel")}
                       </span>
                     </div>
                   </div>
@@ -118,7 +144,7 @@ export default function BlogPage() {
                     <div className="flex items-center justify-between text-sm text-slate-500 dark:text-slate-400">
                       <div>{p.date}</div>
                       <div className="hidden sm:block">
-                        {p.author} · 3 min read
+                        {p.author} · {t("blog.card.readTime", { minutes: 3 })}
                       </div>
                     </div>
 
@@ -134,9 +160,11 @@ export default function BlogPage() {
                       <Link
                         href={`/${p.slug}`}
                         className="inline-flex items-center gap-2 text-sm font-medium text-indigo-600 dark:text-indigo-400"
-                        aria-label={`Read ${p.title}`}
+                        aria-label={t("blog.card.readArticleAria", {
+                          title: p.title,
+                        })}
                       >
-                        Read article
+                        {t("blog.card.readArticle")}
                         <svg
                           className="w-4 h-4"
                           fill="none"
@@ -163,7 +191,7 @@ export default function BlogPage() {
                           try {
                             await navigator.share({
                               title: document.title,
-                              text: "Check this out",
+                              text: t("blog.card.shareText"),
                               url: `${window.location.origin}/${p.slug}`,
                             });
                           } catch (err: any) {
@@ -175,7 +203,7 @@ export default function BlogPage() {
                         }}
                         className="text-sm text-slate-400 hover:text-slate-600 dark:hover:text-slate-300 cursor-pointer  "
                       >
-                        Share
+                        {t("blog.card.share")}
                       </div>
                     </div>
                   </div>
@@ -189,47 +217,21 @@ export default function BlogPage() {
         <section className="py-16 bg-white dark:bg-slate-900">
           <div className="max-w-6xl mx-auto px-6 lg:px-8">
             <h3 className="text-2xl font-semibold text-slate-900 dark:text-white text-center">
-              Authors
+              {t("blog.authors.title")}
             </h3>
             <p className="mt-2 text-center text-slate-600 dark:text-slate-300">
-              Meet the small team behind these posts. Connect with them or read
-              more.
+              {t("blog.authors.desc")}
             </p>
 
             <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-              {[
-                {
-                  name: "Olivia Hart",
-                  role: "Product Designer",
-                  bio: "Designs focused on clarity and conversion. Loves microcopy and A/B testing.",
-                  avatar: "OH",
-                  twitter: "https://twitter.com/oliviahart",
-                  linkedin: "https://www.linkedin.com/in/oliviahart",
-                },
-                {
-                  name: "Matt Rivera",
-                  role: "Frontend Engineer",
-                  bio: "Builds performant, accessible UIs and component systems.",
-                  avatar: "MR",
-                  twitter: "https://twitter.com/mattrivera",
-                  linkedin: "https://www.linkedin.com/in/mattrivera",
-                },
-                {
-                  name: "Liam Chen",
-                  role: "Performance Engineer",
-                  bio: "Optimises loading, metrics and real-user performance.",
-                  avatar: "LC",
-                  twitter: "https://twitter.com/liamchen",
-                  linkedin: "https://www.linkedin.com/in/liamchen",
-                },
-              ].map((a) => (
+              {authors.map((a) => (
                 <div
                   key={a.name}
                   className="p-6 bg-slate-50 dark:bg-slate-800 rounded-xl border border-slate-100 dark:border-slate-700 shadow-2xl"
                 >
                   <div className="flex items-center gap-4">
-                    <div className="w-14 h-14 rounded-full bg-linear-to-br from-indigo-500 to-pink-500 flex items-center justify-center text-white font-semibold">
-                      {a.avatar}
+                    <div className="w-14 h-14 rounded-full bg-linear-to-br from-indigo-500 to-pink-500 flex items-center justify-center text-white font-semibold overflow-hidden">
+                      <img src={a.avatar} alt={a.name} />
                     </div>
 
                     <div>
@@ -254,6 +256,7 @@ export default function BlogPage() {
                       aria-label={`Twitter ${a.name}`}
                       className="text-slate-500 hover:text-indigo-600"
                     >
+                      {/* twitter icon omitted for brevity; kept as original svg in locales */}
                       <svg
                         xmlns="http://www.w3.org/2000/svg"
                         width={20}
@@ -325,33 +328,30 @@ export default function BlogPage() {
         <section className="py-16 bg-slate-50 dark:bg-slate-900">
           <div className="max-w-6xl mx-auto px-6 lg:px-8">
             <h3 className="text-2xl font-semibold text-slate-900 dark:text-white text-center">
-              What people say
+              {t("blog.testimonials.title")}
             </h3>
             <p className="mt-2 text-center text-slate-600 dark:text-slate-300">
-              Short testimonials from teams who used our patterns and guides.
+              {t("blog.testimonials.desc")}
             </p>
 
             <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
                 {
-                  quote:
-                    "The UI Kit saved us weeks — the components are well thought out and easy to adapt.",
-                  name: "Asha Patel",
-                  role: "Head of Product, NovaShop",
+                  quote: t("blog.testimonials.items.0.quote"),
+                  name: t("blog.testimonials.items.0.name"),
+                  role: t("blog.testimonials.items.0.role"),
                   initials: "AP",
                 },
                 {
-                  quote:
-                    "Following the performance guide helped us reduce LCP by 0.9s on average.",
-                  name: "Carlos Mendes",
-                  role: "Frontend Lead, Cartly",
+                  quote: t("blog.testimonials.items.1.quote"),
+                  name: t("blog.testimonials.items.1.name"),
+                  role: t("blog.testimonials.items.1.role"),
                   initials: "CM",
                 },
                 {
-                  quote:
-                    "The analytics checklist made our event tracking consistent across the product.",
-                  name: "Fatima Noor",
-                  role: "Growth Analyst, Marketly",
+                  quote: t("blog.testimonials.items.2.quote"),
+                  name: t("blog.testimonials.items.2.name"),
+                  role: t("blog.testimonials.items.2.role"),
                   initials: "FN",
                 },
               ].map((t) => (
@@ -364,8 +364,8 @@ export default function BlogPage() {
 
                   <div className="flex items-start gap-4">
                     <div className="relative">
-                      <div className="w-16 h-16 rounded-full bg-linear-to-br from-indigo-500 to-pink-500 flex items-center justify-center text-white font-semibold text-lg shadow-md">
-                        {t.initials}
+                      <div className="w-16 h-16 rounded-full bg-linear-to-br from-indigo-500 to-pink-500 flex items-center justify-center text-white font-semibold text-lg shadow-md overflow-hidden">
+                        <img src={t.initials} alt={t.name} />
                       </div>
                     </div>
 
@@ -409,32 +409,18 @@ export default function BlogPage() {
         <section className="py-16 bg-white dark:bg-slate-900">
           <div className="max-w-4xl mx-auto px-6 lg:px-8">
             <h3 className="text-2xl font-semibold text-slate-900 dark:text-white text-center">
-              Frequently asked
+              {t("blog.faq.title")}
             </h3>
             <p className="mt-2 text-center text-slate-600 dark:text-slate-300">
-              Answers to common questions about our templates, guides and best
-              practices.
+              {t("blog.faq.desc")}
             </p>
 
             <div className="mt-8 space-y-3">
-              {[
-                {
-                  q: "How do I use the UI Kit?",
-                  a: "Download the UI Kit, install the token package, and import the sample components into your app. Start by copying the hero and header patterns.",
-                },
-                {
-                  q: "Are the performance tips applicable to server-side rendered pages?",
-                  a: "Yes — many tips are generic. Prioritise image optimization, critical CSS and reducing blocking scripts. Server-side rendering benefits from edge caching and CDN rules.",
-                },
-                {
-                  q: "Can I adapt the templates to other design systems?",
-                  a: "Absolutely — the templates are intentionally minimal and token-driven so you can map them to your design system variables.",
-                },
-                {
-                  q: "Do you offer professional help?",
-                  a: "Yes — check the Services page to see our engagement models or contact us via the contact form.",
-                },
-              ].map((f, idx) => (
+              {(
+                t("blog.faq.items", {
+                  returnObjects: true,
+                }) as unknown as Array<{ q: string; a: string }>
+              ).map((f, idx) => (
                 <details
                   key={f.q}
                   className="group bg-slate-50 dark:bg-slate-800 border border-slate-100 dark:border-slate-700 rounded-lg p-4"
@@ -471,21 +457,20 @@ export default function BlogPage() {
         {/* Newsletter CTA */}
         <section className="py-16 bg-indigo-600 text-white">
           <div className="max-w-4xl mx-auto px-6 lg:px-8 text-center">
-            <h3 className="text-2xl font-semibold">Get product page tips</h3>
-            <p className="mt-2">
-              Subscribe for short, tactical posts about design, performance and
-              conversion.
-            </p>
+            <h3 className="text-2xl font-semibold">
+              {t("blog.newsletter.title")}
+            </h3>
+            <p className="mt-2">{t("blog.newsletter.desc")}</p>
             <div className="mt-6 flex justify-center">
               <form className="w-full max-w-md flex gap-2">
                 <input
                   aria-label="Email"
                   type="email"
-                  placeholder="you@company.com"
+                  placeholder={t("blog.newsletter.form.placeholder")}
                   className="flex-1 px-4 py-3 rounded-md bg-amber-100 border  text-slate-900"
                 />
                 <button className="px-4 py-3 bg-white text-indigo-600 rounded-md font-medium">
-                  Subscribe
+                  {t("blog.newsletter.form.subscribe")}
                 </button>
               </form>
             </div>
