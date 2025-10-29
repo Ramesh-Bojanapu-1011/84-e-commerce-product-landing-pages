@@ -166,12 +166,10 @@ export default function BlogPage() {
                               text: "Check this out",
                               url: `${window.location.origin}/${p.slug}`,
                             });
-                             
                           } catch (err: any) {
-                             
                             console.error(
                               "Share failed or was cancelled:",
-                              err
+                              err,
                             );
                           }
                         }}
