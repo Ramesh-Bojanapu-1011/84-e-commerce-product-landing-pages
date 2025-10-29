@@ -20,6 +20,7 @@
     "adminDashboard": "Admin Dashboard"
   },
   "footer": {
+    "logoAlt": "EcomPages logo",
     "about": "We build attractive, high-converting product landing pages and product detail experiences tailored for ecommerce brands. Fast, accessible and designed to sell.",
     "quickLinks": "Quick Links",
     "services": "Services",
@@ -48,7 +49,12 @@
       "phone": "+1 (234) 567-890"
     }
   },
+
   "home1": {
+    "meta": {
+      "title": "Home — E-commerce Product Landing Pages",
+      "description": "E-commerce product landing page templates and components."
+    },
     "hero": {
       "badge": "E-commerce templates",
       "title": "Product landing pages that convert — fast",
@@ -743,6 +749,31 @@
       "desc": "Book a short discovery call and we'll share a tailored plan.",
       "email": "Email us",
       "seeServices": "See services"
+    }
+  },
+  "admin": {
+    "heading": "Admin Overview",
+    "stats": {
+      "totalUsers": "Total users",
+      "loggedUsers": "Logged users",
+      "activeUsers": "Active users (30m)"
+    },
+    "charts": {
+      "dailyLogins": "Daily Logins (Last 14 days)",
+      "userStatus": "User Status Breakdown"
+    },
+    "pie": {
+      "logged": "Logged in users",
+      "notLogged": "Not logged"
+    },
+    "table": {
+      "title": "All System Users",
+      "name": "Name",
+      "email": "Email",
+      "role": "Role",
+      "registered": "Registered",
+      "lastLogin": "Last Login",
+      "lastLogout": "Last Logout"
     }
   }
 }

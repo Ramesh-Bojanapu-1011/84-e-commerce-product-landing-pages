@@ -3,6 +3,7 @@ import SiteHeadder from "../src/components/SiteHeadder";
 import SiteFooter from "../src/components/SiteFooter";
 import { getUsers, User } from "@/lib/localAuth";
 import { Users, LogIn, Clock } from "lucide-react"; // Import icons for a modern touch
+import { useTranslation } from "react-i18next";
 import {
   ResponsiveContainer,
   LineChart,
@@ -66,6 +67,7 @@ const StatCard: React.FC<StatCardProps> = ({
 );
 
 export default function AdminDashboard() {
+  const { t } = useTranslation();
   const [users, setUsers] = useState<User[]>([]);
   const [mounted, setMounted] = useState(false);
 
@@ -106,8 +108,11 @@ export default function AdminDashboard() {
   }, [users]);
 
   const pieData = [
-    { name: "Logged in users", value: loggedUsers },
-    { name: "Not logged", value: Math.max(0, totalUsers - loggedUsers) },
+    { name: t("admin.pie.logged"), value: loggedUsers },
+    {
+      name: t("admin.pie.notLogged"),
+      value: Math.max(0, totalUsers - loggedUsers),
+    },
   ];
 
   return (
@@ -144,28 +149,28 @@ export default function AdminDashboard() {
               ></path>
             </g>
           </svg>
-          Admin Overview
+          {t("admin.heading")}
         </h1>
 
         {/* STATS CARDS - Enhanced look with icons and colors */}
         <section className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
           <StatCard
-            title="Total users"
+            title={t("admin.stats.totalUsers")}
             value={totalUsers}
             icon={Users}
-            color="#4F46E5" // Indigo
+            color="#4F46E5"
           />
           <StatCard
-            title="Logged users"
+            title={t("admin.stats.loggedUsers")}
             value={loggedUsers}
             icon={LogIn}
-            color="#10B981" // Emerald
+            color="#10B981"
           />
           <StatCard
-            title="Active users (30m)"
+            title={t("admin.stats.activeUsers")}
             value={activeUsers}
             icon={Clock}
-            color="#F59E0B" // Amber
+            color="#F59E0B"
           />
         </section>
 
@@ -173,7 +178,7 @@ export default function AdminDashboard() {
         <section className="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-10">
           <div className="p-6 bg-white rounded-xl shadow-lg dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
             <h3 className="text-xl font-semibold mb-4 text-slate-700 dark:text-slate-200">
-              Daily Logins (Last 14 days)
+              {t("admin.charts.dailyLogins")}
             </h3>
             <div style={{ width: "100%", height: 300 }}>
               {mounted && (
@@ -217,7 +222,7 @@ export default function AdminDashboard() {
 
           <div className="p-6 bg-white rounded-xl shadow-lg dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
             <h3 className="text-xl font-semibold mb-4 text-slate-700 dark:text-slate-200">
-              User Status Breakdown
+              {t("admin.charts.userStatus")}
             </h3>
             <div
               style={{ width: "100%", height: 300 }}
@@ -269,18 +274,22 @@ export default function AdminDashboard() {
         {/* USERS TABLE - Stripes and better header look */}
         <section className="bg-white rounded-xl shadow-lg p-6 dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
           <h3 className="text-xl font-semibold mb-5 text-slate-700 dark:text-slate-200">
-            All System Users
+            {t("admin.table.title")}
           </h3>
           <div className="overflow-x-auto">
             <table className="w-full text-left">
               <thead>
                 <tr className="text-sm font-semibold uppercase tracking-wider bg-slate-100 dark:bg-slate-700 text-slate-600 dark:text-slate-300">
-                  <th className="py-3 px-4 rounded-tl-xl">Name</th>
-                  <th className="py-3 px-4">Email</th>
-                  <th className="py-3 px-4">Role</th>
-                  <th className="py-3 px-4">Registered</th>
-                  <th className="py-3 px-4">Last Login</th>
-                  <th className="py-3 px-4 rounded-tr-xl">Last Logout</th>
+                  <th className="py-3 px-4 rounded-tl-xl">
+                    {t("admin.table.name")}
+                  </th>
+                  <th className="py-3 px-4">{t("admin.table.email")}</th>
+                  <th className="py-3 px-4">{t("admin.table.role")}</th>
+                  <th className="py-3 px-4">{t("admin.table.registered")}</th>
+                  <th className="py-3 px-4">{t("admin.table.lastLogin")}</th>
+                  <th className="py-3 px-4 rounded-tr-xl">
+                    {t("admin.table.lastLogout")}
+                  </th>
                 </tr>
               </thead>
               <tbody>

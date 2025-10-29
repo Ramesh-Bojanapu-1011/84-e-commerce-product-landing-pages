@@ -69,11 +69,8 @@ export default function Home1() {
   return (
     <>
       <Head>
-        <title>Home — E-commerce Product Landing Pages</title>
-        <meta
-          name="description"
-          content="E-commerce product landing page templates and components."
-        />
+        <title>{t("home1.meta.title")}</title>
+        <meta name="description" content={t("home1.meta.description")} />
       </Head>
 
       <div className="min-h-screen bg-linear-to-br from-blue-50 to-white dark:from-slate-900 dark:to-slate-800 caret-transparent">
@@ -347,7 +344,7 @@ export default function Home1() {
                       </div>
                     </div>
                     <div className="text-sm font-semibold text-slate-900 dark:text-white">
-                      $89
+                      {t("home1.showcase.mini1.price")}
                     </div>
                   </div>
                 </div>
@@ -381,7 +378,7 @@ export default function Home1() {
                       </div>
                     </div>
                     <div className="text-sm font-semibold text-slate-900 dark:text-white">
-                      $39
+                      {t("home1.showcase.mini2.price")}
                     </div>
                   </div>
                 </div>

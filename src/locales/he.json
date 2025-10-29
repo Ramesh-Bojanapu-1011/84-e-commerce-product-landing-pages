@@ -20,6 +20,7 @@
     "adminDashboard": "לוח ניהול"
   },
   "footer": {
+    "logoAlt": "EcomPages logo",
     "about": "אנחנו בונים דפי נחיתה אטרקטיביים ובעלי המרה גבוהה וחוויות פרטי מוצר המותאמות למותגי מסחר אלקטרוני. מהיר, נגיש ומעוצב למכירה.",
     "quickLinks": "קישורים מהירים",
     "services": "שירותים",
@@ -33,6 +34,10 @@
     }
   },
   "home1": {
+    "meta": {
+      "title": "Home — E-commerce Product Landing Pages",
+      "description": "E-commerce product landing page templates and components."
+    },
     "hero": {
       "badge": "תבניות מסחר אלקטרוני",
       "title": "דפי נחיתה למוצרים שממירים — במהירות",
@@ -723,6 +728,31 @@
       "desc": "קבע שיחת היכרות קצרה ונשתף תוכנית מותאמת אישית.",
       "email": "שלח לנו אימייל",
       "seeServices": "ראה שירותים"
+    }
+  },
+  "admin": {
+    "heading": "Admin Overview",
+    "stats": {
+      "totalUsers": "Total users",
+      "loggedUsers": "Logged users",
+      "activeUsers": "Active users (30m)"
+    },
+    "charts": {
+      "dailyLogins": "Daily Logins (Last 14 days)",
+      "userStatus": "User Status Breakdown"
+    },
+    "pie": {
+      "logged": "Logged in users",
+      "notLogged": "Not logged"
+    },
+    "table": {
+      "title": "All System Users",
+      "name": "Name",
+      "email": "Email",
+      "role": "Role",
+      "registered": "Registered",
+      "lastLogin": "Last Login",
+      "lastLogout": "Last Logout"
     }
   }
 }

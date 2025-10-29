@@ -32,7 +32,7 @@ const SiteFooter: React.FC = () => {
           <div>
             <img
               src="https://i.postimg.cc/DwdH9gv8/logo-stackly.png"
-              alt="EcomPages"
+              alt={t("footer.logoAlt")}
               width={100}
               height={100}
               className="object-cover"
