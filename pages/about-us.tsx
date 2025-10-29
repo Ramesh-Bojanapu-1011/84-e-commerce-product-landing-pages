@@ -503,14 +503,8 @@ export default function AboutUs() {
             <p className="mt-2 max-w-2xl mx-auto">{t("about.cta.desc")}</p>
             <div className="mt-6 flex items-center justify-center gap-3">
               <Link
-                href="/templates"
-                className="bg-white text-blue-600 px-6 py-3 rounded-md font-semibold"
-              >
-                {t("about.cta.getTemplates")}
-              </Link>
-              <Link
                 href="/contact-us"
-                className="text-white px-4 py-3 rounded-md border border-white/30"
+                className="bg-white text-blue-600 px-6 py-3 rounded-md font-semibold"
               >
                 {t("about.cta.talkToSales")}
               </Link>

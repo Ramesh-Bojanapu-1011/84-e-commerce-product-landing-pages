@@ -3,172 +3,58 @@ import SiteHeadder from "@/components/SiteHeadder";
 import { Globe, Package, Star, Users, Zap } from "lucide-react";
 import Head from "next/head";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
 
 const servicesList = [
   {
     slug: "product-design",
-    title: "Product Page Design",
-    desc: "Design high-converting product page layouts, hero patterns and variant-first templates.",
     icon: <Package className="w-6 h-6" />,
     href: "/services/product-design",
   },
   {
     slug: "ux-audit",
-    title: "UX/UI Audit",
-    desc: "Expert UX reviews, accessibility checks and actionable recommendations.",
     icon: <Star className="w-6 h-6" />,
     href: "/services/ux-audit",
   },
-  {
-    slug: "cro",
-    title: "Conversion Rate Opt.",
-    desc: "A/B testing, microcopy and layout work focused on lift and clearer flows.",
-    icon: <Zap className="w-6 h-6" />,
-    href: "/services/cro",
-  },
+  { slug: "cro", icon: <Zap className="w-6 h-6" />, href: "/services/cro" },
   {
     slug: "performance",
-    title: "Performance",
-    desc: "Image optimisation, lazy-loading and bundle trimming for snappy pages.",
     icon: <Zap className="w-6 h-6" />,
     href: "/services/performance",
   },
   {
     slug: "accessibility",
-    title: "Accessibility",
-    desc: "Semantic, keyboard-friendly controls and ARIA improvements for all users.",
     icon: <Users className="w-6 h-6" />,
     href: "/services/accessibility",
   },
   {
     slug: "integrations",
-    title: "Integrations",
-    desc: "Platform integrations and storefront wiring for headless or hosted setups.",
     icon: <Globe className="w-6 h-6" />,
     href: "/services/integrations",
   },
 ];
 
 const features = [
-  {
-    title: "Ready-made blocks",
-    text: "Composable blocks for hero, gallery, variants and upsell sections so you can assemble pages fast.",
-  },
-  {
-    title: "Accessible markup",
-    text: "Semantic HTML and keyboard-friendly controls — built for everyone.",
-  },
-  {
-    title: "Integrations",
-    text: "Easily plug components into popular storefronts and headless stacks.",
-  },
-];
-
-const templatesList = [
-  {
-    slug: "hero-collection",
-    title: "Hero-first",
-    desc: "Bold hero patterns with CTA-first layout to maximise conversions.",
-    tag: "Hero",
-    icon: <Package className="w-5 h-5 text-indigo-600" />,
-    href: "/templates/hero-collection",
-  },
-  {
-    slug: "variant-led",
-    title: "Variant-led",
-    desc: "Variant-first product layouts that prioritise SKU clarity and upsells.",
-    tag: "Variants",
-    icon: <Zap className="w-5 h-5 text-emerald-500" />,
-    href: "/templates/variant-led",
-  },
-  {
-    slug: "gallery-grid",
-    title: "Gallery grid",
-    desc: "Image-forward gallery templates for high-impact visual merchandising.",
-    tag: "Gallery",
-    icon: <Globe className="w-5 h-5 text-pink-500" />,
-    href: "/templates/gallery-grid",
-  },
-  {
-    slug: "quick-checkout",
-    title: "Quick checkout",
-    desc: "Lightweight checkout-focused templates tuned for conversions.",
-    tag: "Checkout",
-    icon: <Users className="w-5 h-5 text-yellow-500" />,
-    href: "/templates/quick-checkout",
-  },
-];
-
-const caseStudies = [
-  {
-    slug: "acme-hero",
-    client: "ACME Corp",
-    title: "Hero redesign increases conversions",
-    summary:
-      "Redesigned hero and CTA flow that improved add-to-cart rates across devices.",
-    result: "+32% conv",
-    href: "/case-studies/acme-hero",
-  },
-  {
-    slug: "bolt-variants",
-    client: "Bolt",
-    title: "Variant UI & inventory mapping",
-    summary:
-      "Introduced variant-first layout and clearer SKU mapping to reduce returns.",
-    result: "-18% returns",
-    href: "/case-studies/bolt-variants",
-  },
-  {
-    slug: "globe-performance",
-    client: "Globe",
-    title: "Performance tuning for peak traffic",
-    summary:
-      "Image and bundle optimisation that reduced LCP and improved checkout speed.",
-    result: "1.2s LCP",
-    href: "/case-studies/globe-performance",
-  },
+  { key: "features.readyMade" },
+  { key: "features.accessible" },
+  { key: "features.integrations" },
 ];
 
 const teamMembers = [
-  {
-    slug: "olivia",
-    name: "Olivia Hart",
-    role: "Lead Product Designer",
-    bio: "Designs hero-first layouts and visual systems focused on clarity and conversion.",
-    href: "/team/olivia",
-  },
-  {
-    slug: "matt",
-    name: "Matt Rivera",
-    role: "Frontend Engineer",
-    bio: "Builds accessible, high-performance product pages and component libraries.",
-    href: "/team/matt",
-  },
-  {
-    slug: "nina",
-    name: "Nina Park",
-    role: "Conversion Strategist",
-    bio: "Runs experiments and optimisations that move key metrics like AOV and add-to-cart.",
-    href: "/team/nina",
-  },
-  {
-    slug: "liam",
-    name: "Liam Chen",
-    role: "Project Manager",
-    bio: "Keeps projects on track and coordinates launches across teams and stores.",
-    href: "/team/liam",
-  },
+  { slug: "olivia", name: "Olivia Hart", href: "/team/olivia" },
+  { slug: "matt", name: "Matt Rivera", href: "/team/matt" },
+  { slug: "nina", name: "Nina Park", href: "/team/nina" },
+  { slug: "liam", name: "Liam Chen", href: "/team/liam" },
 ];
 
 export default function ServicesPage() {
+  const { t } = useTranslation();
+
   return (
     <>
       <Head>
-        <title>Services — E-commerce Product Pages</title>
-        <meta
-          name="description"
-          content="Services and offerings for building high-converting product pages."
-        />
+        <title>{t("services.meta.title")}</title>
+        <meta name="description" content={t("services.meta.description")} />
       </Head>
 
       <div className="min-h-screen bg-linear-to-br from-white to-blue-50 dark:from-slate-900 dark:to-slate-800 caret-transparent">
@@ -179,12 +65,10 @@ export default function ServicesPage() {
           <div className="max-w-6xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div>
               <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white">
-                Services to build faster, convert better
+                {t("services.hero.title")}
               </h1>
               <p className="mt-4 text-lg text-slate-600 dark:text-slate-300 max-w-xl">
-                We provide templates, components and optimisation work focused
-                on product pages — hero design, variants, checkout flows and
-                internationalisation.
+                {t("services.hero.desc")}
               </p>
 
               <div className="mt-6 flex flex-wrap gap-3">
@@ -192,31 +76,30 @@ export default function ServicesPage() {
                   href="/contact-us"
                   className="inline-flex items-center gap-2 bg-linear-to-r from-blue-600 to-indigo-600 text-white px-5 py-3 rounded-lg shadow"
                 >
-                  Get started
-                </Link>
-                <Link
-                  href="/pricing"
-                  className="inline-flex items-center gap-2 px-5 py-3 rounded-lg border border-slate-200 dark:border-slate-700"
-                >
-                  Pricing
+                  {t("services.hero.cta")}
                 </Link>
               </div>
             </div>
 
             <div>
               <div className="rounded-3xl p-6 bg-linear-to-r from-indigo-500 to-blue-600 text-white shadow-2xl">
-                <div className="text-sm opacity-90">Service spotlight</div>
+                <div className="text-sm opacity-90">
+                  {t("services.spotlight.label")}
+                </div>
                 <h3 className="mt-2 text-xl font-semibold">
-                  Product pages & variants
+                  {t("services.spotlight.title")}
                 </h3>
                 <p className="mt-4 text-white/90">
-                  Design patterns and engineering work to ship product pages
-                  that actually convert visitors into buyers.
+                  {t("services.spotlight.desc")}
                 </p>
 
                 <div className="mt-6 flex items-center gap-4">
-                  <div className="text-sm opacity-90">Trusted by</div>
-                  <div className="ml-auto font-bold">1000+ stores</div>
+                  <div className="text-sm opacity-90">
+                    {t("services.spotlight.trustedBy")}
+                  </div>
+                  <div className="ml-auto font-bold">
+                    {t("services.spotlight.trustedCount")}
+                  </div>
                 </div>
               </div>
             </div>
@@ -227,11 +110,10 @@ export default function ServicesPage() {
         <section className="py-12 bg-white dark:bg-slate-900">
           <div className="max-w-6xl mx-auto px-6 lg:px-8">
             <h3 className="text-2xl font-semibold text-slate-900 dark:text-white text-center">
-              Our services
+              {t("services.listHeader")}
             </h3>
             <p className="mt-2 text-center text-slate-600 dark:text-slate-300">
-              Click any service to read more (these match the header 'Services'
-              dropdown).
+              {t("services.listSubtitle")}
             </p>
 
             <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -251,15 +133,15 @@ export default function ServicesPage() {
                   {/* content */}
                   <div className="pt-8 px-6 pb-6">
                     <h4 className="font-semibold text-slate-900 dark:text-white">
-                      {s.title}
+                      {t(`services.items.${s.slug}.title`)}
                     </h4>
                     <p className="mt-3 text-sm text-slate-600 dark:text-slate-300 max-h-16 overflow-hidden">
-                      {s.desc}
+                      {t(`services.items.${s.slug}.desc`)}
                     </p>
 
                     <div className="mt-6">
                       <span className="inline-flex items-center text-sm font-medium text-indigo-600 group-hover:underline">
-                        Learn more
+                        {t("services.learnMore")}
                         <svg
                           className="ml-2 w-4 h-4"
                           fill="none"
@@ -287,17 +169,16 @@ export default function ServicesPage() {
         <section className="py-16 bg-slate-50 dark:bg-slate-900">
           <div className="max-w-6xl mx-auto px-6 lg:px-8">
             <h3 className="text-2xl font-semibold text-slate-900 dark:text-white text-center">
-              Why our services
+              {t("services.features.header")}
             </h3>
             <p className="mt-2 text-center text-slate-600 dark:text-slate-300">
-              Practical outcomes focused on speed, conversion and international
-              readiness.
+              {t("services.features.subtitle")}
             </p>
 
             <div className="mt-10 grid grid-cols-1  lg:grid-cols-3 gap-6">
               {features.map((f, i) => (
                 <div
-                  key={f.title}
+                  key={f.key}
                   className="relative p-8 pt-12 bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700 rounded-2xl shadow-sm hover:shadow-lg transition-transform transform hover:-translate-y-2"
                 >
                   {/* overlapping badge */}
@@ -381,19 +262,19 @@ export default function ServicesPage() {
                   </div>
 
                   <h4 className="font-semibold text-slate-900 dark:text-white pl-0">
-                    {f.title}
+                    {t(`services.features.${i}.title`)}
                   </h4>
 
                   <p className="mt-3 text-sm text-slate-600 dark:text-slate-300">
-                    {f.text}
+                    {t(`services.features.${i}.text`)}
                   </p>
 
                   <div className="mt-6 flex items-center justify-between">
                     <span className="text-sm text-slate-500 dark:text-slate-400">
-                      Trusted pattern
+                      {t("services.features.trusted")}
                     </span>
                     <span className="text-sm text-indigo-600 dark:text-indigo-400 font-medium">
-                      Learn
+                      {t("services.features.learn")}
                     </span>
                   </div>
                 </div>
@@ -406,10 +287,10 @@ export default function ServicesPage() {
         <section className="py-16 bg-white dark:bg-slate-900">
           <div className="max-w-6xl mx-auto px-6 lg:px-8">
             <h3 className="text-2xl font-semibold text-slate-900 dark:text-white text-center">
-              How we work
+              {t("services.how.header")}
             </h3>
             <p className="mt-2 text-center text-slate-600 dark:text-slate-300">
-              Simple, predictable engagement model.
+              {t("services.how.subtitle")}
             </p>
 
             <div className="mt-12">
@@ -426,22 +307,20 @@ export default function ServicesPage() {
                       </div>
                       <div className="md:hidden">
                         <h4 className="text-lg font-semibold text-slate-900 dark:text-white">
-                          Audit & Plan
+                          {t("services.how.steps.0.title")}
                         </h4>
                         <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
-                          We audit current pages and propose a focused plan to
-                          improve conversions.
+                          {t("services.how.steps.0.text")}
                         </p>
                       </div>
                     </div>
 
                     <div className="hidden md:block mt-6 text-center">
                       <h4 className="text-lg font-semibold text-slate-900 dark:text-white">
-                        Audit & Plan
+                        {t("services.how.steps.0.title")}
                       </h4>
                       <p className="mt-2 text-sm text-slate-600 dark:text-slate-300 max-w-xs">
-                        We audit your current pages and propose a focused plan
-                        to improve conversions.
+                        {t("services.how.steps.0.text")}
                       </p>
                     </div>
                   </div>
@@ -454,22 +333,20 @@ export default function ServicesPage() {
                       </div>
                       <div className="md:hidden">
                         <h4 className="text-lg font-semibold text-slate-900 dark:text-white">
-                          Build & Integrate
+                          {t("services.how.steps.1.title")}
                         </h4>
                         <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
-                          We deliver production-ready components and help
-                          integrate them with your store backend.
+                          {t("services.how.steps.1.text")}
                         </p>
                       </div>
                     </div>
 
                     <div className="hidden md:block mt-6 text-center">
                       <h4 className="text-lg font-semibold text-slate-900 dark:text-white">
-                        Build & Integrate
+                        {t("services.how.steps.1.title")}
                       </h4>
                       <p className="mt-2 text-sm text-slate-600 dark:text-slate-300 max-w-xs">
-                        We deliver production-ready components and help
-                        integrate them with your store backend.
+                        {t("services.how.steps.1.text")}
                       </p>
                     </div>
                   </div>
@@ -482,22 +359,20 @@ export default function ServicesPage() {
                       </div>
                       <div className="md:hidden">
                         <h4 className="text-lg font-semibold text-slate-900 dark:text-white">
-                          Optimize
+                          {t("services.how.steps.2.title")}
                         </h4>
                         <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
-                          We measure impact and iterate — A/B tests, bundle
-                          trimming and image optimisation.
+                          {t("services.how.steps.2.text")}
                         </p>
                       </div>
                     </div>
 
                     <div className="hidden md:block mt-6 text-center">
                       <h4 className="text-lg font-semibold text-slate-900 dark:text-white">
-                        Optimize
+                        {t("services.how.steps.2.title")}
                       </h4>
                       <p className="mt-2 text-sm text-slate-600 dark:text-slate-300 max-w-xs">
-                        We measure impact and iterate — A/B tests, bundle
-                        trimming and image optimisation.
+                        {t("services.how.steps.2.text")}
                       </p>
                     </div>
                   </div>
@@ -511,10 +386,10 @@ export default function ServicesPage() {
         <section className="py-16 bg-white dark:bg-slate-900">
           <div className="max-w-6xl mx-auto px-6 lg:px-8">
             <h3 className="text-2xl font-semibold text-slate-900 dark:text-white text-center">
-              Meet the team
+              {t("services.team.header")}
             </h3>
             <p className="mt-2 text-center text-slate-600 dark:text-slate-300">
-              The people who design, build and optimise product experiences.
+              {t("services.team.subtitle")}
             </p>
 
             <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -537,15 +412,15 @@ export default function ServicesPage() {
                   </div>
 
                   <h4 className="mt-4 font-semibold text-slate-900 dark:text-white">
-                    {m.name}
+                    {t(`services.team.${m.slug}.name`)}
                   </h4>
 
                   <div className="inline-block mt-2 px-3 py-1 text-xs rounded-full bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200">
-                    {m.role}
+                    {t(`services.team.${m.slug}.role`)}
                   </div>
 
                   <p className="mt-3 text-sm text-slate-600 dark:text-slate-300 line-clamp-3">
-                    {m.bio}
+                    {t(`services.team.${m.slug}.bio`)}
                   </p>
 
                   {/* social icons - hidden until hover or keyboard focus */}
@@ -652,24 +527,15 @@ export default function ServicesPage() {
         <section className="py-16 bg-blue-600 text-white">
           <div className="max-w-6xl mx-auto px-6 lg:px-8 text-center">
             <h3 className="text-2xl font-semibold">
-              Ready to improve product performance?
+              {t("services.cta.header")}
             </h3>
-            <p className="mt-2 max-w-2xl mx-auto">
-              Book a call or start with a template and let us help you iterate
-              faster.
-            </p>
+            <p className="mt-2 max-w-2xl mx-auto">{t("services.cta.desc")}</p>
             <div className="mt-6 flex items-center justify-center gap-3">
               <Link
-                href="/contact-us"
+                href="/templates"
                 className="bg-white text-blue-600 px-6 py-3 rounded-md font-semibold"
               >
-                Talk to us
-              </Link>
-              <Link
-                href="/templates"
-                className="text-white px-4 py-3 rounded-md border border-white/30"
-              >
-                Try templates
+                {t("services.cta.templates")}
               </Link>
             </div>
           </div>

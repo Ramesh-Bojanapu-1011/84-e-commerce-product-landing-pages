@@ -325,24 +325,15 @@ export default function Home2() {
         <section className="py-16 bg-blue-600 text-white">
           <div className="max-w-6xl mx-auto px-6 lg:px-8 text-center">
             <h3 className="text-2xl font-semibold">
-              Ready to ship beautiful product pages?
+              {t("home2.finalCta.title")}
             </h3>
-            <p className="mt-2 max-w-2xl mx-auto">
-              Start with a template, customize, and convert more visitors into
-              customers.
-            </p>
+            <p className="mt-2 max-w-2xl mx-auto">{t("home2.finalCta.desc")}</p>
             <div className="mt-6 flex items-center justify-center gap-3">
               <Link
-                href="/templates"
+                href="/contact-us"
                 className="bg-white text-blue-600 px-6 py-3 rounded-md font-semibold"
               >
-                Get templates
-              </Link>
-              <Link
-                href="/contact-us"
-                className="text-white px-4 py-3 rounded-md border border-white/30"
-              >
-                Talk to sales
+                {t("home2.finalCta.talkToSales")}
               </Link>
             </div>
           </div>

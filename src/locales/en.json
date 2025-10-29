@@ -394,5 +394,118 @@
       "getTemplates": "Get templates",
       "talkToSales": "Talk to sales"
     }
+  },
+  "services": {
+    "meta": {
+      "title": "Services — E-commerce Product Pages",
+      "description": "Services and offerings for building high-converting product pages."
+    },
+    "hero": {
+      "title": "Services to build faster, convert better",
+      "desc": "We provide templates, components and optimisation work focused on product pages — hero design, variants, checkout flows and internationalisation.",
+      "cta": "Get started"
+    },
+    "listHeader": "Our services",
+    "listSubtitle": "Click any service to read more (these match the header 'Services' dropdown).",
+    "learnMore": "Learn more →",
+    "items": {
+      "product-design": {
+        "title": "Product Page Design",
+        "desc": "Design high-converting product page layouts, hero patterns and variant-first templates."
+      },
+      "ux-audit": {
+        "title": "UX/UI Audit",
+        "desc": "Expert UX reviews, accessibility checks and actionable recommendations."
+      },
+      "cro": {
+        "title": "Conversion Rate Opt.",
+        "desc": "A/B testing, microcopy and layout work focused on lift and clearer flows."
+      },
+      "performance": {
+        "title": "Performance",
+        "desc": "Image optimisation, lazy-loading and bundle trimming for snappy pages."
+      },
+      "accessibility": {
+        "title": "Accessibility",
+        "desc": "Semantic, keyboard-friendly controls and ARIA improvements for all users."
+      },
+      "integrations": {
+        "title": "Integrations",
+        "desc": "Platform integrations and storefront wiring for headless or hosted setups."
+      }
+    },
+    "spotlight": {
+      "label": "Service spotlight",
+      "title": "Product pages & variants",
+      "desc": "Design patterns and engineering work to ship product pages that actually convert visitors into buyers.",
+      "trustedBy": "Trusted by",
+      "trustedCount": "1000+ stores"
+    },
+    "how": {
+      "header": "How we work",
+      "subtitle": "Simple, predictable engagement model.",
+      "steps": [
+        {
+          "title": "Audit & Plan",
+          "text": "We audit your current pages and propose a focused plan to improve conversions."
+        },
+        {
+          "title": "Build & Integrate",
+          "text": "We deliver production-ready components and help integrate them with your store backend."
+        },
+        {
+          "title": "Optimize",
+          "text": "We measure impact and iterate — A/B tests, bundle trimming and image optimisation."
+        }
+      ]
+    },
+    "features": {
+      "header": "Why our services",
+      "subtitle": "Practical outcomes focused on speed, conversion and international readiness.",
+      "trusted": "Trusted pattern",
+      "learn": "Learn",
+      "0": {
+        "title": "Ready-made blocks",
+        "text": "Composable blocks for hero, gallery, variants and upsell sections so you can assemble pages fast."
+      },
+      "1": {
+        "title": "Accessible markup",
+        "text": "Semantic HTML and keyboard-friendly controls — built for everyone."
+      },
+      "2": {
+        "title": "Integrations",
+        "text": "Easily plug components into popular storefronts and headless stacks."
+      }
+    },
+    "team": {
+      "header": "Meet the team",
+      "subtitle": "The people who design, build and optimise product experiences.",
+      "olivia": {
+        "name": "Olivia Hart",
+        "role": "Lead Product Designer",
+        "bio": "Designs hero-first layouts and visual systems focused on clarity and conversion."
+      },
+      "matt": {
+        "name": "Matt Chen",
+        "role": "Frontend Engineer",
+        "bio": "Builds accessible, high-performance product pages and component libraries."
+      },
+      "nina": {
+        "name": "Nina Rodriguez",
+        "role": "Conversion Strategist",
+        "bio": "Runs experiments and optimisations that move key metrics like AOV and add-to-cart."
+      },
+      "liam": {
+        "name": "Liam O'Connor",
+        "role": "Project Manager",
+        "bio": "Keeps projects on track and coordinates launches across teams and stores."
+      }
+    },
+    "cta": {
+      "header": "Ready to improve product performance?",
+      "desc": "Book a call or start with a template and let us help you iterate faster.",
+      "contact": "Talk to us",
+      "templates": "Try templates"
+    }
   }
 }

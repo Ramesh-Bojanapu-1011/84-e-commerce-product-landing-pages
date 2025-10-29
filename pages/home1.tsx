@@ -507,14 +507,8 @@ export default function Home1() {
             <p className="mt-2 max-w-2xl mx-auto">{t("home1.cta.desc")}</p>
             <div className="mt-6 flex items-center justify-center gap-3">
               <Link
-                href="/auth"
-                className="bg-white text-blue-600 px-6 py-3 rounded-md font-semibold"
-              >
-                {t("home1.cta.getStarted")}
-              </Link>
-              <Link
                 href="/contact-us"
-                className="text-white px-4 py-3 rounded-md border border-white/30"
+                className="bg-white text-blue-600 px-6 py-3 rounded-md font-semibold"
               >
                 {t("home1.cta.contactSales")}
               </Link>
