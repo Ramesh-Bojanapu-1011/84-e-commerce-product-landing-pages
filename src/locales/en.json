@@ -286,5 +286,113 @@
       "getTemplates": "Get templates",
       "talkToSales": "Talk to sales"
     }
+  },
+  "about": {
+    "meta": {
+      "title": "About — E-commerce Product Pages",
+      "description": "About the E-commerce Product Pages theme."
+    },
+    "hero": {
+      "title": "Built for stores that want beautiful product pages — fast",
+      "desc": "We design components and templates focused on conversion, performance and localization so your product pages convert more visitors into customers.",
+      "ctaTemplates": "See templates",
+      "ctaContact": "Contact sales"
+    },
+    "mission": {
+      "label": "Our mission",
+      "title": "Design for conversion, ship faster",
+      "desc": "We build composable, accessible and high-performance blocks that make product pages simple to assemble and fast to iterate.",
+      "trusted": "Trusted by",
+      "trustedCount": "1000+ stores"
+    },
+    "values": {
+      "header": "Our values",
+      "desc": "Principles that guide design and engineering decisions — focused on clarity, speed and international compatibility.",
+      "performance": {
+        "title": "Performance",
+        "desc": "Fast images and small bundles for snappy UX."
+      },
+      "global": {
+        "title": "Global-first",
+        "desc": "Locale and currency-aware components; RTL-friendly by design."
+      },
+      "composable": {
+        "title": "Composable",
+        "desc": "Blocks designed to mix-and-match for fast iteration."
+      },
+      "trust": {
+        "title": "Trust",
+        "desc": "Accessible markup and clear interactions for all users."
+      }
+    },
+    "componentsHeader": "Components you get",
+    "componentsSubtitle": "A library of product-focused blocks ready to assemble.",
+    "components": {
+      "itemDesc": "Ready-made block to speed development.",
+      "hero": { "title": "Product hero" },
+      "variants": { "title": "Variant selector" },
+      "reviews": { "title": "Reviews & ratings" },
+      "upsell": { "title": "Cross-sell" },
+      "intl": { "title": "International-ready" },
+      "checkout": { "title": "Optimized checkout" }
+    },
+    "roadmap": {
+      "header": "Roadmap & milestones",
+      "items": [
+        {
+          "title": "v1 — Core components",
+          "desc": "Initial release: hero, gallery, variants, and checkout flows."
+        },
+        {
+          "title": "v1.5 — International & performance",
+          "desc": "Add multi-currency helpers, RTL tweaks, and improved image loading."
+        },
+        {
+          "title": "v2 — Integrations",
+          "desc": "Expanded connectors and pre-built bundles for storefront platforms."
+        }
+      ]
+    },
+    "caseStudies": {
+      "header": "Case studies",
+      "subtitle": "Real results from stores using these components and templates.",
+      "apt-build": {
+        "title": "Apt Build — DTC",
+        "subtitle": "+34% add-to-cart in first month after redesign.",
+        "details": "How they did it: focused hero, clear variant visuals and optimized CTAs."
+      },
+      "lumina": {
+        "title": "Lumina — Hardware",
+        "subtitle": "Reduced returns by 18% with clearer variant previews.",
+        "details": "How they did it: variant-first product cards and consistent review placement."
+      },
+      "bakerkit": {
+        "title": "BakerKit — Marketplace",
+        "subtitle": "Faster page loads, 2x conversions on holiday deals.",
+        "details": "How they did it: optimized images + A/B tested CTAs for peak traffic."
+      }
+    },
+    "stats": {
+      "header": "Impact & stats",
+      "subtitle": "Numbers that show our scale and quality.",
+      "1": { "label": "Templates" },
+      "2": { "label": "Uptime" },
+      "3": { "label": "Products powered" },
+      "4": { "label": "Avg rating" }
+    },
+    "testimonials": {
+      "header": "What customers say",
+      "jordan": {
+        "quote": "This theme cut our time-to-launch in half and improved add-to-cart rates — the components are smartly designed.",
+        "author": "Jordan M.",
+        "role": "Head of Growth"
+      }
+    },
+    "cta": {
+      "header": "Ready to try it?",
+      "desc": "Start with a template and iterate quickly — our components make it easy.",
+      "getTemplates": "Get templates",
+      "talkToSales": "Talk to sales"
+    }
   }
 }

@@ -1,33 +1,19 @@
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeadder from "@/components/SiteHeadder";
+import i18n from "@/i18n";
 import { Globe, Package, ShoppingCart, Star, Users, Zap } from "lucide-react";
 import Head from "next/head";
 import Link from "next/link";
 import React from "react";
+import { useTranslation } from "react-i18next";
 
 const components = [
-  { id: "hero", title: "Product hero", icon: <Package className="w-5 h-5" /> },
-  {
-    id: "variants",
-    title: "Variant selector",
-    icon: <ShoppingCart className="w-5 h-5" />,
-  },
-  {
-    id: "reviews",
-    title: "Reviews & ratings",
-    icon: <Star className="w-5 h-5" />,
-  },
-  { id: "upsell", title: "Cross-sell", icon: <Zap className="w-5 h-5" /> },
-  {
-    id: "intl",
-    title: "International-ready",
-    icon: <Globe className="w-5 h-5" />,
-  },
-  {
-    id: "checkout",
-    title: "Optimized checkout",
-    icon: <Users className="w-5 h-5" />,
-  },
+  { id: "hero", icon: <Package className="w-5 h-5" /> },
+  { id: "variants", icon: <ShoppingCart className="w-5 h-5" /> },
+  { id: "reviews", icon: <Star className="w-5 h-5" /> },
+  { id: "upsell", icon: <Zap className="w-5 h-5" /> },
+  { id: "intl", icon: <Globe className="w-5 h-5" /> },
+  { id: "checkout", icon: <Users className="w-5 h-5" /> },
 ];
 
 const team = [
@@ -37,49 +23,19 @@ const team = [
 ];
 
 const stats = [
-  { id: 1, value: "+120", label: "Templates" },
-  { id: 2, value: "99.9%", label: "Uptime" },
-  { id: 3, value: "+1M", label: "Products powered" },
-  { id: 4, value: "4.8", label: "Avg rating" },
+  { id: 1, value: "+120" },
+  { id: 2, value: "99.9%" },
+  { id: 3, value: "+1M" },
+  { id: 4, value: "4.8" },
 ];
 
 const caseStudies = [
-  {
-    id: "apt-build",
-    initials: "AB",
-    title: "Apt Build — DTC",
-    subtitle: "+34% add-to-cart in first month after redesign.",
-    details:
-      "How they did it: focused hero, clear variant visuals and optimized CTAs.",
-  },
-  {
-    id: "lumina",
-    initials: "LN",
-    title: "Lumina — Hardware",
-    subtitle: "Reduced returns by 18% with clearer variant previews.",
-    details:
-      "How they did it: variant-first product cards and consistent review placement.",
-  },
-  {
-    id: "bakerkit",
-    initials: "BK",
-    title: "BakerKit — Marketplace",
-    subtitle: "Faster page loads, 2x conversions on holiday deals.",
-    details:
-      "How they did it: optimized images + A/B tested CTAs for peak traffic.",
-  },
+  { id: "apt-build", initials: "AB" },
+  { id: "lumina", initials: "LN" },
+  { id: "bakerkit", initials: "BK" },
 ];
 
-const testimonials = [
-  {
-    id: "jordan",
-    quote:
-      "This theme cut our time-to-launch in half and improved add-to-cart rates — the components are smartly designed.",
-    author: "Jordan M.",
-    role: "Head of Growth",
-    rating: 5,
-  },
-];
+const testimonials = [{ id: "jordan", rating: 5 }];
 
 // Small CountUp component that parses compact strings like "+120", "99.9%", "1.2M" and animates
 function formatCompact(n: number) {
@@ -188,14 +144,13 @@ const CountUp: React.FC<{
 };
 
 export default function AboutUs() {
+  const { t } = useTranslation();
+
   return (
     <>
       <Head>
-        <title>About — E-commerce Product Pages</title>
-        <meta
-          name="description"
-          content="About the E-commerce Product Pages theme."
-        />
+        <title>{t("about.meta.title")}</title>
+        <meta name="description" content={t("about.meta.description")} />
       </Head>
 
       <div className="min-h-screen bg-linear-to-br from-white to-blue-50 dark:from-slate-900 dark:to-slate-800">
@@ -206,43 +161,38 @@ export default function AboutUs() {
           <div className="max-w-6xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <div>
               <h1 className="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white">
-                Built for stores that want beautiful product pages — fast
+                {t("about.hero.title")}
               </h1>
               <p className="mt-4 text-lg text-slate-600 dark:text-slate-300 max-w-xl">
-                We design components and templates focused on conversion,
-                performance and localization so your product pages convert more
-                visitors into customers.
+                {t("about.hero.desc")}
               </p>
 
               <div className="mt-6 flex flex-wrap gap-3">
                 <Link
-                  href="/templates"
+                  href="/contact-us"
                   className="inline-flex items-center gap-2 bg-linear-to-r from-blue-600 to-indigo-600 text-white px-5 py-3 rounded-lg shadow"
                 >
-                  See templates
-                </Link>
-                <Link
-                  href="/contact-us"
-                  className="inline-flex items-center gap-2 px-5 py-3 rounded-lg border border-slate-200 dark:border-slate-700"
-                >
-                  Contact sales
+                  {t("about.hero.ctaContact")}
                 </Link>
               </div>
             </div>
 
             <div className="rounded-3xl p-6 bg-linear-to-r from-indigo-500 to-blue-600 text-white shadow-2xl">
-              <div className="text-sm opacity-90">Our mission</div>
+              <div className="text-sm opacity-90">
+                {t("about.mission.label")}
+              </div>
               <h3 className="mt-2 text-xl font-semibold">
-                Design for conversion, ship faster
+                {t("about.mission.title")}
               </h3>
-              <p className="mt-4 text-white/90">
-                We build composable, accessible and high-performance blocks that
-                make product pages simple to assemble and fast to iterate.
-              </p>
+              <p className="mt-4 text-white/90">{t("about.mission.desc")}</p>
 
               <div className="mt-6 flex items-center gap-4">
-                <div className="text-sm opacity-90">Trusted by</div>
-                <div className="ml-auto font-bold">1000+ stores</div>
+                <div className="text-sm opacity-90">
+                  {t("about.mission.trusted")}
+                </div>
+                <div className="ml-auto font-bold">
+                  {t("about.mission.trustedCount")}
+                </div>
               </div>
             </div>
           </div>
@@ -253,11 +203,10 @@ export default function AboutUs() {
           <div className=" mx-auto max-w-7xl px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
             <div>
               <h3 className="text-2xl font-semibold text-slate-900 dark:text-white">
-                Our values
+                {t("about.values.header")}
               </h3>
               <p className="mt-3 text-slate-600 dark:text-slate-300">
-                Principles that guide design and engineering decisions — focused
-                on clarity, speed and international compatibility.
+                {t("about.values.desc")}
               </p>
 
               <div className="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -268,10 +217,10 @@ export default function AboutUs() {
                     </div>
                     <div>
                       <div className="font-semibold text-slate-900 dark:text-white">
-                        Performance
+                        {t("about.values.performance.title")}
                       </div>
                       <div className="text-sm text-slate-600 dark:text-slate-300">
-                        Fast images and small bundles for snappy UX.
+                        {t("about.values.performance.desc")}
                       </div>
                     </div>
                   </div>
@@ -284,11 +233,10 @@ export default function AboutUs() {
                     </div>
                     <div>
                       <div className="font-semibold text-slate-900 dark:text-white">
-                        Global-first
+                        {t("about.values.global.title")}
                       </div>
                       <div className="text-sm text-slate-600 dark:text-slate-300">
-                        Locale and currency-aware components; RTL-friendly by
-                        design.
+                        {t("about.values.global.desc")}
                       </div>
                     </div>
                   </div>
@@ -301,10 +249,10 @@ export default function AboutUs() {
                     </div>
                     <div>
                       <div className="font-semibold text-slate-900 dark:text-white">
-                        Composable
+                        {t("about.values.composable.title")}
                       </div>
                       <div className="text-sm text-slate-600 dark:text-slate-300">
-                        Blocks designed to mix-and-match for fast iteration.
+                        {t("about.values.composable.desc")}
                       </div>
                     </div>
                   </div>
@@ -317,10 +265,10 @@ export default function AboutUs() {
                     </div>
                     <div>
                       <div className="font-semibold text-slate-900 dark:text-white">
-                        Trust
+                        {t("about.values.trust.title")}
                       </div>
                       <div className="text-sm text-slate-600 dark:text-slate-300">
-                        Accessible markup and clear interactions for all users.
+                        {t("about.values.trust.desc")}
                       </div>
                     </div>
                   </div>
@@ -330,54 +278,61 @@ export default function AboutUs() {
 
             <div>
               <h4 className="text-lg font-semibold text-slate-900 dark:text-white">
-                Roadmap & milestones
+                {t("about.roadmap.header")}
               </h4>
               <div className="mt-6 flow-root">
                 <ol className="-mb-8">
-                  <li className="mb-8">
-                    <div className="relative pb-8">
-                      <span className="absolute left-0 -ml-3 mt-1 w-2 h-2 rounded-full bg-blue-600" />
-                      <div className="ml-6">
-                        <div className="text-sm font-semibold text-slate-900 dark:text-white">
-                          v1 — Core components
-                        </div>
-                        <div className="mt-2 text-sm text-slate-600 dark:text-slate-300">
-                          Initial release: hero, gallery, variants, and checkout
-                          flows.
+                  {(
+                    t("about.roadmap.items", { returnObjects: true }) as Array<{
+                      title: string;
+                      desc: string;
+                    }>
+                  ).map((item, idx) => (
+                    <li
+                      key={idx}
+                      className={
+                        idx <
+                        (
+                          t("about.roadmap.items", {
+                            returnObjects: true,
+                          }) as Array<any>
+                        ).length -
+                          1
+                          ? "mb-8"
+                          : ""
+                      }
+                    >
+                      <div
+                        className={
+                          idx <
+                          (
+                            t("about.roadmap.items", {
+                              returnObjects: true,
+                            }) as Array<any>
+                          ).length -
+                            1
+                            ? "relative pb-8"
+                            : "relative"
+                        }
+                      >
+                        <span
+                          className={`absolute ${
+                            i18n.language == "en"
+                              ? `left-0 -ml-3`
+                              : ` right-0 -mr-3`
+                          }  mt-1 w-2 h-2 rounded-full bg-blue-600`}
+                        />
+                        <div className="ml-6">
+                          <div className="text-sm font-semibold text-slate-900 dark:text-white">
+                            {item.title}
+                          </div>
+                          <div className="mt-2 text-sm text-slate-600 dark:text-slate-300">
+                            {item.desc}
+                          </div>
                         </div>
                       </div>
-                    </div>
-                  </li>
-
-                  <li className="mb-8">
-                    <div className="relative pb-8">
-                      <span className="absolute left-0 -ml-3 mt-1 w-2 h-2 rounded-full bg-blue-600" />
-                      <div className="ml-6">
-                        <div className="text-sm font-semibold text-slate-900 dark:text-white">
-                          v1.5 — International & performance
-                        </div>
-                        <div className="mt-2 text-sm text-slate-600 dark:text-slate-300">
-                          Add multi-currency helpers, RTL tweaks, and improved
-                          image loading.
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-
-                  <li>
-                    <div className="relative">
-                      <span className="absolute left-0 -ml-3 mt-1 w-2 h-2 rounded-full bg-blue-600" />
-                      <div className="ml-6">
-                        <div className="text-sm font-semibold text-slate-900 dark:text-white">
-                          v2 — Integrations
-                        </div>
-                        <div className="mt-2 text-sm text-slate-600 dark:text-slate-300">
-                          Expanded connectors and pre-built bundles for
-                          storefront platforms.
-                        </div>
-                      </div>
-                    </div>
-                  </li>
+                    </li>
+                  ))}
                 </ol>
               </div>
             </div>
@@ -388,10 +343,10 @@ export default function AboutUs() {
         <section className="py-16">
           <div className="max-w-6xl mx-auto px-6 lg:px-8">
             <h3 className="text-2xl font-semibold text-slate-900 dark:text-white text-center">
-              Components you get
+              {t("about.componentsHeader")}
             </h3>
             <p className="mt-2 text-center text-slate-600 dark:text-slate-300">
-              A library of product-focused blocks ready to assemble.
+              {t("about.componentsSubtitle")}
             </p>
 
             <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -406,10 +361,10 @@ export default function AboutUs() {
                     </div>
                     <div>
                       <div className="font-semibold text-slate-900 dark:text-white">
-                        {c.title}
+                        {t(`about.components.${c.id}.title`)}
                       </div>
                       <div className="text-sm text-slate-600 dark:text-slate-300 mt-1">
-                        Ready-made block to speed development.
+                        {t("about.components.itemDesc")}
                       </div>
                     </div>
                   </div>
@@ -423,10 +378,10 @@ export default function AboutUs() {
         <section className="py-16 bg-white dark:bg-slate-900">
           <div className="max-w-6xl mx-auto px-6 lg:px-8">
             <h3 className="text-2xl font-semibold text-slate-900 dark:text-white text-center">
-              Case studies
+              {t("about.caseStudies.header")}
             </h3>
             <p className="mt-2 text-center text-slate-600 dark:text-slate-300">
-              Real results from stores using these components and templates.
+              {t("about.caseStudies.subtitle")}
             </p>
 
             <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-6">
@@ -445,16 +400,16 @@ export default function AboutUs() {
 
                     <div className="flex-1">
                       <div className="font-semibold text-slate-900 dark:text-white">
-                        {c.title}
+                        {t(`about.caseStudies.${c.id}.title`)}
                       </div>
                       <div className="text-sm text-slate-600 dark:text-slate-300 mt-1">
-                        {c.subtitle}
+                        {t(`about.caseStudies.${c.id}.subtitle`)}
                       </div>
                     </div>
                   </div>
 
                   <div className="mt-4 text-sm text-slate-600 dark:text-slate-300">
-                    {c.details}
+                    {t(`about.caseStudies.${c.id}.details`)}
                   </div>
                 </div>
               ))}
@@ -467,10 +422,10 @@ export default function AboutUs() {
           <div className="max-w-6xl mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
             <div>
               <h3 className="text-2xl font-semibold text-slate-900 dark:text-white">
-                Impact & stats
+                {t("about.stats.header")}
               </h3>
               <p className="mt-2 text-slate-600 dark:text-slate-300">
-                Numbers that show our scale and quality.
+                {t("about.stats.subtitle")}
               </p>
 
               <div className="mt-6 grid grid-cols-2 gap-4">
@@ -483,7 +438,7 @@ export default function AboutUs() {
                       <CountUp value={s.value} duration={1400} startOnView />
                     </div>
                     <div className="text-sm text-slate-600 dark:text-slate-300 mt-1">
-                      {s.label}
+                      {t(`about.stats.${s.id}.label`)}
                     </div>
                     <div className="mt-3 flex items-center justify-center gap-2 text-xs text-slate-500 dark:text-slate-400">
                       <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-800">
@@ -502,13 +457,13 @@ export default function AboutUs() {
 
             <div>
               <h3 className="text-2xl font-semibold text-slate-900 dark:text-white">
-                What customers say
+                {t("about.testimonials.header")}
               </h3>
 
               <div className="mt-6 grid grid-cols-1 gap-4">
-                {testimonials.map((t) => (
+                {testimonials.map((tItem) => (
                   <blockquote
-                    key={t.id}
+                    key={tItem.id}
                     className="p-6 bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 rounded-xl"
                   >
                     <div className="flex items-start gap-4">
@@ -517,16 +472,19 @@ export default function AboutUs() {
                       </div>
                       <div className="flex-1">
                         <p className="italic text-slate-800 dark:text-white">
-                          “{t.quote}”
+                          “{t(`about.testimonials.${tItem.id}.quote`)}”
                         </p>
                         <div className="mt-3 flex items-center justify-between">
                           <div className="text-sm text-slate-600 dark:text-slate-300">
-                            — {t.author}, {t.role}
+                            — {t(`about.testimonials.${tItem.id}.author`)},{" "}
+                            {t(`about.testimonials.${tItem.id}.role`)}
                           </div>
                           <div className="flex items-center gap-1 text-yellow-400">
-                            {Array.from({ length: t.rating }).map((_, i) => (
-                              <Star key={i} className="w-4 h-4" />
-                            ))}
+                            {Array.from({ length: tItem.rating }).map(
+                              (_, i) => (
+                                <Star key={i} className="w-4 h-4" />
+                              ),
+                            )}
                           </div>
                         </div>
                       </div>
@@ -541,23 +499,20 @@ export default function AboutUs() {
         {/* Final CTA */}
         <section className="py-16 bg-blue-600 text-white">
           <div className="max-w-6xl mx-auto px-6 lg:px-8 text-center">
-            <h3 className="text-2xl font-semibold">Ready to try it?</h3>
-            <p className="mt-2 max-w-2xl mx-auto">
-              Start with a template and iterate quickly — our components make it
-              easy.
-            </p>
+            <h3 className="text-2xl font-semibold">{t("about.cta.header")}</h3>
+            <p className="mt-2 max-w-2xl mx-auto">{t("about.cta.desc")}</p>
             <div className="mt-6 flex items-center justify-center gap-3">
               <Link
                 href="/templates"
                 className="bg-white text-blue-600 px-6 py-3 rounded-md font-semibold"
               >
-                Get templates
+                {t("about.cta.getTemplates")}
               </Link>
               <Link
                 href="/contact-us"
                 className="text-white px-4 py-3 rounded-md border border-white/30"
               >
-                Talk to sales
+                {t("about.cta.talkToSales")}
               </Link>
             </div>
           </div>
