@@ -1013,6 +1013,121 @@
       "scheduleCall": "Schedule call"
     }
   },
+  "uxAudit": {
+    "meta": {
+      "title": "UX/UI Audit Services - Enkonix",
+      "description": "Comprehensive UX & UI audits: expert reviews, accessibility checks and prioritized remediation roadmaps to improve usability and conversions."
+    },
+    "hero": {
+      "badge": "UX Audit",
+      "title": "UX & UI Audits that expose friction and unlock growth",
+      "desc": "We combine analytics, expert review and lightweight user checks to uncover usability, accessibility and conversion issues — then prioritise fixes your team can ship.",
+      "cta": {
+        "seeSamples": "See audit samples",
+        "requestAudit": "Request audit"
+      },
+      "tags": ["Heuristics", "Accessibility", "Funnel", "Analytics"]
+    },
+    "featuresHeader": "Audit areas",
+    "featuresSubtitle": "The checks we run and the outcomes you can expect from an audit.",
+    "features": [
+      {
+        "title": "Heuristic Evaluation",
+        "desc": "A task-based expert review against established usability heuristics to surface friction and unclear flows."
+      },
+      {
+        "title": "Accessibility Audit",
+        "desc": "Automated checks and manual validation for WCAG issues, keyboard support and assistive tech compatibility."
+      },
+      {
+        "title": "Conversion Funnel Review",
+        "desc": "Analyze drop-off points, CTA clarity and form friction to identify quick-win revenue improvements."
+      },
+      {
+        "title": "Interaction & Microcopy",
+        "desc": "Inspect interaction patterns, affordances and messaging that influence user decisions and trust."
+      }
+    ],
+    "processHeader": "Audit process",
+    "processSubtitle": "A pragmatic, evidence-based workflow that surfaces problems, validates impact and delivers a prioritized remediation plan.",
+    "processSteps": [
+      {
+        "step": "Scope & Data",
+        "copy": "Gather analytics, product metrics and stakeholder goals to define audit boundaries and success criteria."
+      },
+      {
+        "step": "Expert Review",
+        "copy": "Heuristic and accessibility review by senior UX auditors with prioritized findings."
+      },
+      {
+        "step": "User Checks",
+        "copy": "Lightweight usability tests or remote validation to confirm the most critical issues."
+      },
+      {
+        "step": "Report & Roadmap",
+        "copy": "Actionable report with prioritized fixes, impact estimates and a pragmatic remediation plan."
+      }
+    ],
+    "projectsHeader": "Audit highlights",
+    "projectsSubtitle": "Example audits and the measurable improvements that followed.",
+    "projectDefaultDesc": "A short summary of the impact and metrics — concise and outcome focused.",
+    "projects": [
+      {
+        "title": "Checkout Accessibility Fixes",
+        "tag": "E‑commerce Audit"
+      },
+      {
+        "title": "Onboarding Funnel Review",
+        "tag": "Mobile / Fintech"
+      },
+      {
+        "title": "Admin UX Healthcheck",
+        "tag": "SaaS Audit"
+      }
+    ],
+    "testimonialsHeader": "Client feedback",
+    "testimonialsSubtitle": "Feedback from product and engineering leaders who commissioned audits.",
+    "testimonials": [
+      {
+        "quote": "The audit quickly exposed critical accessibility issues and gave our team a clear plan to fix them — impact was immediate.",
+        "who": "Serhiy Hipskyy",
+        "role": "CEO, Universal"
+      },
+      {
+        "quote": "Actionable findings and prioritised recommendations — we shipped the top three fixes in two sprints and saw conversion improvements.",
+        "who": "Maya Singh",
+        "role": "Head of Product, FinSystems"
+      },
+      {
+        "quote": "Clear evidence and lightweight testing saved us weeks of guesswork — the roadmap was practical and measurable.",
+        "who": "Rohit Patel",
+        "role": "Product Lead, StartupX"
+      }
+    ],
+    "teamHeader": "Meet the audit team",
+    "teamSubtitle": "Senior auditors, accessibility specialists and conversion analysts who deliver practical recommendations.",
+    "teamBlurb": "Experienced in product strategy, interaction design and building design systems that scale.",
+    "team": [
+      {
+        "name": "Asha Patel",
+        "role": "Principal UX Auditor"
+      },
+      {
+        "name": "Miguel Santos",
+        "role": "Accessibility Specialist"
+      },
+      {
+        "name": "Lina Chen",
+        "role": "Conversion Analyst"
+      }
+    ],
+    "finalCta": {
+      "title": "Ready for an audit?",
+      "desc": "Tell us what to assess and we’ll return a scoped plan, timeline and estimated impact.",
+      "requestBrief": "Request audit brief",
+      "scheduleCall": "Schedule audit call"
+    }
+  },
   "admin": {
     "heading": "Admin Overview",
     "stats": {

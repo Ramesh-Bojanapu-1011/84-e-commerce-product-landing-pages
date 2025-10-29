@@ -396,7 +396,10 @@ const ProductDesign = () => {
         </section>
 
         {/* Team */}
-        <section aria-labelledby="team-title" className="py-12 bg-white dark:bg-slate-900  ">
+        <section
+          aria-labelledby="team-title"
+          className="py-12 bg-white dark:bg-slate-900  "
+        >
           <div className="max-w-7xl mx-auto">
             <h2 id="team-title" className="text-2xl font-bold text-center">
               {t("productDesign.teamHeader")}

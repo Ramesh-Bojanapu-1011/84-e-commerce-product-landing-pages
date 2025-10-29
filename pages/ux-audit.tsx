@@ -3,126 +3,108 @@ import SiteFooter from "../src/components/SiteFooter";
 import SiteHeadder from "../src/components/SiteHeadder";
 import Head from "next/head";
 import { Quote, Linkedin, Twitter } from "lucide-react";
+import { useTranslation } from "react-i18next";
+import i18n from "@/i18n";
 
-const features = [
-  {
-    title: "Heuristic Evaluation",
-    desc: "A task-based expert review against established usability heuristics to surface friction and unclear flows.",
-  },
-  {
-    title: "Accessibility Audit",
-    desc: "Automated checks and manual validation for WCAG issues, keyboard support and assistive tech compatibility.",
-  },
-  {
-    title: "Conversion Funnel Review",
-    desc: "Analyze drop-off points, CTA clarity and form friction to identify quick-win revenue improvements.",
-  },
-  {
-    title: "Interaction & Microcopy",
-    desc: "Inspect interaction patterns, affordances and messaging that influence user decisions and trust.",
-  },
-];
-
-const processSteps = [
-  {
-    step: "Scope & Data",
-    copy: "Gather analytics, product metrics and stakeholder goals to define audit boundaries and success criteria.",
-  },
-  {
-    step: "Expert Review",
-    copy: "Heuristic and accessibility review by senior UX auditors with prioritized findings.",
-  },
-  {
-    step: "User Checks",
-    copy: "Lightweight usability tests or remote validation to confirm the most critical issues.",
-  },
-  {
-    step: "Report & Roadmap",
-    copy: "Actionable report with prioritized fixes, impact estimates and a pragmatic remediation plan.",
-  },
-];
-
-const projects = [
-  {
-    title: "Checkout Accessibility Fixes",
-    tag: "E‑commerce Audit",
-    img: "https://i.pinimg.com/1200x/c7/1d/ec/c71dec991f8c1c9f364288b0e87072fc.jpg",
-  },
-  {
-    title: "Onboarding Funnel Review",
-    tag: "Mobile / Fintech",
-    img: "https://i.pinimg.com/1200x/a1/31/a9/a131a9f4cfbe21b07d5ec5ca2834fb7a.jpg",
-  },
-  {
-    title: "Admin UX Healthcheck",
-    tag: "SaaS Audit",
-    img: "https://i.pinimg.com/1200x/d7/7e/fa/d77efa14bcbbc9ac8e221161b86b9d50.jpg",
-  },
-];
-
-const team = [
-  { name: "Asha Patel", role: "Principal UX Auditor", avatar: "/avatar1.jpg" },
-  {
-    name: "Miguel Santos",
-    role: "Accessibility Specialist",
-    avatar: "/avatar2.jpg",
-  },
-  { name: "Lina Chen", role: "Conversion Analyst", avatar: "/avatar3.jpg" },
-];
-
-const testimonials = [
-  {
-    quote:
-      "The audit quickly exposed critical accessibility issues and gave our team a clear plan to fix them — impact was immediate.",
-    who: "Serhiy Hipskyy",
-    role: "CEO, Universal",
-    avatar: "/avatar1.jpg",
-    rating: 5,
-  },
-  {
-    quote:
-      "Actionable findings and prioritised recommendations — we shipped the top three fixes in two sprints and saw conversion improvements.",
-    who: "Maya Singh",
-    role: "Head of Product, FinSystems",
-    avatar: "/avatar2.jpg",
-    rating: 5,
-  },
-  {
-    quote:
-      "Clear evidence and lightweight testing saved us weeks of guesswork — the roadmap was practical and measurable.",
-    who: "Rohit Patel",
-    role: "Product Lead, StartupX",
-    avatar: "/avatar3.jpg",
-    rating: 5,
-  },
-];
+// content is loaded from locales so all visible strings exist per-language
 
 const UxAudit = () => {
+  const { t } = useTranslation();
+
+  const features = t("uxAudit.features", { returnObjects: true }) as Array<{
+    title: string;
+    desc: string;
+  }>;
+  const processSteps = t("uxAudit.processSteps", {
+    returnObjects: true,
+  }) as Array<{ step: string; copy: string }>;
+
+  const projects = [
+    {
+      title: t("uxAudit.projects.0.title"),
+      tag: t("uxAudit.projects.0.tag"),
+      img: " https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=800&q=80",
+      desc: t("uxAudit.projects.0.desc"),
+    },
+    {
+      title: t("uxAudit.projects.1.title"),
+      tag: t("uxAudit.projects.1.tag"),
+      img: " https://images.unsplash.com/photo-1492724441997-5dc865305da7?auto=format&fit=crop&w=800&q=80",
+      desc: t("uxAudit.projects.1.desc"),
+    },
+    {
+      title: t("uxAudit.projects.2.title"),
+      tag: t("uxAudit.projects.2.tag"),
+      img: " https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=800&q=80",
+      desc: t("uxAudit.projects.2.desc"),
+    },
+  ];
+
+  const team = [
+    {
+      name: t("uxAudit.team.0.name"),
+      role: t("uxAudit.team.0.role"),
+      avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+    },
+    {
+      name: t("uxAudit.team.1.name"),
+      role: t("uxAudit.team.1.role"),
+      avatar: "https://randomuser.me/api/portraits/men/45.jpg",
+    },
+    {
+      name: t("uxAudit.team.2.name"),
+      role: t("uxAudit.team.2.role"),
+      avatar: "https://randomuser.me/api/portraits/women/12.jpg",
+    },
+  ];
+
+  const testimonials = [
+    {
+      quote: t("uxAudit.testimonials.0.quote"),
+      who: t("uxAudit.testimonials.0.who"),
+      role: t("uxAudit.testimonials.0.role"),
+      rating: 5,
+      avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+    },
+    {
+      quote: t("uxAudit.testimonials.1.quote"),
+      who: t("uxAudit.testimonials.1.who"),
+      role: t("uxAudit.testimonials.1.role"),
+      rating: 5,
+      avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+    },
+    {
+      quote: t("uxAudit.testimonials.2.quote"),
+      who: t("uxAudit.testimonials.2.who"),
+      role: t("uxAudit.testimonials.2.role"),
+      rating: 5,
+      avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+    },
+  ];
+
   return (
     <>
       <Head>
-        <title>UX/UI Audit Services - Enkonix</title>
+        <title>{t("uxAudit.meta.title")}</title>
         <meta
           name="description"
-          content="Comprehensive UX & UI audits: expert reviews, accessibility checks and prioritized remediation roadmaps to improve usability and conversions."
+          content={t("uxAudit.meta.description") as string}
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
       <SiteHeadder />
-      <main className=" caret-transparent ">
+      <main className=" caret-transparent  bg-linear-to-br from-blue-50 to-white dark:from-slate-900 dark:to-slate-800 ">
         {/* Hero */}
         <section className="relative overflow-hidden bg-linear-to-br from-indigo-600 to-emerald-500 text-white min-h-screen flex items-center justify-center">
           <div className="max-w-7xl mx-auto px-6  ">
             <div className="grid grid-cols-1   gap-10 items-center">
               <div className="flex justify-center items-center text-center flex-col">
                 <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight ">
-                  UX & UI Audits that expose friction and unlock growth
+                  {t("uxAudit.hero.title")}
                 </h1>
                 <p className="mt-4 text-lg opacity-90 max-w-xl">
-                  We combine analytics, expert review and lightweight user
-                  checks to uncover usability, accessibility and conversion
-                  issues — then prioritise fixes your team can ship.
+                  {t("uxAudit.hero.desc")}
                 </p>
 
                 <div className="mt-8 flex flex-wrap gap-3">
@@ -130,27 +112,27 @@ const UxAudit = () => {
                     href="#projects"
                     className="inline-flex items-center rounded-lg bg-white/20 px-4 py-2 text-white hover:bg-white/30"
                   >
-                    See audit samples
+                    {t("uxAudit.hero.cta.seeSamples")}
                   </Link>
                   <Link
                     href="#contact"
                     className="inline-flex items-center rounded-lg bg-white text-indigo-700 px-4 py-2 hover:shadow"
                   >
-                    Request audit
+                    {t("uxAudit.hero.cta.requestAudit")}
                   </Link>
                 </div>
 
                 <div className="mt-6 flex flex-wrap gap-2 text-sm opacity-95">
-                  {["Heuristics", "Accessibility", "Funnel", "Analytics"].map(
-                    (b) => (
-                      <span
-                        key={b}
-                        className="rounded-full bg-white/10 px-3 py-1"
-                      >
-                        {b}
-                      </span>
-                    ),
-                  )}
+                  {(
+                    t("uxAudit.hero.tags", { returnObjects: true }) as string[]
+                  ).map((b) => (
+                    <span
+                      key={b}
+                      className="rounded-full bg-white/10 px-3 py-1"
+                    >
+                      {b}
+                    </span>
+                  ))}
                 </div>
               </div>
             </div>
@@ -160,21 +142,21 @@ const UxAudit = () => {
         {/* Features */}
         <section
           aria-labelledby="features-title"
-          className=" flex justify-center py-12 items-center   "
+          className=" flex justify-center py-12 items-center bg-white dark:bg-slate-900   "
         >
           <div className="flex flex-col  max-w-7xl">
             <h2 id="features-title" className="text-2xl text-center font-bold">
-              Audit areas
+              {t("uxAudit.featuresHeader")}
             </h2>
             <p className="mt-2 text-center text-slate-500 dark:text-slate-300 ">
-              The checks we run and the outcomes you can expect from an audit.
+              {t("uxAudit.featuresSubtitle")}
             </p>
 
             <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {features.map((f, idx) => (
                 <article
                   key={idx}
-                  className="group relative rounded-2xl overflow-hidden bg-white/60 dark:bg-slate-900/50 border border-slate-200/30 dark:border-slate-700/20 p-6 shadow-xl hover:shadow-2xl transition transform hover:-translate-y-2"
+                  className="group relative rounded-2xl overflow-hidden bg-white/60 dark:bg-slate-900/50 border border-transparent hover:border-slate-200/20 p-6 shadow-md hover:shadow-xl transition-transform duration-300 hover:-translate-y-2 backdrop-blur-sm"
                 >
                   <div className="flex items-start gap-4">
                     <div className="shrink-0">
@@ -219,11 +201,10 @@ const UxAudit = () => {
         >
           <div className=" items-center flex-col w-screen   flex">
             <h2 id="process-title" className="text-2xl font-bold">
-              Audit process
+              {t("uxAudit.processHeader")}
             </h2>
             <p className="mt-2 text-slate-500 dark:text-slate-300 max-w-2xl">
-              A pragmatic, evidence-based workflow that surfaces problems,
-              validates impact and delivers a prioritized remediation plan.
+              {t("uxAudit.processSubtitle")}
             </p>
 
             <ol className="mt-8 relative w-full">
@@ -240,8 +221,16 @@ const UxAudit = () => {
                       key={p.step}
                       className={` flex    items-center  ${
                         i % 2 === 0
-                          ? " md:justify-start md:ml-10  flex-row-reverse"
-                          : " md:justify-start md:mr-10"
+                          ? ` md:justify-start flex-row-reverse ${
+                              i18n.language == "en"
+                                ? `  md:ml-10 `
+                                : `  md:mr-10 `
+                            }`
+                          : ` md:justify-start ${
+                              i18n.language == "en"
+                                ? `  md:mr-10 `
+                                : `  md:ml-10 `
+                            }`
                       }`}
                       aria-label={`Step ${i + 1}: ${p.step}`}
                     >
@@ -282,14 +271,14 @@ const UxAudit = () => {
         <section
           id="projects"
           aria-labelledby="projects-title"
-          className="flex w-full justify-center "
+          className="flex w-full justify-center bg-white dark:bg-slate-900 py-7 "
         >
-          <div className="flex flex-col max-w-7xl justify-center items-center">
+          <div className="flex flex-col w-screen   justify-center items-center">
             <h2 id="projects-title" className="text-2xl font-bold">
-              Audit highlights
+              {t("uxAudit.projectsHeader")}
             </h2>
             <p className="mt-2 text-slate-500 dark:text-slate-300 max-w-2xl">
-              Example audits and the measurable improvements that followed.
+              {t("uxAudit.projectsSubtitle")}
             </p>
 
             <div className="mt-8">
@@ -305,7 +294,7 @@ const UxAudit = () => {
                   return (
                     <article
                       key={p.title}
-                      className={`group relative overflow-hidden rounded-xl shadow-lg ${baseClasses} bg-slate-50 dark:bg-slate-900/50 py-5 `}
+                      className={`group relative overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-transform duration-300 ${baseClasses} bg-slate-50 dark:bg-slate-900/50 py-5 border border-transparent hover:border-white/10`}
                       aria-labelledby={`project-${idx}`}
                     >
                       <div
@@ -332,8 +321,8 @@ const UxAudit = () => {
                         </div>
 
                         <p className="mt-3 hidden sm:block text-sm text-white/80 max-w-prose">
-                          A short summary of the impact and metrics — concise
-                          and outcome focused.
+                          {p.desc ||
+                            (t("uxAudit.projectDefaultDesc") as string)}
                         </p>
                       </div>
                     </article>
@@ -351,18 +340,17 @@ const UxAudit = () => {
         >
           <div className="flex flex-col justify-center items-center max-w-7xl">
             <h2 id="testimonials-title" className="text-2xl font-bold">
-              Client feedback
+              {t("uxAudit.testimonialsHeader")}
             </h2>
             <p className="mt-2 text-slate-500 dark:text-slate-300 max-w-2xl">
-              Feedback from product and engineering leaders who commissioned
-              audits.
+              {t("uxAudit.testimonialsSubtitle")}
             </p>
 
             <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-              {testimonials.map((t, idx) => (
+              {testimonials.map((item, idx) => (
                 <div
                   key={idx}
-                  className="relative rounded-xl p-6 bg-white dark:bg-slate-800 border border-slate-200/40 dark:border-slate-700/30 shadow-sm overflow-visible"
+                  className="relative rounded-2xl p-6 bg-white/95 dark:bg-slate-800/60 ring-1 ring-slate-100/40 hover:ring-2 hover:ring-amber-200/30 shadow-md hover:shadow-xl transition-transform duration-300 hover:-translate-y-1 overflow-visible"
                 >
                   {/* quote badge */}
                   <div className="absolute -top-5 left-6 h-12 w-12 rounded-full bg-linear-to-br from-emerald-400 to-indigo-600 text-white flex items-center justify-center shadow-2xl">
@@ -371,7 +359,7 @@ const UxAudit = () => {
 
                   {/* rating */}
                   <div className="flex items-center gap-1 text-amber-400 mb-3">
-                    {Array.from({ length: t.rating }).map((_, i) => (
+                    {Array.from({ length: item.rating ?? 0 }).map((_, i) => (
                       <svg
                         key={i}
                         className="w-4 h-4"
@@ -385,19 +373,19 @@ const UxAudit = () => {
                   </div>
 
                   <p className="text-slate-800 dark:text-slate-100">
-                    “{t.quote}”
+                    “{item.quote}”
                   </p>
 
                   <div className="mt-4 flex items-center gap-3">
                     <img
-                      src={t.avatar}
-                      alt={t.who}
+                      src={item.avatar}
+                      alt={item.who}
                       className="h-10 w-10 rounded-full object-cover"
                     />
                     <div>
-                      <div className="font-semibold text-sm">{t.who}</div>
+                      <div className="font-semibold text-sm">{item.who}</div>
                       <div className="text-xs text-slate-500 dark:text-slate-300">
-                        {t.role}
+                        {item.role}
                       </div>
                     </div>
                   </div>
@@ -408,21 +396,23 @@ const UxAudit = () => {
         </section>
 
         {/* Team */}
-        <section aria-labelledby="team-title" className="py-12">
+        <section
+          aria-labelledby="team-title"
+          className="py-12 bg-white dark:bg-slate-900  "
+        >
           <div className="max-w-7xl mx-auto">
             <h2 id="team-title" className="text-2xl font-bold text-center">
-              Meet the audit team
+              {t("uxAudit.teamHeader")}
             </h2>
             <p className="mt-2 text-center text-slate-500 dark:text-slate-300 max-w-2xl mx-auto">
-              Senior auditors, accessibility specialists and conversion analysts
-              who deliver practical recommendations.
+              {t("uxAudit.teamSubtitle")}
             </p>
 
             <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {team.map((m) => (
                 <div
                   key={m.name}
-                  className="group relative rounded-xl overflow-hidden bg-white dark:bg-slate-900/40 border border-slate-100/60 dark:border-slate-700/30 p-6 shadow-sm hover:shadow-lg transition transform hover:-translate-y-1"
+                  className="group relative rounded-2xl overflow-hidden bg-white/95 dark:bg-slate-900/50 border   hover:border-slate-200/20 p-6 shadow-2xl hover:shadow-xl transition-transform duration-300 hover:-translate-y-1"
                 >
                   <div className="flex items-start gap-4">
                     <img
@@ -506,8 +496,7 @@ const UxAudit = () => {
                       </div>
 
                       <p className="mt-3 text-sm text-slate-600 dark:text-slate-300">
-                        Experienced in product strategy, interaction design and
-                        building design systems that scale.
+                        {t("uxAudit.teamBlurb")}
                       </p>
                     </div>
                   </div>
@@ -520,24 +509,23 @@ const UxAudit = () => {
         {/* Final CTA */}
         <section id="contact" className="py-12 bg-indigo-600 text-white">
           <div className="max-w-3xl flex flex-col mx-auto items-center justify-center text-center">
-            <h2 className="text-2xl font-bold">Ready for an audit?</h2>
-            <p className="mt-2 opacity-90">
-              Tell us what to assess and we’ll return a scoped plan, timeline
-              and estimated impact.
-            </p>
+            <h2 className="text-2xl font-bold">
+              {t("uxAudit.finalCta.title")}
+            </h2>
+            <p className="mt-2 opacity-90">{t("uxAudit.finalCta.desc")}</p>
 
             <div className="mt-6 flex gap-3">
               <Link
                 href="#"
                 className="rounded-md bg-white text-indigo-600 px-4 py-2 font-medium"
               >
-                Request audit brief
+                {t("uxAudit.finalCta.requestBrief")}
               </Link>
               <Link
                 href="/contact-us"
                 className="rounded-md border border-white/30 px-4 py-2"
               >
-                Schedule audit call
+                {t("uxAudit.finalCta.scheduleCall")}
               </Link>
             </div>
           </div>
