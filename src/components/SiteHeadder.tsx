@@ -46,7 +46,7 @@ const SiteHeadder: React.FC = () => {
         { title: t("header.allServices"), href: "/services" },
         { title: t("header.productDesign"), href: "/product-design" },
         { title: t("header.uxAudit"), href: "/ux-audit" },
-        { title: t("header.conversionRateOpt"), href: "/cro" },
+        { title: t("header.conversionRateOpt"), href: "/conversion-rate-opt" },
         { title: t("header.performance"), href: "/performance" },
         { title: t("header.accessibility"), href: "/accessibility" },
         { title: t("header.integrations"), href: "/integrations" },
