@@ -45,10 +45,26 @@ const features = [
 ];
 
 const teamMembers = [
-  { slug: "olivia", name: "Olivia Hart", href: "/team/olivia" },
-  { slug: "matt", name: "Matt Rivera", href: "/team/matt" },
-  { slug: "nina", name: "Nina Park", href: "/team/nina" },
-  { slug: "liam", name: "Liam Chen", href: "/team/liam" },
+  {
+    slug: "olivia",
+    name: "Olivia Hart",
+    img: "https://randomuser.me/api/portraits/men/37.jpg",
+  },
+  {
+    slug: "matt",
+    name: "Matt Rivera",
+    img: "https://randomuser.me/api/portraits/men/78.jpg",
+  },
+  {
+    slug: "nina",
+    name: "Nina Park",
+    img: "https://randomuser.me/api/portraits/men/70.jpg",
+  },
+  {
+    slug: "liam",
+    name: "Liam Chen",
+    img: "https://randomuser.me/api/portraits/men/73.jpg",
+  },
 ];
 
 export default function ServicesPage() {
@@ -370,7 +386,7 @@ export default function ServicesPage() {
         </section>
 
         {/* Meet the team (new look) */}
-        <section className="py-16 bg-white dark:bg-slate-900">
+        <section className="py-16  ">
           <div className="max-w-6xl mx-auto px-6 lg:px-8">
             <h3 className="text-2xl font-semibold text-slate-900 dark:text-white text-center">
               {t("services.team.header")}
@@ -389,11 +405,11 @@ export default function ServicesPage() {
                   <div className="mx-auto w-28 h-28 rounded-full p-1 bg-linear-to-br from-indigo-500 to-blue-500">
                     <div className="w-full h-full rounded-full bg-white dark:bg-slate-900 flex items-center justify-center overflow-hidden">
                       <div className="text-2xl font-bold text-slate-700 dark:text-slate-200">
-                        {m.name
-                          .split(" ")
-                          .map((n) => n[0])
-                          .slice(0, 2)
-                          .join("")}
+                        <img
+                          src={m.img}
+                          alt={m.name}
+                          className="h-full w-full object-cover object-center"
+                        />
                       </div>
                     </div>
                   </div>

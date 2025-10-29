@@ -38,23 +38,23 @@ export default function Home2() {
     },
     {
       id: 2,
-      title:  t("home2.gallery.1.title"),
+      title: t("home2.gallery.1.title"),
       price: 199,
-      desc:  t("home2.gallery.1.desc"),
+      desc: t("home2.gallery.1.desc"),
       img: "https://i.pinimg.com/736x/a7/b2/01/a7b2014d08144a31e109fffff912b07e.jpg",
     },
     {
       id: 3,
-      title:  t("home2.gallery.2.title"),
+      title: t("home2.gallery.2.title"),
       price: 149,
-      desc:  t("home2.gallery.2.desc"),
+      desc: t("home2.gallery.2.desc"),
       img: "https://i.pinimg.com/1200x/9d/8a/12/9d8a120cf5f5b8259a31618a742db7c1.jpg",
     },
     {
       id: 4,
-      title:  t("home2.gallery.3.title"),
+      title: t("home2.gallery.3.title"),
       price: 79,
-      desc:   t("home2.gallery.3.desc"),
+      desc: t("home2.gallery.3.desc"),
       img: "https://i.pinimg.com/1200x/85/93/34/859334876ba72c88ea4416b4b802a3e2.jpg",
     },
   ];
@@ -145,7 +145,6 @@ export default function Home2() {
                   <img
                     src="https://i.pinimg.com/1200x/1b/86/23/1b8623f4693a51b8f144ca46d97f44e0.jpg"
                     alt=""
-                    
                     className="h-full w-full object-cover object-center rounded-xl"
                   />
                 </div>
@@ -277,7 +276,11 @@ export default function Home2() {
                     </div>
 
                     {/* placeholder art */}
-                    <img src={p.img} alt="" className="h-full w-full object-cover object-center" />
+                    <img
+                      src={p.img}
+                      alt=""
+                      className="h-full w-full object-cover object-center"
+                    />
                   </div>
 
                   <div className="p-4">
