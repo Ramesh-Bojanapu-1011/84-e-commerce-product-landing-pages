@@ -42,7 +42,7 @@ const ProductDesign = () => {
     {
       name: t("productDesign.team.0.name"),
       role: t("productDesign.team.0.role"),
-      avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+      avatar: "https://randomuser.me/api/portraits/women/65.jpg",
     },
     {
       name: t("productDesign.team.1.name"),
@@ -62,7 +62,7 @@ const ProductDesign = () => {
       who: t("productDesign.testimonials.0.who"),
       role: t("productDesign.testimonials.0.role"),
       rating: 5,
-      avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+      avatar: "https://randomuser.me/api/portraits/men/32.jpg",
     },
     {
       quote: t("productDesign.testimonials.1.quote"),
@@ -76,7 +76,7 @@ const ProductDesign = () => {
       who: t("productDesign.testimonials.2.who"),
       role: t("productDesign.testimonials.2.role"),
       rating: 5,
-      avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+      avatar: "https://randomuser.me/api/portraits/men/85.jpg",
     },
   ];
 
