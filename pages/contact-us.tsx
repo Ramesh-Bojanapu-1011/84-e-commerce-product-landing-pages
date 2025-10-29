@@ -1,6 +1,6 @@
 import SiteFooter from "@/components/SiteFooter";
 import SiteHeadder from "@/components/SiteHeadder";
-import { Mail, Phone } from "lucide-react";
+import { Mail, MailIcon, Phone, PhoneCall } from "lucide-react";
 import Head from "next/head";
 import Link from "next/link";
 import { useState } from "react";
@@ -34,8 +34,8 @@ function FormNewLook({
             const href = isEmail
               ? `mailto:${c.value}`
               : isPhone
-                ? `tel:${c.value.replace(/[^0-9+]/g, "")}`
-                : `mailto:${c.value}`;
+              ? `tel:${c.value.replace(/[^0-9+]/g, "")}`
+              : `mailto:${c.value}`;
 
             return (
               <a
@@ -280,8 +280,8 @@ export default function ContactUs() {
                 const href = isEmail
                   ? `mailto:${c.value}`
                   : isPhone
-                    ? `tel:${c.value.replace(/[^0-9+]/g, "")}`
-                    : `mailto:${c.value}`;
+                  ? `tel:${c.value.replace(/[^0-9+]/g, "")}`
+                  : `mailto:${c.value}`;
 
                 return (
                   <a
@@ -292,47 +292,9 @@ export default function ContactUs() {
                     <div className="flex items-center justify-center gap-3">
                       <div className="w-10 h-10 rounded-md flex items-center justify-center text-white bg-linear-to-br from-indigo-500 to-pink-500">
                         {isEmail ? (
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="w-5 h-5"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth="2"
-                              d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8"
-                            />
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth="2"
-                              d="M21 8v8a2 2 0 01-2 2H5a2 2 0 01-2-2V8"
-                            />
-                          </svg>
+                          <MailIcon />
                         ) : isPhone ? (
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            className="w-5 h-5"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            stroke="currentColor"
-                          >
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth="2"
-                              d="M3 5a2 2 0 012-2h2.2c.6 0 1.1.3 1.4.8l1.2 2.2"
-                            />
-                            <path
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth="2"
-                              d="M7 7l10 10"
-                            />
-                          </svg>
+                          <PhoneCall />
                         ) : (
                           <svg
                             xmlns="http://www.w3.org/2000/svg"
@@ -445,7 +407,13 @@ export default function ContactUs() {
                   </div>
 
                   <div className="mt-4 h-32 rounded-md bg-slate-100 dark:bg-slate-900 flex items-center justify-center text-slate-400">
-                    {t("contact.locations.mapPlaceholder")}
+                    <iframe
+                      src={`https://maps.google.com/maps?q=${encodeURIComponent(
+                        loc.address
+                      )}&z=15&output=embed`}
+                      className="w-full h-32 rounded-md"
+                      loading="lazy"
+                    ></iframe>
                   </div>
                 </div>
               ))}
