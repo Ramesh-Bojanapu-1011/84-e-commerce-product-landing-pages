@@ -46,17 +46,17 @@ const ConversionOptimizationPage = () => {
     {
       name: t("conversionRateOpt.team.0.name"),
       role: t("conversionRateOpt.team.0.role"),
-      avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+      avatar: "https://randomuser.me/api/portraits/women/65.jpg",
     },
     {
       name: t("conversionRateOpt.team.1.name"),
       role: t("conversionRateOpt.team.1.role"),
-      avatar: "https://randomuser.me/api/portraits/men/45.jpg",
+      avatar: " https://randomuser.me/api/portraits/men/32.jpg",
     },
     {
       name: t("conversionRateOpt.team.2.name"),
       role: t("conversionRateOpt.team.2.role"),
-      avatar: "https://randomuser.me/api/portraits/women/12.jpg",
+      avatar: " https://randomuser.me/api/portraits/men/85.jpg",
     },
   ];
 
@@ -66,21 +66,21 @@ const ConversionOptimizationPage = () => {
       who: t("conversionRateOpt.testimonials.0.who"),
       role: t("conversionRateOpt.testimonials.0.role"),
       rating: 5,
-      avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+      avatar: "https://randomuser.me/api/portraits/women/85.jpg",
     },
     {
       quote: t("conversionRateOpt.testimonials.1.quote"),
       who: t("conversionRateOpt.testimonials.1.who"),
       role: t("conversionRateOpt.testimonials.1.role"),
       rating: 5,
-      avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+      avatar: "https://randomuser.me/api/portraits/men/42.jpg",
     },
     {
       quote: t("conversionRateOpt.testimonials.2.quote"),
       who: t("conversionRateOpt.testimonials.2.who"),
       role: t("conversionRateOpt.testimonials.2.role"),
       rating: 5,
-      avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+      avatar: "https://randomuser.me/api/portraits/women/45.jpg",
     },
   ];
 
