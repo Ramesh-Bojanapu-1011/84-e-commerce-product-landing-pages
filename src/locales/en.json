@@ -1372,6 +1372,120 @@
       "scheduleCall": "Schedule audit call"
     }
   },
+  "accessibility": {
+    "meta": {
+      "title": "Accessibility Services — Enkonix",
+      "description": "Make your product usable by everyone: WCAG audits, remediation, assistive tech testing and accessibility monitoring."
+    },
+    "hero": {
+      "title": "Accessibility-first experiences that include everyone",
+      "desc": "We audit, fix and validate accessibility issues so your product works for all users and complies with standards.",
+      "ctaCaseStudies": "See case studies",
+      "ctaConsult": "Get a consult",
+      "badges": ["WCAG", "Screen Readers", "Keyboard", "ARIA"]
+    },
+    "featuresHeader": "What we do",
+    "featuresSubtitle": "Practical accessibility work: audits, prioritized remediation and assistive-tech validation.",
+    "features": [
+      {
+        "title": "WCAG Audit",
+        "desc": "Full accessibility audit against WCAG 2.1 standards to find barriers for users."
+      },
+      {
+        "title": "Keyboard & Focus",
+        "desc": "Ensure predictable keyboard navigation and visible focus states across UI."
+      },
+      {
+        "title": "Screen Reader Support",
+        "desc": "Semantic markup, ARIA patterns and testing with assistive tech to improve UX for screen reader users."
+      },
+      {
+        "title": "Color & Contrast",
+        "desc": "Accessible color palettes and contrast ratios for readability and visual clarity."
+      }
+    ],
+    "processHeader": "Our process",
+    "processSubtitle": "A pragmatic assess → remediate → validate workflow that removes barriers and improves inclusion.",
+    "processSteps": [
+      {
+        "step": "Assess",
+        "copy": "Run automated and manual checks, plus real-user assistive tech testing to identify issues."
+      },
+      {
+        "step": "Remediate",
+        "copy": "Fix semantic HTML, ARIA roles, keyboard flow and color contrast with prioritized tickets."
+      },
+      {
+        "step": "Validate",
+        "copy": "Perform screen reader walkthroughs, keyboard-only passes and regression tests."
+      },
+      {
+        "step": "Maintain",
+        "copy": "Integrate accessibility into CI, design systems and developer reviews to prevent regressions."
+      }
+    ],
+    "projectsHeader": "Selected work",
+    "projectsSubtitle": "Short snapshots of recent projects — outcomes first.",
+    "projects": [
+      {
+        "title": "WCAG Remediation",
+        "tag": "E‑commerce",
+        "desc": "Achieved WCAG AA compliance across the storefront, enabling independent purchases for users with disabilities."
+      },
+      {
+        "title": "Accessible Checkout",
+        "tag": "Retail",
+        "desc": "Improved keyboard navigation and screen reader support in the checkout flow, boosting completion rates."
+      },
+      {
+        "title": "Mobile-a11y Improvements",
+        "tag": "Mobile",
+        "desc": "Enhanced color contrast and touch target sizes in the mobile app, improving usability for all users."
+      }
+    ],
+    "projectDefaultDesc": "A short summary of the impact and metrics — concise and outcome focused.",
+    "testimonialsHeader": "What clients say",
+    "testimonialsSubtitle": "Short quotes from teams who improved accessibility, compliance and customer satisfaction.",
+    "testimonials": [
+      {
+        "quote": "They helped us reach WCAG AA across our storefront — customers with disabilities can now complete purchases independently.",
+        "who": "Maya R.",
+        "role": "Head of Design, MarketPlace"
+      },
+      {
+        "quote": "Their keyboard and screen reader fixes made our admin app usable without a mouse — huge productivity gains.",
+        "who": "Owen P.",
+        "role": "Operations Lead, FinTechCo"
+      },
+      {
+        "quote": "Clear remediation tickets and CI checks prevented regressions — a practical accessibility program.",
+        "who": "Sara L.",
+        "role": "VP Engineering, NewsCorp"
+      }
+    ],
+    "teamHeader": "Meet the team",
+    "teamSubtitle": "Small, cross-functional accessibility teams pairing engineers, designers and QA.",
+    "team": [
+      {
+        "name": "Amina Shah",
+        "role": "Accessibility Engineer"
+      },
+      {
+        "name": "Daniel Cho",
+        "role": "UX Researcher (a11y)"
+      },
+      {
+        "name": "Rita Gomez",
+        "role": "QA & Assistive Tech Tester"
+      }
+    ],
+    "finalCta": {
+      "title": "Ready to make your product accessible?",
+      "desc": "Share a URL or a user flow — we’ll propose a remediation plan and validation checklist.",
+      "sendBrief": "Send brief",
+      "scheduleCall": "Schedule call"
+    }
+  },
   "admin": {
     "heading": "Admin Overview",
     "stats": {
