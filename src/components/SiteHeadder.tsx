@@ -1,5 +1,5 @@
 import { getCurrentUser, handleLogout, User } from "@/lib/localAuth";
-import { ChevronDown, Grid, LogOut, Menu } from "lucide-react";
+import { ChevronDown, Grid, LogOut, Menu, X } from "lucide-react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react";
@@ -125,7 +125,7 @@ const SiteHeadder: React.FC = () => {
             <div className="relative not-md:hidden">
               <button
                 onClick={() => setOpenLang((s) => !s)}
-                className="inline-flex items-center gap-1 px-3 py-1 rounded-md text-sm border border-slate-200 bg-white dark:bg-slate-900 dark:border-slate-700"
+                className="inline-flex items-center gap-1 px-3 py-1 rounded-md text-sm border border-slate-200 bg-white dark:bg-slate-900 dark:text-white dark:border-slate-700"
                 aria-expanded={openLang}
               >
                 {t("header.language")}
@@ -216,7 +216,11 @@ const SiteHeadder: React.FC = () => {
                 className="p-2 rounded-md hover:bg-slate-100 dark:hover:bg-slate-800"
                 aria-label="Open menu"
               >
-                <Menu className="w-6 h-6 text-slate-700 dark:text-slate-200" />
+                {openMobile ? (
+                  <X className="w-6 h-6 text-slate-700 dark:text-slate-200" />
+                ) : (
+                  <Menu className="w-6 h-6 text-slate-700 dark:text-slate-200" />
+                )}
               </button>
             </div>
           </div>
@@ -264,13 +268,18 @@ const SiteHeadder: React.FC = () => {
               </div>
               <div>
                 <details>
-                  <summary className="cursor-pointer px-2 py-1">
+                  <summary className="cursor-pointer dark:text-white px-2 py-1">
                     {t("header.language")}
                   </summary>
                   <div className="pl-3 absolute bg-white mt-1 space-y-1">
                     {languages.map((l) => (
                       <button
                         key={l.code}
+                        onClick={() => {
+                          // apply language and close menu
+                          applyLanguage(l.code);
+                          setOpenLang(false);
+                        }}
                         className="block text-left px-2 py-1 text-sm"
                       >
                         {l.label}

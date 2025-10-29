@@ -34,8 +34,8 @@ function FormNewLook({
             const href = isEmail
               ? `mailto:${c.value}`
               : isPhone
-              ? `tel:${c.value.replace(/[^0-9+]/g, "")}`
-              : `mailto:${c.value}`;
+                ? `tel:${c.value.replace(/[^0-9+]/g, "")}`
+                : `mailto:${c.value}`;
 
             return (
               <a
@@ -280,8 +280,8 @@ export default function ContactUs() {
                 const href = isEmail
                   ? `mailto:${c.value}`
                   : isPhone
-                  ? `tel:${c.value.replace(/[^0-9+]/g, "")}`
-                  : `mailto:${c.value}`;
+                    ? `tel:${c.value.replace(/[^0-9+]/g, "")}`
+                    : `mailto:${c.value}`;
 
                 return (
                   <a
@@ -409,7 +409,7 @@ export default function ContactUs() {
                   <div className="mt-4 h-32 rounded-md bg-slate-100 dark:bg-slate-900 flex items-center justify-center text-slate-400">
                     <iframe
                       src={`https://maps.google.com/maps?q=${encodeURIComponent(
-                        loc.address
+                        loc.address,
                       )}&z=15&output=embed`}
                       className="w-full h-32 rounded-md"
                       loading="lazy"

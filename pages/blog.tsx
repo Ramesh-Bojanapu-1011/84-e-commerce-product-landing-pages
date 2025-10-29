@@ -24,7 +24,8 @@ export default function BlogPage() {
       excerpt: t("blog.posts.0.excerpt"),
       date: t("blog.posts.0.date"),
       author: t("blog.posts.0.author"),
-      cover: "",
+      cover:
+        "https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=1400&q=80&quot",
     },
     {
       slug: "variant-ui",
@@ -32,7 +33,8 @@ export default function BlogPage() {
       excerpt: t("blog.posts.1.excerpt"),
       date: t("blog.posts.1.date"),
       author: t("blog.posts.1.author"),
-      cover: "",
+      cover:
+        "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1400&q=80&quot",
     },
     {
       slug: "performance-tuning",
@@ -40,7 +42,8 @@ export default function BlogPage() {
       excerpt: t("blog.posts.2.excerpt"),
       date: t("blog.posts.2.date"),
       author: t("blog.posts.2.author"),
-      cover: "",
+      cover:
+        "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&w=1400&q=80&quot",
     },
   ];
 
@@ -49,7 +52,7 @@ export default function BlogPage() {
       name: t("blog.authors.people.0.name"),
       role: t("blog.authors.people.0.role"),
       bio: t("blog.authors.people.0.bio"),
-      avatar: "https://i.postimg.cc/3x3QzSGq/author1.jpg",
+      avatar: "https://randomuser.me/api/portraits/women/44.jpg",
       twitter: "https://twitter.com/janedoe",
       linkedin: "https://linkedin.com/in/janedoe",
     },
@@ -57,7 +60,7 @@ export default function BlogPage() {
       name: t("blog.authors.people.1.name"),
       role: t("blog.authors.people.1.role"),
       bio: t("blog.authors.people.1.bio"),
-      avatar: "https://i.postimg.cc/3x3QzSGq/author2.jpg",
+      avatar: "https://randomuser.me/api/portraits/men/22.jpg",
       twitter: "https://twitter.com/johnsmith",
       linkedin: "https://linkedin.com/in/johnsmith",
     },
@@ -65,7 +68,7 @@ export default function BlogPage() {
       name: t("blog.authors.people.2.name"),
       role: t("blog.authors.people.2.role"),
       bio: t("blog.authors.people.2.bio"),
-      avatar: "https://i.postimg.cc/3x3QzSGq/author3.jpg",
+      avatar: "https://randomuser.me/api/portraits/women/68.jpg",
       twitter: "https://twitter.com/emilyjohnson",
       linkedin: "https://linkedin.com/in/emilyjohnson",
     },
@@ -100,7 +103,7 @@ export default function BlogPage() {
               </Link>
               <Link
                 href="/services"
-                className="px-5 py-3 rounded-md border border-slate-200 dark:border-slate-700"
+                className="px-5 py-3 rounded-md border border-slate-900 dark:text-white dark:border-white    "
               >
                 {t("blog.hero.cta.services")}
               </Link>
@@ -126,10 +129,14 @@ export default function BlogPage() {
                 >
                   {/* cover */}
                   <div className="relative h-44 sm:h-48">
-                    <div className="absolute inset-0 bg-slate-100 dark:bg-slate-900 flex items-center justify-center">
+                    <div className="absolute inset-0 bg-slate-100 dark:bg-slate-900  ">
                       {/* placeholder cover - replace with Image when available */}
                       <div className="text-slate-400">
-                        <img src={p.cover} alt={p.slug} />
+                        <img
+                          src={p.cover}
+                          alt={p.slug}
+                          className="h-44 sm:h-48 w-full object-cover object-center"
+                        />
                       </div>
                     </div>
                     <div className="absolute inset-0 bg-linear-to-t from-black/30 to-transparent pointer-events-none" />
@@ -214,7 +221,7 @@ export default function BlogPage() {
         </section>
 
         {/* Authors */}
-        <section className="py-16 bg-white dark:bg-slate-900">
+        <section className="py-16 ">
           <div className="max-w-6xl mx-auto px-6 lg:px-8">
             <h3 className="text-2xl font-semibold text-slate-900 dark:text-white text-center">
               {t("blog.authors.title")}
@@ -340,19 +347,19 @@ export default function BlogPage() {
                   quote: t("blog.testimonials.items.0.quote"),
                   name: t("blog.testimonials.items.0.name"),
                   role: t("blog.testimonials.items.0.role"),
-                  initials: "AP",
+                  initials: "https://randomuser.me/api/portraits/men/35.jpg",
                 },
                 {
                   quote: t("blog.testimonials.items.1.quote"),
                   name: t("blog.testimonials.items.1.name"),
                   role: t("blog.testimonials.items.1.role"),
-                  initials: "CM",
+                  initials: "https://randomuser.me/api/portraits/women/65.jpg",
                 },
                 {
                   quote: t("blog.testimonials.items.2.quote"),
                   name: t("blog.testimonials.items.2.name"),
                   role: t("blog.testimonials.items.2.role"),
-                  initials: "FN",
+                  initials: "https://randomuser.me/api/portraits/men/12.jpg",
                 },
               ].map((t) => (
                 <div
@@ -406,7 +413,7 @@ export default function BlogPage() {
         </section>
 
         {/* FAQ */}
-        <section className="py-16 bg-white dark:bg-slate-900">
+        <section className="py-16  ">
           <div className="max-w-4xl mx-auto px-6 lg:px-8">
             <h3 className="text-2xl font-semibold text-slate-900 dark:text-white text-center">
               {t("blog.faq.title")}
