@@ -1,131 +1,112 @@
+import i18n from "@/i18n";
+import { Quote } from "lucide-react";
+import Head from "next/head";
 import Link from "next/link";
+import { useTranslation } from "react-i18next";
 import SiteFooter from "../src/components/SiteFooter";
 import SiteHeadder from "../src/components/SiteHeadder";
-import Head from "next/head";
-import { Quote, Linkedin, Twitter } from "lucide-react";
 
-const features = [
-  {
-    title: "Core Web Vitals",
-    desc: "Improve LCP, INP and CLS to deliver faster, more reliable pages.",
-  },
-  {
-    title: "Resource Optimization",
-    desc: "Optimize images, fonts and critical CSS to dramatically reduce payloads.",
-  },
-  {
-    title: "Caching & CDN",
-    desc: "Smart cache policies and CDN strategies to serve assets closer to users.",
-  },
-  {
-    title: "JS & Bundles",
-    desc: "Code-splitting, tree-shaking and lazy-loading to minimize runtime cost.",
-  },
-];
-
-const processSteps = [
-  {
-    step: "Measure",
-    copy: "Run lab and field audits (Lighthouse, Real User Metrics) to baseline performance.",
-  },
-  {
-    step: "Prioritize",
-    copy: "Identify high-impact fixes by cost, risk and expected metric improvement.",
-  },
-  {
-    step: "Implement",
-    copy: "Ship focused changes: image delivery, critical CSS, caching and bundle splits.",
-  },
-  {
-    step: "Monitor",
-    copy: "Automate monitoring and alerts to prevent regressions and measure long-term gains.",
-  },
-];
-
-const projects = [
-  {
-    title: "Core Web Vitals Sprint",
-    tag: "E‑commerce",
-    img: "https://images.unsplash.com/photo-1505685296765-3a2736de412f?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    title: "Image & Font Optimization",
-    tag: "Publishing",
-    img: "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1200&q=80",
-  },
-  {
-    title: "Bundle Reduction for App",
-    tag: "SaaS",
-    img: "https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=80",
-  },
-];
-
-const team = [
-  { name: "Priya Nair", role: "Performance Engineer", avatar: "/avatar1.jpg" },
-  {
-    name: "Omar Haddad",
-    role: "Frontend Engineer",
-    avatar: "/avatar2.jpg",
-  },
-  {
-    name: "Sofia Ruiz",
-    role: "Infrastructure & CDN Lead",
-    avatar: "/avatar3.jpg",
-  },
-];
-
-const testimonials = [
-  {
-    quote:
-      "Cut our LCP in half and organic traffic rose within weeks — great impact on revenue.",
-    who: "Luca B.",
-    role: "Head of Engineering, RetailCo",
-    avatar: "/avatar1.jpg",
-    rating: 5,
-  },
-  {
-    quote:
-      "Their performance sprint removed critical render-blocking assets and improved engagement significantly.",
-    who: "Nadia R.",
-    role: "Product Manager, NewsDaily",
-    avatar: "/avatar2.jpg",
-    rating: 5,
-  },
-  {
-    quote:
-      "Reliable monitoring and alerts helped us prevent regressions after releases.",
-    who: "Tom W.",
-    role: "CTO, SaaSWorks",
-    avatar: "/avatar3.jpg",
-    rating: 5,
-  },
-];
+// content is loaded from locales so all visible strings exist per-language
 
 const PerformanceEnhancementPage = () => {
+  const { t } = useTranslation();
+
+  const features = t("performance.features", {
+    returnObjects: true,
+  }) as Array<{
+    title: string;
+    desc: string;
+  }>;
+  const processSteps = t("performance.processSteps", {
+    returnObjects: true,
+  }) as Array<{ step: string; copy: string }>;
+
+  const projects = [
+    {
+      title: t("performance.projects.0.title"),
+      tag: t("performance.projects.0.tag"),
+      img: " https://images.unsplash.com/photo-1505685296765-3a2736de412f?auto=format&fit=crop&w=1200&q=80&quot",
+      desc: t("performance.projects.0.desc"),
+    },
+    {
+      title: t("performance.projects.1.title"),
+      tag: t("performance.projects.1.tag"),
+      img: " https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=800&q=80",
+      desc: t("performance.projects.1.desc"),
+    },
+    {
+      title: t("performance.projects.2.title"),
+      tag: t("performance.projects.2.tag"),
+      img: " https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=800&q=80",
+      desc: t("performance.projects.2.desc"),
+    },
+  ];
+
+  const team = [
+    {
+      name: t("performance.team.0.name"),
+      role: t("performance.team.0.role"),
+      avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+    },
+    {
+      name: t("performance.team.1.name"),
+      role: t("performance.team.1.role"),
+      avatar: "https://randomuser.me/api/portraits/men/45.jpg",
+    },
+    {
+      name: t("performance.team.2.name"),
+      role: t("performance.team.2.role"),
+      avatar: "https://randomuser.me/api/portraits/women/12.jpg",
+    },
+  ];
+
+  const testimonials = [
+    {
+      quote: t("performance.testimonials.0.quote"),
+      who: t("performance.testimonials.0.who"),
+      role: t("performance.testimonials.0.role"),
+      rating: 5,
+      avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+    },
+    {
+      quote: t("performance.testimonials.1.quote"),
+      who: t("performance.testimonials.1.who"),
+      role: t("performance.testimonials.1.role"),
+      rating: 5,
+      avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+    },
+    {
+      quote: t("performance.testimonials.2.quote"),
+      who: t("performance.testimonials.2.who"),
+      role: t("performance.testimonials.2.role"),
+      rating: 5,
+      avatar: "https://randomuser.me/api/portraits/women/68.jpg",
+    },
+  ];
+
   return (
     <>
       <Head>
-        <title>Performance Optimization - Enkonix</title>
+        <title>{t("performance.meta.title")}</title>
         <meta
           name="description"
-          content="Improve page speed, Core Web Vitals and delivery pipelines—performance sprints, image & font optimization, caching and monitoring."
+          content={t("performance.meta.description") as string}
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
 
       <SiteHeadder />
-      <main className=" caret-transparent ">
+      <main className=" caret-transparent  bg-linear-to-br from-blue-50 to-white dark:from-slate-900 dark:to-slate-800 ">
         {/* Hero */}
         <section className="relative overflow-hidden bg-linear-to-br from-indigo-600 to-emerald-500 text-white min-h-screen flex items-center justify-center">
           <div className="max-w-7xl mx-auto px-6  ">
             <div className="grid grid-cols-1   gap-10 items-center">
-              <div className="flex justify-center items-center flex-col">
-                <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight">
-                  Performance optimization that speeds growth
+              <div className="flex justify-center items-center text-center flex-col">
+                <h1 className="text-4xl sm:text-5xl font-extrabold leading-tight ">
+                  {t("performance.hero.title")}
                 </h1>
                 <p className="mt-4 text-lg opacity-90 max-w-xl">
-                  Practical performance sprints: reduce load times, improve Core
-                  Web Vitals and keep pages fast at scale.
+                  {t("performance.hero.desc")}
                 </p>
 
                 <div className="mt-8 flex flex-wrap gap-3">
@@ -133,18 +114,22 @@ const PerformanceEnhancementPage = () => {
                     href="#projects"
                     className="inline-flex items-center rounded-lg bg-white/20 px-4 py-2 text-white hover:bg-white/30"
                   >
-                    See case studies
+                    {t("performance.hero.ctaCaseStudies")}
                   </Link>
                   <Link
                     href="#contact"
                     className="inline-flex items-center rounded-lg bg-white text-indigo-700 px-4 py-2 hover:shadow"
                   >
-                    Get a consult
+                    {t("performance.hero.ctaConsult")}
                   </Link>
                 </div>
 
                 <div className="mt-6 flex flex-wrap gap-2 text-sm opacity-95">
-                  {["LCP", "TTFB", "CLS", "Lighthouse"].map((b) => (
+                  {(
+                    t("performance.hero.badges", {
+                      returnObjects: true,
+                    }) as string[]
+                  ).map((b) => (
                     <span
                       key={b}
                       className="rounded-full bg-white/10 px-3 py-1"
@@ -161,22 +146,21 @@ const PerformanceEnhancementPage = () => {
         {/* Features */}
         <section
           aria-labelledby="features-title"
-          className=" flex justify-center py-12 items-center   "
+          className=" flex justify-center py-12 items-center bg-white dark:bg-slate-900   "
         >
           <div className="flex flex-col  max-w-7xl">
             <h2 id="features-title" className="text-2xl text-center font-bold">
-              What we do
+              {t("performance.featuresHeader")}
             </h2>
             <p className="mt-2 text-center text-slate-500 dark:text-slate-300 ">
-              Fast, technical and product-focused performance work: audits,
-              targeted fixes and automated monitoring.
+              {t("performance.featuresSubtitle")}
             </p>
 
             <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
               {features.map((f, idx) => (
                 <article
                   key={idx}
-                  className="group relative rounded-2xl overflow-hidden bg-white/60 dark:bg-slate-900/50 border border-slate-200/30 dark:border-slate-700/20 p-6 shadow-xl hover:shadow-2xl transition transform hover:-translate-y-2"
+                  className="group relative rounded-2xl overflow-hidden bg-white/60 dark:bg-slate-900/50 border border-transparent hover:border-slate-200/20 p-6 shadow-md hover:shadow-xl transition-transform duration-300 hover:-translate-y-2 backdrop-blur-sm"
                 >
                   <div className="flex items-start gap-4">
                     <div className="shrink-0">
@@ -221,11 +205,10 @@ const PerformanceEnhancementPage = () => {
         >
           <div className=" items-center flex-col w-screen   flex">
             <h2 id="process-title" className="text-2xl font-bold">
-              Our process
+              {t("performance.processHeader")}
             </h2>
             <p className="mt-2 text-slate-500 dark:text-slate-300 max-w-2xl">
-              A practical audit → fix → monitor workflow that reduces load times
-              and improves user experience.
+              {t("performance.processSubtitle")}
             </p>
 
             <ol className="mt-8 relative w-full">
@@ -242,8 +225,16 @@ const PerformanceEnhancementPage = () => {
                       key={p.step}
                       className={` flex    items-center  ${
                         i % 2 === 0
-                          ? " md:justify-start md:ml-10  flex-row-reverse"
-                          : " md:justify-start md:mr-10"
+                          ? ` md:justify-start flex-row-reverse ${
+                              i18n.language == "en"
+                                ? `  md:ml-10 `
+                                : `  md:mr-10 `
+                            }`
+                          : ` md:justify-start ${
+                              i18n.language == "en"
+                                ? `  md:mr-10 `
+                                : `  md:ml-10 `
+                            }`
                       }`}
                       aria-label={`Step ${i + 1}: ${p.step}`}
                     >
@@ -284,14 +275,14 @@ const PerformanceEnhancementPage = () => {
         <section
           id="projects"
           aria-labelledby="projects-title"
-          className="flex w-full justify-center "
+          className="flex w-full justify-center bg-white dark:bg-slate-900 py-7 "
         >
-          <div className="flex flex-col max-w-7xl justify-center items-center">
+          <div className="flex flex-col max-w-7xl   justify-center items-center">
             <h2 id="projects-title" className="text-2xl font-bold">
-              Selected work
+              {t("performance.projectsHeader")}
             </h2>
             <p className="mt-2 text-slate-500 dark:text-slate-300 max-w-2xl">
-              Short snapshots of recent projects — outcomes first.
+              {t("performance.projectsSubtitle")}
             </p>
 
             <div className="mt-8">
@@ -307,7 +298,7 @@ const PerformanceEnhancementPage = () => {
                   return (
                     <article
                       key={p.title}
-                      className={`group relative overflow-hidden rounded-xl shadow-lg ${baseClasses} bg-slate-50 dark:bg-slate-900/50 py-5 `}
+                      className={`group relative overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition-transform duration-300 ${baseClasses} bg-slate-50 dark:bg-slate-900/50 py-5 border border-transparent hover:border-white/10`}
                       aria-labelledby={`project-${idx}`}
                     >
                       <div
@@ -334,8 +325,8 @@ const PerformanceEnhancementPage = () => {
                         </div>
 
                         <p className="mt-3 hidden sm:block text-sm text-white/80 max-w-prose">
-                          A short summary of the impact and metrics — concise
-                          and outcome focused.
+                          {p.desc ||
+                            (t("performance.projectDefaultDesc") as string)}
                         </p>
                       </div>
                     </article>
@@ -353,18 +344,17 @@ const PerformanceEnhancementPage = () => {
         >
           <div className="flex flex-col justify-center items-center max-w-7xl">
             <h2 id="testimonials-title" className="text-2xl font-bold">
-              What clients say
+              {t("performance.testimonialsHeader")}
             </h2>
             <p className="mt-2 text-slate-500 dark:text-slate-300 max-w-2xl">
-              Short quotes from product and engineering teams who saw faster
-              pages and better retention.
+              {t("performance.testimonialsSubtitle")}
             </p>
 
             <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
-              {testimonials.map((t, idx) => (
+              {testimonials.map((item, idx) => (
                 <div
                   key={idx}
-                  className="relative rounded-xl p-6 bg-white dark:bg-slate-800 border border-slate-200/40 dark:border-slate-700/30 shadow-sm overflow-visible"
+                  className="relative rounded-2xl p-6 bg-white/95 dark:bg-slate-800/60 ring-1 ring-slate-100/40 hover:ring-2 hover:ring-amber-200/30 shadow-md hover:shadow-xl transition-transform duration-300 hover:-translate-y-1 overflow-visible"
                 >
                   {/* quote badge */}
                   <div className="absolute -top-5 left-6 h-12 w-12 rounded-full bg-linear-to-br from-emerald-400 to-indigo-600 text-white flex items-center justify-center shadow-2xl">
@@ -373,7 +363,7 @@ const PerformanceEnhancementPage = () => {
 
                   {/* rating */}
                   <div className="flex items-center gap-1 text-amber-400 mb-3">
-                    {Array.from({ length: t.rating }).map((_, i) => (
+                    {Array.from({ length: item.rating ?? 0 }).map((_, i) => (
                       <svg
                         key={i}
                         className="w-4 h-4"
@@ -387,19 +377,19 @@ const PerformanceEnhancementPage = () => {
                   </div>
 
                   <p className="text-slate-800 dark:text-slate-100">
-                    “{t.quote}”
+                    “{item.quote}”
                   </p>
 
                   <div className="mt-4 flex items-center gap-3">
                     <img
-                      src={t.avatar}
-                      alt={t.who}
+                      src={item.avatar}
+                      alt={item.who}
                       className="h-10 w-10 rounded-full object-cover"
                     />
                     <div>
-                      <div className="font-semibold text-sm">{t.who}</div>
+                      <div className="font-semibold text-sm">{item.who}</div>
                       <div className="text-xs text-slate-500 dark:text-slate-300">
-                        {t.role}
+                        {item.role}
                       </div>
                     </div>
                   </div>
@@ -410,21 +400,23 @@ const PerformanceEnhancementPage = () => {
         </section>
 
         {/* Team */}
-        <section aria-labelledby="team-title" className="py-12">
+        <section
+          aria-labelledby="team-title"
+          className="py-12 bg-white dark:bg-slate-900  "
+        >
           <div className="max-w-7xl mx-auto">
             <h2 id="team-title" className="text-2xl font-bold text-center">
-              Meet the team
+              {t("performance.teamHeader")}
             </h2>
             <p className="mt-2 text-center text-slate-500 dark:text-slate-300 max-w-2xl mx-auto">
-              Small, cross-functional performance teams specializing in frontend
-              efficiency, infra and monitoring.
+              {t("performance.teamSubtitle")}
             </p>
 
             <div className="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {team.map((m) => (
                 <div
                   key={m.name}
-                  className="group relative rounded-xl overflow-hidden bg-white dark:bg-slate-900/40 border border-slate-100/60 dark:border-slate-700/30 p-6 shadow-sm hover:shadow-lg transition transform hover:-translate-y-1"
+                  className="group relative rounded-2xl overflow-hidden bg-white/95 dark:bg-slate-900/50 border   hover:border-slate-200/20 p-6 shadow-2xl hover:shadow-xl transition-transform duration-300 hover:-translate-y-1"
                 >
                   <div className="flex items-start gap-4">
                     <img
@@ -508,8 +500,7 @@ const PerformanceEnhancementPage = () => {
                       </div>
 
                       <p className="mt-3 text-sm text-slate-600 dark:text-slate-300">
-                        Experienced in product strategy, interaction design and
-                        building design systems that scale.
+                        {t("performance.teamBlurb")}
                       </p>
                     </div>
                   </div>
@@ -523,25 +514,22 @@ const PerformanceEnhancementPage = () => {
         <section id="contact" className="py-12 bg-indigo-600 text-white">
           <div className="max-w-3xl flex flex-col mx-auto items-center justify-center text-center">
             <h2 className="text-2xl font-bold">
-              Ready to speed up your product?
+              {t("performance.finalCta.title")}
             </h2>
-            <p className="mt-2 opacity-90">
-              Share your site and performance goals — we’ll recommend a quick
-              sprint to improve key metrics and prevent regressions.
-            </p>
+            <p className="mt-2 opacity-90">{t("performance.finalCta.desc")}</p>
 
             <div className="mt-6 flex gap-3">
               <Link
                 href="#"
                 className="rounded-md bg-white text-indigo-600 px-4 py-2 font-medium"
               >
-                Send brief
+                {t("performance.finalCta.sendBrief")}
               </Link>
               <Link
                 href="/contact-us"
                 className="rounded-md border border-white/30 px-4 py-2"
               >
-                Schedule call
+                {t("performance.finalCta.scheduleCall")}
               </Link>
             </div>
           </div>

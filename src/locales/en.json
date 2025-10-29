@@ -1021,6 +1021,130 @@
       "button": "Book a performance sprint"
     }
   },
+  "performance": {
+    "meta": {
+      "title": "Performance Optimization — Enkonix",
+      "description": "Improve page speed, Core Web Vitals and delivery pipelines—performance sprints, image & font optimization, caching and monitoring."
+    },
+    "hero": {
+      "title": "Performance optimization that speeds growth",
+      "desc": "Practical performance sprints: reduce load times, improve Core Web Vitals and keep pages fast at scale.",
+      "ctaCaseStudies": "See case studies",
+      "ctaConsult": "Get a consult",
+      "badges": ["LCP", "TTFB", "CLS", "Lighthouse"]
+    },
+    "featuresHeader": "What we do",
+    "featuresSubtitle": "Fast, technical and product-focused performance work: audits, targeted fixes and automated monitoring.",
+    "features": [
+      {
+        "title": "Core Web Vitals",
+        "desc": "Improve LCP, INP and CLS to deliver faster, more reliable pages."
+      },
+      {
+        "title": "Resource Optimization",
+        "desc": "Optimize images, fonts and critical CSS to dramatically reduce payloads."
+      },
+      {
+        "title": "Caching & CDN",
+        "desc": "Smart cache policies and CDN strategies to serve assets closer to users."
+      },
+      {
+        "title": "JS & Bundles",
+        "desc": "Code-splitting, tree-shaking and lazy-loading to minimize runtime cost."
+      }
+    ],
+    "processHeader": "Our process",
+    "processSubtitle": "A practical audit → fix → monitor workflow that reduces load times and improves user experience.",
+    "processSteps": [
+      {
+        "step": "Measure",
+        "copy": "Run lab and field audits (Lighthouse, Real User Metrics) to baseline performance."
+      },
+      {
+        "step": "Prioritize",
+        "copy": "Identify high-impact fixes by cost, risk and expected metric improvement."
+      },
+      {
+        "step": "Implement",
+        "copy": "Ship focused changes: image delivery, critical CSS, caching and bundle splits."
+      },
+      {
+        "step": "Monitor",
+        "copy": "Automate monitoring and alerts to prevent regressions and measure long-term gains."
+      }
+    ],
+    "projectsHeader": "Selected work",
+    "projectsSubtitle": "Short snapshots of recent projects — outcomes first.",
+    "projects": [
+      {
+        "title": "Core Web Vitals Sprint",
+        "tag": "E‑commerce",
+        "desc": "Reduced LCP by 48% and INP by 60% through targeted optimizations on product pages."
+      },
+      {
+        "title": "Image & Font Optimization",
+        "tag": "Publishing",
+        "desc": "Improved load times by 35% with responsive images, AVIF formats and font subsetting."
+      },
+      {
+        "title": "Bundle Reduction for App",
+        "tag": "SaaS",
+        "desc": "Cut JS bundle size by 40% using code-splitting, tree-shaking and lazy-loading techniques."
+      }
+    ],
+    "projectDefaultDesc": "A short summary of the impact and metrics — concise and outcome focused.",
+    "testimonialsHeader": "What clients say",
+    "testimonialsSubtitle": "Short quotes from product and engineering teams who saw faster pages and better retention.",
+    "testimonials": [
+      {
+        "quote": "Cut our LCP in half and organic traffic rose within weeks — great impact on revenue.",
+        "who": "Luca B.",
+        "role": "Head of Engineering, RetailCo",
+        "avatar": "/avatar1.jpg",
+        "rating": 5
+      },
+      {
+        "quote": "Their performance sprint removed critical render-blocking assets and improved engagement significantly.",
+        "who": "Nadia R.",
+        "role": "Product Manager, NewsDaily",
+        "avatar": "/avatar2.jpg",
+        "rating": 5
+      },
+      {
+        "quote": "Reliable monitoring and alerts helped us prevent regressions after releases.",
+        "who": "Tom W.",
+        "role": "CTO, SaaSWorks",
+        "avatar": "/avatar3.jpg",
+        "rating": 5
+      }
+    ],
+    "teamHeader": "Meet the team",
+    "teamSubtitle": "Small, cross-functional performance teams specializing in frontend efficiency, infra and monitoring.",
+    "teamBlurb": "Experienced in web performance, Core Web Vitals and scalable delivery pipelines.",
+    "team": [
+      {
+        "name": "Priya Nair",
+        "role": "Performance Engineer",
+        "avatar": "/avatar1.jpg"
+      },
+      {
+        "name": "Omar Haddad",
+        "role": "Frontend Engineer",
+        "avatar": "/avatar2.jpg"
+      },
+      {
+        "name": "Sofia Ruiz",
+        "role": "Infrastructure & CDN Lead",
+        "avatar": "/avatar3.jpg"
+      }
+    ],
+    "finalCta": {
+      "title": "Ready to speed up your product?",
+      "desc": "Share your site and performance goals — we’ll recommend a quick sprint to improve key metrics and prevent regressions.",
+      "sendBrief": "Send brief",
+      "scheduleCall": "Schedule call"
+    }
+  },
   "productDesign": {
     "meta": {
       "title": "Product design services — Enkonix",

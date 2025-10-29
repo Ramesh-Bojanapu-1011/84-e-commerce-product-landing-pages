@@ -327,7 +327,7 @@ const ConversionOptimizationPage = () => {
                         <p className="mt-3 hidden sm:block text-sm text-white/80 max-w-prose">
                           {p.desc ||
                             (t(
-                              "conversionRateOpt.projectDefaultDesc"
+                              "conversionRateOpt.projectDefaultDesc",
                             ) as string)}
                         </p>
                       </div>
